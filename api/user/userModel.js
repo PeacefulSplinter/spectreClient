@@ -19,8 +19,6 @@ var UserSchema = new mongoose.Schema({
     }
   }
 
-
-
 });
 
 //bcrypt middleware
@@ -43,7 +41,6 @@ UserSchema.pre('save', function(next) {
     });
   });
 });
-
 
 // Password verification
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {
