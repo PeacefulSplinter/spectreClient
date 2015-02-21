@@ -4,19 +4,20 @@ angular.module('Daas.auth.service', [])
   return {
 
     authLogin: function(url){
-    $http({
-      method: 'GET',
-      url: url
-    }).then(function(resp){
-      console.log(resp);
-    })
-
+      var windowFeatures = 'location=0,status0,modal=yes,alwaysRaised=yes,width=800,height=600';
+      var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
+      var closed = $interval(function(){
+        if(windowObjectReference.closed){
+          console.log('closed');
+        $interval.cancel(closed);
+        }
+      }, 500);
     },
 
     login: function(obj){
       $http({
         method: 'POST',
-        url: '/api/local/login',
+        url: '/auth/local/login',
         data: obj
       }).then(function(resp){
         console.log(resp.data.token);
@@ -25,7 +26,7 @@ angular.module('Daas.auth.service', [])
     register: function(obj){
       $http({
         method: 'POST',
-        url: '/api/local/register',
+        url: '/auth/local/register',
         data: obj
       }).then(function(resp){
         console.log(resp.data.token);
