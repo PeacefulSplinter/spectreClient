@@ -8,7 +8,7 @@ exports.setup = function (User){
       callbackURL: $config.facebook.callbackUrl
     },
     function(accessToken, refreshToken, profile, done) {
-      User.findOne({'providers.facebook.id': profile.id }, function(err, user){
+      User.findOne({'providers.facebookID': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
           var newUser = new User({'providers.facebookID': profile.id});
