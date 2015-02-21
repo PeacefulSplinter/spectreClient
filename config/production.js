@@ -10,7 +10,8 @@ module.exports = {
   },
   google: {
     clientID: process.env.GOOGLE_ID,
-    clientSecret: process.env.GOOGLE_SECRET
+    clientSecret: process.env.GOOGLE_SECRET,
+    callbackUrl: process.env.GOOGLE_URL
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID,
