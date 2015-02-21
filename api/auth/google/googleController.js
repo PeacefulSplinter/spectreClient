@@ -18,7 +18,7 @@ exports.setup = function (User){
           });
         }
         if (user){
-          user.save({'providers.google.token': accessToken}, function(err, user){
+          User.findOneAndUpdate({'providers.google.id': profile.id}, {'providers.google.token': accessToken}, function(err, user){
             if(err) { return done(err); }
             done(null, profile);
           });
