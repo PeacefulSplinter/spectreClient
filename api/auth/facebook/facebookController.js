@@ -19,9 +19,9 @@ exports.setup = function (User){
         }
         if (user){
             done(null, profile);
-          });
+          };
         }
-      });
+      );
     }
   ));
 }
