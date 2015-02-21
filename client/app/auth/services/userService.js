@@ -4,7 +4,7 @@ angular.module('Daas.auth.service', [])
   return {
 
     authLogin: function(url){
-      var windowFeatures = 'location=0,status0,modal=yes,alwaysRaised=yes,width=800,height=600';
+      var windowFeatures = 'location=0,status=0,modal=yes,alwaysRaised=yes,width=800,height=600';
       var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
       var closed = $interval(function(){
         if(windowObjectReference.closed){
