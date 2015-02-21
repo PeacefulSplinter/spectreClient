@@ -18,7 +18,7 @@ exports.setup = function (User){
           });
         }
         if (user){
-            done(null, profile);
+            done(null, profile);    
           };
         }
       );
