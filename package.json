@@ -1,9 +1,17 @@
 {
-  "name": "Daas",
+  "name": "spectreClient",
   "version": "1.0.0",
+  "engines": {
+    "node": "~0.10.36"
+  },
   "description": "Dashboard as a service",
-  "main": "server.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "postinstall": "bower cache clean && bower install"
+    },
   "dependencies": {
+    "bower": "*",
     "bcrypt": "^0.8.1",
     "body-parser": "^1.11.0",
     "cookie-parser": "^1.3.4",
