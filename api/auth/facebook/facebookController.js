@@ -13,11 +13,14 @@ exports.setup = function (User){
         if (!user) {
           var newUser = new User({'providers.facebookID': profile.id});
           newUser.save(function(err, user){
-            if (err) { return done(err); 
-          }
-        });
-      }
-      done(null, profile);
+            if (err) { return done(err); }
+            done(null, profile);
+          });
+        }
+        if (user){
+            done(null, profile);
+          });
+        }
       });
     }
   ));
