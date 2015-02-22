@@ -11,7 +11,7 @@ exports.setup = function (User){
       User.findOne({'providers.facebookID': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({'username': '', 'password': '', 'providers.facebookID': profile.id, 'providers.google.id': '', 'providers.google.token': ''});
+          var newUser = new User({'username': undefined, 'password': undefined, 'providers.facebookID': profile.id, 'providers.google.id': undefined, 'providers.google.token': undefined});
           newUser.save(function(err, user){
             console.log('save process started');
             if (err) { 
