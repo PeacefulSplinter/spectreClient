@@ -16,16 +16,18 @@ passport.deserializeUser(function(id, done) {
 router.get('/facebook', passport.authenticate('facebook'));
 
 router.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/auth/fb/facebook/facebookFailure'}), function (req, res){
-  //console.log('foobar');
+	console.log('foobar', req.user);
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
-  var token = jwt.sign({foo:'foobar'}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+  var token = jwt.sign(req.user, $config.JWT_SECRET, {expiresInMinutes: 60*5});
   res.cookie('Token', token);
   res.sendFile(testFile);
 });
 
 router.get('/facebook/facebookFailure', function (req, res){
-	res.status(200).json({msg: 'failed'});
+  var cwd = process.cwd();
+  var testFile = cwd + '/api/views/test.html';
+  res.sendFile(testFile);
 });
 
 module.exports = router;
