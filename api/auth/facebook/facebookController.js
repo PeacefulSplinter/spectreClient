@@ -15,7 +15,7 @@ exports.setup = function (User){
           newUser.save(function(err, user){
             console.log('save process started');
             if (err) { 
-              console.log('save query error');
+              console.log('save query error'); 
               return done(err); 
             }
             console.log('save query success!');
