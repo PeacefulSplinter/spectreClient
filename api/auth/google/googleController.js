@@ -11,7 +11,7 @@ exports.setup = function (User){
       User.findOne({'providers.google.id': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({'username': profile.displayName, 'providers.google.id': profile.id, 'providers.google.token': accessToken});
+          var newUser = new User({'username': profile.id, 'providers.google.id': profile.id, 'providers.google.token': accessToken});
           newUser.save(function(err, user){
             console.log(user);
             if (err) { return done(err); }
