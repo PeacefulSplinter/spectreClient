@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String
   },
-
+  
   providers: {
     facebookID: String,
     google: {
