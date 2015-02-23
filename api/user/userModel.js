@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
+
   username: {
     type: String,
     unique: true,
@@ -11,7 +12,7 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String
   },
-  
+
   providers: {
     facebookID: String,
     google: {

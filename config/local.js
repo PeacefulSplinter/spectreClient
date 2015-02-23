@@ -1,0 +1,8 @@
+module.exports = {
+	'TWITTER_ID': 'bL9j8Lj2NCh13knSterEaS9lI',
+	'TWITTER_SECRET': 'mHKrS9WYYEBeF7gNA5wT6HzfsO2HGwp1K2AltiecFBB6OE0ySI',
+	'GOOGLE_ID': '312415623012-njb1l6q4pplpogdt4tjeumih8oe9p25p.apps.googleusercontent.com',
+	'GOOGLE_SECRET': 'YzShQbUay4ZEC1E7QlqWKVWc',
+	'FACEBOOK_ID': '1457822237814153',
+	'FACEBOOK_SECRET': 'e37881e8e6a010d62c70c9b315993718'
+};

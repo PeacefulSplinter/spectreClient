@@ -6,7 +6,8 @@ module.exports = {
   JWT_SECRET: process.env.JWT_SECRET,
   twitter: {
     clientID: process.env.TWITTER_ID,
-    clientSecret: process.env.TWITTER_SECRET
+    clientSecret: process.env.TWITTER_SECRET,
+    callbackUrl: process.env.TWITTER_URL
   },
   google: {
     clientID: process.env.GOOGLE_ID,
