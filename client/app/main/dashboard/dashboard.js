@@ -5,7 +5,8 @@ angular.module('Daas.main.dashboard', [])
     .state('app.main.dashboard', {
       url: '/dashboard',
       templateUrl: 'main/dashboard/dashboard.html',
-      controller: 'DashboardController'
+      controller: 'DashboardController',
+      auth: true
     });
 })
 .controller('DashboardController', function($scope, $state, $http){

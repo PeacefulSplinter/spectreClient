@@ -3,7 +3,7 @@ angular.module('Daas.main.home', [])
 .config(function($stateProvider){
   $stateProvider
     .state('app.main.home', {
-      url: '/home',
+      url: '/',
       templateUrl: 'main/home/home.html',
       controller: 'HomeController'
     });

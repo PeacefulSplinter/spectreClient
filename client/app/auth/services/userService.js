@@ -1,23 +1,22 @@
 angular.module('Daas.auth.service', ['ngCookies'])
 
 .factory('Auth', function($http, $window, $interval, $cookieStore, $rootScope, $state){
-  var checkCookie = function(){
-    var cookie;
-    try{
-      cookie = $cookieStore.get('Token');
-    }catch(err){
-      console.error(err);
-    }
-
-    if(cookie){
-      $state.go('app.main.dashboard');
-    }else{
-      $rootScope.$broadcast('noCookie');
-    }
-  };
 
   return {
 
+    checkCookie: function(evt, toState){
+      var cookie;
+      try{
+        cookie = $cookieStore.get('Token');
+      }catch(err){
+        console.error(err);
+      }
+
+      if(cookie && toState.auth){
+        evt.preventDefault();
+        $state.go('app.main.dashboard');
+      }
+    },
     authLogin: function(provider){
       var urlMap = {
         'fb': '/auth/fb/facebook',
@@ -35,7 +34,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
         interval = $interval(function(){
 
           if(windowObjectReference.closed){
-            checkCookie();
+            this.checkCookie();
             $interval.cancel(interval);
           }
 
