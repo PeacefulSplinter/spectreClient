@@ -1,16 +1,17 @@
-  <div>
-  <nav class="navbar navbar-default navbar-static-top">
+<div>
+  <!-- <nav class="navbar navbar-default navbar-static-top">
+>>>>>>> More styling to home pages
     <div class="container-fluid">
       <div class="navbar-header">
-        <h2>D.A.A.S</h2>
+        <h3 class="header">Spectre Widgets |</h3><h5>Dashboard As A Service</h5>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-btn"><a ui-sref="home">Home</a></li>
-        <li class="navbar-btn"><a ui-sref="examples">examples</a></li>
-        <li class="navbar-btn"><a ui-sref="signup">Sign Up</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="home">Home</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="examples">examples</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="signup">Sign Up</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
 
   <div id="login-container">
 
@@ -18,20 +19,20 @@
 
       <div class="form-group">
         <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
-        <div class="col-sm-3">
+        <div class="col-sm-6">
           <input id="inputUsername" type="text" placeholder="Username" class="form-control" ng-model="username">
         </div>
       </div>
 
       <div class="form-group">
         <label for="inputPassword" class="col-sm-2 control-label">Password:</label>
-        <div class="col-sm-3">
+        <div class="col-sm-6">
           <input id="inputPassword" type="password" placeholder="Password" class="form-control" ng-model="password">
         </div>
       </div>
 
-      <button class="col-sm-offset-1 col-sm-2 btn" ng-click="loginFacebook()">Log in with Facebook</button>
-      <button class="col-sm-offset-1 col-sm-2 btn" ng-click="loginGoogle()">Log in with Google</button>
+      <button class="col-sm-offset-1 col-sm-4 btn btn-primary" ng-click="loginFacebook()">Log in with Facebook</button>
+      <button class="col-sm-offset-1 col-sm-4 btn btn-primary" ng-click="loginGoogle()">Log in with Google</button>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">

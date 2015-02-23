@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 mongoose.connect($config.mongo.url);
-require('./api')(app);
+// require('./api')(app);
 
 app.listen($config.port, function(){
   console.log("Listening on " + $config.port);
