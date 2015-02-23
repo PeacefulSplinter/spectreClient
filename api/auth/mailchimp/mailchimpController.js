@@ -1,8 +1,8 @@
 var passport = require('passport');
-var GoogleStrategy = require('passport-mailchimp');
+var MailChimpStrategy = require('passport-mailchimp');
 
 exports.setup = function (User){
-  passport.use(new GoogleStrategy({
+  passport.use(new MailChimpStrategy({
       clientID: $config.mailchimp.clientID,
       clientSecret: $config.mailchimp.clientSecret,
       callbackURL: $config.mailchimp.callbackUrl
