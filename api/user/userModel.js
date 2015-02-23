@@ -17,6 +17,14 @@ var UserSchema = new mongoose.Schema({
     google: {
       id: String,
       token: String
+    },
+    twitter: {
+      id: String,
+      token: String
+    },
+    mailchimp: {
+      id: String,
+      token: String
     }
   }
 
