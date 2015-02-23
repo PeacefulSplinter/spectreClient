@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
 client/app/lib
-client/styles
 config/local.js
 
