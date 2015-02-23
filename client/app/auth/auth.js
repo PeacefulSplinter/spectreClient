@@ -5,18 +5,17 @@ angular.module('Daas.auth',[
   ])
 
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider){
 
-  // $stateProvider
-  //   .state('login', {
-  //     url: 'auth/login',
-  //     templateUrl: 'auth/login/login.html',
-  //     controller: 'LoginController'
-  //   })
-  //   .state('signup', {
-  //     url: 'auth/signup',
-  //     templateUrl: 'auth/signup/signup.html',
-  //     controller: 'SignupController'
-  //   })
-  //   $urlRouterProvider.otherwise('auth/login');
+  $stateProvider
+    .state('app.login', {
+      url: '/login',
+      templateUrl: 'auth/login/login.html',
+      controller: 'LoginController'
+    })
+    .state('app.signup', {
+      url: '/signup',
+      templateUrl: 'auth/signup/signup.html',
+      controller: 'SignupController'
+    });
 })

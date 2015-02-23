@@ -1,4 +1,4 @@
-<div>
+  <div>
   <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -13,7 +13,9 @@
   </nav>
 
   <div id="login-container">
+
     <form class="form-horizontal">
+
       <div class="form-group">
         <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
         <div class="col-sm-3">
@@ -41,9 +43,16 @@
           </div>
         </div>
       </div>
+
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <button ng-click="login()" type="submit" class="btn btn-default">Sign in</button>
+        </div>
+      </div>
+
+      <div ng-messages="authError">
+        <div ng-message="cookie">
+          There is no cookie
         </div>
       </div>
     </form>

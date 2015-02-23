@@ -1,6 +1,7 @@
 angular.module('Daas.auth.login', [])
 
-.controller('LoginController', function(Auth, $scope, $state, $window, $interval){
+.controller('LoginController', function(Auth, $scope, $state, $window, $interval, $rootScope){
+  $scope.authError = {};
   $scope.login = function(){
     if($scope.username && $scope.password){
       var obj = {};
@@ -11,10 +12,15 @@ angular.module('Daas.auth.login', [])
   };
 
   $scope.loginFacebook = function(){
-    Auth.authLogin('/auth/fb/facebook');
+    Auth.authLogin('fb');
   };
   $scope.loginGoogle = function(){
-    Auth.authLogin('/auth/g/google');
+    Auth.authLogin('g');
   };
+
+  $rootScope.$on('noCookie', function(){
+    console.log('There is no cookie');
+    $scope.authError.cookie = true;
+  });
 
 });
