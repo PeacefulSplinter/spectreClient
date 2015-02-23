@@ -1,5 +1,5 @@
 var passport = require('passport');
-var MailChimpStrategy = require('passport-mailchimp').OAuth2Strategy;
+var MailChimpStrategy = require('passport-mailchimp').Strategy;
 
 exports.setup = function (User){
   passport.use(new MailChimpStrategy({
