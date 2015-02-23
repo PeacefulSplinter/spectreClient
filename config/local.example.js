@@ -1,5 +1,4 @@
 module.exports = {
-
 	'TWITTER_ID': '',
 	'TWITTER_SECRET': '?',
 	'GOOGLE_ID': '',

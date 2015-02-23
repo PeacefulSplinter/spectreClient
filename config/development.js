@@ -1,14 +1,13 @@
 var local;
 try {
   local = require('./local');
-}catch(error){
-  console.log('error from '+__dirname+'/development.js: ', error);
+} catch(error){
+	console.log('error from ' + __dirname + '/development.js: ', error);
 }
 
 for(var key in local){
   process.env[key] = local[key];
 }
-
 
 module.exports = {
   mongo: {
