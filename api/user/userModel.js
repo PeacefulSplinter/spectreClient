@@ -4,7 +4,8 @@ var bcrypt = require('bcrypt');
 var UserSchema = new mongoose.Schema({
   username: {
     type: String,
-    unique: true
+    unique: true,
+    sparse: true
   },
 
   password: {
@@ -18,8 +19,6 @@ var UserSchema = new mongoose.Schema({
       token: String
     }
   }
-
-
 
 });
 
@@ -43,7 +42,6 @@ UserSchema.pre('save', function(next) {
     });
   });
 });
-
 
 // Password verification
 UserSchema.methods.comparePassword = function(candidatePassword, cb) {

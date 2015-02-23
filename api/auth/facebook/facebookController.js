@@ -8,16 +8,26 @@ exports.setup = function (User){
       callbackURL: $config.facebook.callbackUrl
     },
     function(accessToken, refreshToken, profile, done) {
-      User.findOne({username: profile.id}, function(err, user){
+      User.findOne({'providers.facebookID': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({username: profile.id});
+          var newUser = new User({'username': profile.id, 'providers.facebookID': profile.id });
           newUser.save(function(err, user){
-            if (err) { return done(err); }
+            console.log('save process started');
+            if (err) { 
+              console.log('save query error'); 
+              return done(err); 
+            }
+            console.log('save query success!');
+            done(null, profile);
           });
-        };
-    	  done(null, profile);
-      })
+        }
+        if (user){
+            console.log('user in database already');
+            done(null, profile);    
+          };
+        }
+      );
     }
   ));
 }
