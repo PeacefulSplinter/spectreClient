@@ -14,7 +14,6 @@ angular.module('Daas.auth.service', ['ngCookies'])
   };
 
   return {
-
     checkCookie: checkCookie,
     authLogin: function(provider){
       var urlMap = {
