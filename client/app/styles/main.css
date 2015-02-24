@@ -75,3 +75,94 @@ body {
   margin-right: 10px;
   margin-left: 30px;
 }
+.redOrange {
+  background-color: #dc3023 !important;
+}
+.crimson {
+  background-color: #c91f37 !important;
+}
+.trueRed {
+  background-color: #8f1d21 !important;
+}
+.pinkRose {
+  background-color: #ec87c0 !important;
+}
+.rose {
+  background-color: #d24d57 !important;
+}
+.peach {
+  background-color: #f47983 !important;
+}
+.cherryBlossom {
+  background-color: #fcc9b9 !important;
+}
+.violet {
+  background-color: #5b3256 !important;
+}
+.lavender {
+  background-color: #967adc !important;
+}
+.bellFlower {
+  background-color: #5d3f6a !important;
+}
+.navyBlue {
+  background-color: #003171 !important;
+}
+.steelBlue {
+  background-color: #4b77be !important;
+}
+.aqua {
+  background-color: #3bafda !important;
+}
+.blueJeans {
+  background-color: #4a89dc !important;
+}
+.skyBlue {
+  background-color: #4d8fac !important;
+}
+.moutainMeadow {
+  background-color: #16a085 !important;
+}
+.greenBamboo {
+  background-color: #006442 !important;
+}
+.mint {
+  background-color: #37bc9b !important;
+}
+.turquoise {
+  background-color: #36d7b7 !important;
+}
+.oceanGreen {
+  background-color: #4daf7c !important;
+}
+.limon {
+  background-color: #f7ca18 !important;
+}
+.amber {
+  background-color: #ca6924 !important;
+}
+.saffron {
+  background-color: #f4d03f !important;
+}
+.silver {
+  background-color: #bfbfbf !important;
+}
+.porcelain {
+  background-color: #ecf0f1 !important;
+}
+.selecter-selected {
+  position: relative;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  text-overflow: clip;
+  cursor: pointer;
+}
+.selecter-options {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  max-height: 260px;
+  overflow: auto;
+  overflow-x: hidden;
+}

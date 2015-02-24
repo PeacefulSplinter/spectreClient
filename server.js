@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(express.static('client/app'))
 
 mongoose.connect($config.mongo.url);
-require('./api')(app);
+// require('./api')(app);
 
 app.listen($config.port, function(){
   console.log("Listening on port" + $config.port);

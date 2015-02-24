@@ -5,10 +5,10 @@
   </nav>
   <div class="row">
     <ul class="nav navbar-nav side-nav">
-      <li class="nav-choice"><span><i class="glyphicon glyphicon-dashboard"></i>Dashboards</span></li>
-      <li class="nav-choice"><span><i class="glyphicon glyphicon-hdd"></i>Data</span></li>
-      <li class="nav-choice"><span><i class="glyphicon glyphicon-cog"></i>Settings</span></li>
-      <li class="nav-choice"><span><i class="glyphicon glyphicon-user"></i>Profile</span></li>
+      <li class="nav-choice" ui-sref="app.main.dashboard.dashboards"><span><i class="glyphicon glyphicon-dashboard"></i>Dashboards</span></li>
+      <li class="nav-choice" ng-click='integrate()'><span><i class="glyphicon glyphicon-hdd"></i>Data</span></li>
+      <li class="nav-choice" ui-sref="app.main.dashboard.settings"><span><i class="glyphicon glyphicon-cog"></i>Settings</span></li>
+      <li ui-sref="app.main.dashboard.profile" class="nav-choice"><span><i class="glyphicon glyphicon-user"></i>Profile</span></li>
       <li class="nav-choice"><span><i class="glyphicon glyphicon-log-out"></i>Logout</span></li>
     </ul>
     <section class="col-xs-9 dash-content">
