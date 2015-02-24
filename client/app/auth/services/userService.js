@@ -5,10 +5,11 @@ angular.module('Daas.auth.service', ['ngCookies'])
     var cookie;
     try{
       cookie = $cookieStore.get('Token');
+
     }catch(err){
       console.error(err);
     }
-
+    console.log(cookie.token)
     return cookie || false;
   };
 
