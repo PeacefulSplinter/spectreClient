@@ -5,20 +5,23 @@ exports.setup = function (User){
   passport.use(new TwitterStrategy({
       consumerKey: $config.twitter.clientID,
       consumerSecret: $config.twitter.clientSecret,
-      callbackURL: $config.twitter.callbackUrl
+      callbackURL: $config.twitter.callbackUrl,
+      passReqToCallback: true
     },
+    
     function(accessToken, refreshToken, profile, done) {
-      User.findOne({'providers.twitter.token': accessToken }, function(err, user){
-        if (err) return done(err);
-        if (!user) {
-          var newUserEntry = new User({'providers.twitter.token': accessToken}) 
-          newUser.save(function(err, user){
-            if (err) { 
-                return done(err); 
-            }
-            done(null, profile);
-          });
+
+      // find user with id
+      req.user.provider.twitter.id = profile.id;
+      req.user.provider.twitter.token = accessToken;
+
+      // save accessToken
+      req.user.save(function(err, saved){
+        if (err){
+          return done(err);
         }
+
+        done(null, saved)
       });
     }
   ));

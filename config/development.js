@@ -18,7 +18,7 @@ module.exports = {
   twitter: {
     clientID: process.env.TWITTER_ID,
     clientSecret: process.env.TWITTER_SECRET,
-    callbackUrl: 'http://127.0.0.1:3000/twitter/callback'
+    callbackUrl: 'http://127.0.0.1:3000/auth/tw/twitter/callback'
   },
   google: {
     clientID: process.env.GOOGLE_ID,

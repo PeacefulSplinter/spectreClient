@@ -1,8 +1,7 @@
 var express = require('express');
-
 var passport = require('passport');
-
 var router = express.Router();
+var decode = require('../authService').decode;
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -14,11 +13,13 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-router.get('/twitter', passport.authorize('twitter'));
+router.get('/twitter', decode(), passport.authenticate('twitter'));
 
-router.get('/twitter/callback', passport.authorize('twitter'), function (req, res) {
-  //console.log(req);
-  res.send('hey');
+router.get('/twitter/callback', passport.authenticate('twitter'), function (req, res) {
+  console.log(req.account);
+  var cwd = process.cwd();
+  var testFile = cwd + '/api/views/test.html';
+  res.send(testFile);
 
   // var cwd = process.cwd();
   // var testFile = cwd + '/api/views/test.html';
@@ -32,5 +33,7 @@ router.get('/twitter/callback', passport.authorize('twitter'), function (req, re
   // });
   //});
 });
+
+//router.get('/', )
 
 module.exports = router;

@@ -14,6 +14,7 @@ function isAuthenticated() {
       }
       validateJwt(req, res, next);
     })
+    
     // Attach user to request
     .use(function(req, res, next) {
       User.findById(req.user.id, function (err, user) {
@@ -25,6 +26,7 @@ function isAuthenticated() {
 
         req.user = user;
         next();
+
       });
     });
 };

@@ -9,7 +9,6 @@ var cookieParser = require('cookie-parser');
 var morgan =  require('morgan');
 var app = express();
 
-
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,7 +19,7 @@ mongoose.connect($config.mongo.url);
 // require('./api')(app);
 
 app.listen($config.port, function(){
-  console.log("Listening on port" + $config.port);
+  console.log("Listening on port " + $config.port);
 });
 
 exports = module.exports = app;

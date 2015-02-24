@@ -13,6 +13,7 @@ var decode = require('../authService').decode;
 //   });
 // });
 
+// hit the /mailchimp route, decode the 
 router.get('/mailchimp', decode(), passport.authenticate('mailchimp'));
 
 router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (req, res) {

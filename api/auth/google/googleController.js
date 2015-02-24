@@ -14,13 +14,13 @@ exports.setup = function (User){
           var newUser = new User({'username': profile.id, 'providers.google.id': profile.id, 'providers.google.token': accessToken});
           newUser.save(function(err, user){
             if (err) { return done(err); }
-            done(null, profile);
+            done(null, user);
           });
         }
         if (user){
           User.findOneAndUpdate({'providers.google.id': profile.id}, {'providers.google.token': accessToken}, function(err, user){
             if(err) { return done(err); }
-            done(null, profile);
+            done(null, user);
           });
         }
       });
