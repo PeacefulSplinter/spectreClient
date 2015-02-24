@@ -16,11 +16,11 @@ exports.setup = function (User){
             if (err) { 
               return done(err); 
             }
-            done(null, profile);
+            done(null, user);
           });
         }
         if (user){
-            done(null, profile);    
+            done(null, user);    
           };
         }
       );

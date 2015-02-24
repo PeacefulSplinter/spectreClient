@@ -22,6 +22,11 @@ router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (
   res.sendFile(testFile);
 });
 
+router.get('/demo', decode(),function(req, res) {
+	console.log(req.user)
+	res.send(req.user._id)
+});
+
 
 
 module.exports = router;

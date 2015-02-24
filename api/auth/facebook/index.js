@@ -18,9 +18,15 @@ router.get('/facebook', passport.authenticate('facebook'));
 router.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/auth/fb/facebook/facebookFailure' , session: false}), function (req, res){
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
-  var token = jwt.sign({ id: req.user._id}, 'cookies');
+
+  console.log('before auth', req.user)
+
+  var token = jwt.sign({ id: req.user._id}, 'cookie');
+
   console.log(token);
+
   res.cookie('Token', JSON.stringify({token: token }));
+  
   res.sendFile(testFile);
 });
 

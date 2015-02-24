@@ -9,7 +9,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
     }catch(err){
       console.error(err);
     }
-    console.log(cookie.token)
+    // console.log(cookie.token)
     return cookie || false;
   };
 
@@ -21,10 +21,14 @@ angular.module('Daas.auth.service', ['ngCookies'])
         'fb': '/auth/fb/facebook',
         'facebook': '/auth/fb/facebook',
         'g': '/auth/g/google',
-        'google': '/auth/g/google'
+        'google': '/auth/g/google',
+        'mc': '/auth/mc/mailchimp'
       };
 
+
       var url = urlMap[provider];
+
+      console.log(url);
       if(!url)return;
       var windowFeatures = 'location=0,status=0,modal=yes,alwaysRaised=yes,width=800,height=600';
       var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
