@@ -27,14 +27,51 @@ body {
 }
 .side-nav {
   height: 100vh;
-  background-color: #efefef;
+  width: 20vw;
+  background-color: #222;
+  border-top: thin solid #000;
+  border-bottom: thin solid #000;
 }
 nav {
   width: 100vw;
-  background-color: #4d4d4d;
-  height: 80px;
+  background-color: #222;
+  height: 50px;
+  overflow: scroll;
+}
+.nav {
   overflow: scroll;
 }
 .dashboard-body {
   padding: 0px;
+}
+.logout-btn {
+  float: right;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aab2bd;
+  margin-right: 20px;
+}
+.logout-btn:hover {
+  color: #fff !important;
+  cursor: pointer;
+}
+.nav-choice {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 255px;
+  color: #9d9d9d;
+}
+.nav-choice:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-brand {
+  color: #9d9d9d;
+}
+.glyphicon {
+  margin-right: 10px;
+  margin-left: 30px;
 }
