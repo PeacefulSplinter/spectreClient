@@ -13,7 +13,6 @@ exports.setup = function (User){
         if (!user) {
           var newUser = new User({'username': profile.id, 'providers.google.id': profile.id, 'providers.google.token': accessToken});
           newUser.save(function(err, user){
-            console.log(user);
             if (err) { return done(err); }
             done(null, profile);
           });

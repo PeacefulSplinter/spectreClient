@@ -9,7 +9,6 @@ angular.module('Daas.main.dashboard', [])
       auth: true
     });
 })
-.controller('DashboardController', function($scope, $state, $http){
-
-  console.log('controller')
+.controller('DashboardController', function($scope, $state, $http, Auth){
+	
 });

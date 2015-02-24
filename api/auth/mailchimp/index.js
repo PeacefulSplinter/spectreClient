@@ -1,7 +1,7 @@
 var express = require('express');
 var passport = require('passport');
-var jwt = require('jsonwebtoken');
 var router = express.Router();
+var decode = require('../authService').decode;
 
 // passport.serializeUser(function(user, done) {
 //   done(null, user.id);
@@ -13,17 +13,21 @@ var router = express.Router();
 //   });
 // });
 
-router.get('/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login', session: false}), function (req, res) {
-});
+router.get('/mailchimp', decode(), passport.authenticate('mailchimp'));
 
-router.get('/google/callback', passport.authenticate('google'), function (req, res) {
+router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (req, res) {
+  console.log(req.account);
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
-  var token = jwt.sign({ id: req.user._id }, $config.JWT_SECRET, {expiresInMinutes: 60*5});
-  res.cookie('Token', token);
   res.sendFile(testFile);
-  
 });
+
+router.get('/demo', decode(),function(req, res) {
+	console.log(req.user)
+	res.send(req.user._id)
+});
+
+
 
 module.exports = router;
 

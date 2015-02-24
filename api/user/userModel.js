@@ -11,10 +11,18 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String
   },
-
+  
   providers: {
     facebookID: String,
     google: {
+      id: String,
+      token: String
+    },
+    twitter: {
+      id: String,
+      token: String
+    },
+    mailchimp: {
       id: String,
       token: String
     }

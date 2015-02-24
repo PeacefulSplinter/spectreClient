@@ -12,7 +12,8 @@ var paths = {
 	scripts: ['./client/Daas/**/*.js', '!./client/Daas/lib/**/*.js'],
   styles: ['./client/styles/**/*.styl', './client/styles/main.styl'],
   test: ['./client/specs/**/*.js'],
-  html: ['./client/Daas/**/*.html']
+  html: ['./client/Daas/**/*.html'],
+  dest: 'client'
 };
 
 function handleError(err) {
@@ -32,7 +33,7 @@ gulp.task('test', function(){
 gulp.task('stylus', function(){
   return gulp.src(paths.styles[1])
               .pipe(stylus())
-              .pipe(gulp.dest('./client/Daas/styles'));
+              .pipe(gulp.dest('./client/app/styles'));
 });
 
 //serves static assets and auto-reloads browser when files change

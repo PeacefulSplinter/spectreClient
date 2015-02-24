@@ -20,7 +20,8 @@ module.exports = {
   },
   mailchimp: {
     clientID: process.env.MAILCHIMP_ID,
-    clientSecret: process.env.MAILCHIMP_SECRET
+    clientSecret: process.env.MAILCHIMP_SECRET,
+    callbackUrl: process.env.MAILCHIMP_URL
   },
   twitch: {
     clientID: process.env.TWITCH_ID,

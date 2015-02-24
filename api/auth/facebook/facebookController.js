@@ -13,18 +13,14 @@ exports.setup = function (User){
         if (!user) {
           var newUser = new User({'username': profile.id, 'providers.facebookID': profile.id });
           newUser.save(function(err, user){
-            console.log('save process started');
             if (err) { 
-              console.log('save query error'); 
               return done(err); 
             }
-            console.log('save query success!');
-            done(null, profile);
+            done(null, user);
           });
         }
         if (user){
-            console.log('user in database already');
-            done(null, profile);    
+            done(null, user);    
           };
         }
       );

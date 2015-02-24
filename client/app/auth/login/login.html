@@ -1,17 +1,17 @@
 <div>
-  <!-- <nav class="navbar navbar-default navbar-static-top">
->>>>>>> More styling to home pages
+    <nav class="navbar navbar-default navbar-static-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <h3 class="header">Spectre Widgets |</h3><h5>Dashboard As A Service</h5>
+        <h3 class="header">Spectre Widgets</h3>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-btn"><a class="link" ui-sref="home">Home</a></li>
-        <li class="navbar-btn"><a class="link" ui-sref="examples">examples</a></li>
-        <li class="navbar-btn"><a class="link" ui-sref="signup">Sign Up</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="app.main.home">Home</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="examples">Example</a></li>
+        <li class="navbar-btn"><a class="link" ui-sref="app.login">Login</a></li>
       </ul>
     </div>
-  </nav> -->
+  </nav>
+
 
   <div id="login-container">
 
@@ -31,8 +31,8 @@
         </div>
       </div>
 
-      <button class="col-sm-offset-1 col-sm-4 btn btn-primary" ng-click="loginFacebook()">Log in with Facebook</button>
-      <button class="col-sm-offset-1 col-sm-4 btn btn-primary" ng-click="loginGoogle()">Log in with Google</button>
+      <button class="col-sm-offset-2 col-sm-3 btn btn-primary" ng-click="loginFacebook()">Log in with Facebook</button>
+      <button class="col-sm-offset-1 col-sm-3 btn btn-primary" ng-click="loginGoogle()">Log in with Google</button>
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
@@ -46,8 +46,8 @@
       </div>
 
       <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button ng-click="login()" type="submit" class="btn btn-default">Sign in</button>
+        <div class="col-sm-offset-2 col-sm-4">
+          <button ng-click="login()" type="submit" class="btn btn-primary">Sign in</button>
         </div>
       </div>
 
