@@ -16,7 +16,6 @@ passport.deserializeUser(function(id, done) {
 
 router.get('/twitter', passport.authorize('twitter'));
 
-
 router.get('/twitter/callback', passport.authorize('twitter'), function (req, res) {
   //console.log(req);
   res.send('hey');

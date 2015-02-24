@@ -26,6 +26,10 @@ router.get('/facebook/callback', passport.authenticate('facebook', { failureRedi
   console.log(token);
 
   res.cookie('Token', JSON.stringify({token: token }));
+
+  // jwt.sign hashes together req.user.id and jwt_secret
+  var token = jwt.sign(req.user.id, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+  res.cookie('Token', token);
   
   res.sendFile(testFile);
 });
