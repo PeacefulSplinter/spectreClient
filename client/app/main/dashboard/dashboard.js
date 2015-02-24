@@ -1,5 +1,7 @@
 angular.module('Daas.main.dashboard', [
   'Daas.main.dashboard.settings'
+  'Daas.main.dashboard.profile',
+  'Daas.main.dashboard.dashboards'
   ])
 
 .config(function($stateProvider){
@@ -12,7 +14,8 @@ angular.module('Daas.main.dashboard', [
     })
     .state('app.main.dashboard.dashboards', {
       url: '',
-      template: '<div>yooooooo I am here</div>'
+      templateUrl: 'main/dashboard/dashboards/dashboards.html',
+      controller: 'DashboardsController'
     })
     .state('app.main.dashboard.settings', {
       url: '',
@@ -21,12 +24,8 @@ angular.module('Daas.main.dashboard', [
     })
     .state('app.main.dashboard.profile', {
       url: '',
-      template: '<div>yoooo I am the profile</div>'
-    })
-    .state('app.main.dashboard.integrations', {
-      url: '',
-      templateUrl: 'main/dashboard/integrations/integrations.html',
-      controller: 'IntegrationsController'
+      templateUrl: 'main/dashboard/profile/profile.html',
+      controller: 'ProfileController'
     })
 })
 .controller('DashboardController', function($scope, $state, $http, $modal, Auth){
