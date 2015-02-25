@@ -21,7 +21,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
         'facebook': '/auth/fb/facebook',
         'g': '/auth/g/google',
         'google': '/auth/g/google',
-        'mc': '/auth/mc/mailchimp'
+        'mc': '/api/v1/mailchimp/mailchimpcall'
       };
 
 
@@ -50,7 +50,15 @@ angular.module('Daas.auth.service', ['ngCookies'])
       closed();
 
     },
-
+    mailchimapi: function(){
+      $http({
+        method: 'POST',
+        url: 'http://spectre-api.herokuapp.com/api/v1/api/mailchimp/mailchimpcall',
+        data: {ye: 'ye'}
+      }).then(function(resp){
+        console.log(resp);
+      })
+    },
     login: function(obj){
       $http({
         method: 'POST',
