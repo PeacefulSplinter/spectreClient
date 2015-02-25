@@ -9,17 +9,6 @@ exports.setup = function (User){
       passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
-
-      req.user.provider.mailchimp.id = profile.id;
-      req.user.provider.mailchimp.token = accessToken;
-
-      req.user.save(function(err, saved){
-        if (err){
-          return done(err);
-        }
-
-        done(null, saved)
-      });
       done(null, profile);
     }
   ));
