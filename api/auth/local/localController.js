@@ -30,8 +30,8 @@ exports.login = function(req, res, next){
     }
     user.comparePassword(newUser.password, function(err, isMatch){
       if(err) return res.status(401).json('Login Error: ' + err);
-      var token = jwt.sign({_id: user._id}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
-      res.cookie('Token', token);
+      // var token = jwt.sign({_id: user._id}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+      // res.cookie('Token', token);
       res.send();
     });
   });
