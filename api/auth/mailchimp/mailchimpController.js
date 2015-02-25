@@ -9,7 +9,7 @@ exports.setup = function (User){
       passReqToCallback: true
     },
     function(req, accessToken, refreshToken, profile, done) {
-      //console.log(req.user);
+
       req.user.provider.mailchimp.id = profile.id;
       req.user.provider.mailchimp.token = accessToken;
 
@@ -20,23 +20,7 @@ exports.setup = function (User){
 
         done(null, saved)
       });
-      // decode token to find name, use name to find user
-      // User.findOne({'providers.mailchimp.id': profile.id }, function(err, user){
-      //   if (err) return done(err);
-      //   if (!user) {
-      //     var newUser = new User({'username': profile.id, 'providers.mailchimp.id': profile.id, 'providers.mailchimp.token': accessToken});
-      //     newUser.save(function(err, user){
-      //       if (err) { return done(err); }
-      //       done(null, profile);
-      //     });
-      //   }
-      //   if (user){
-      //     User.findOneAndUpdate({'providers.mailchimp.id': profile.id}, {'providers.mailchimp.token': accessToken}, function(err, user){
-      //       if(err) { return done(err); }
-      //       done(null, profile);
-      //     });
-      //   }
-      // });
+      done(null, profile);
     }
   ));
 }
