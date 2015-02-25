@@ -12,6 +12,12 @@ angular.module('Daas.auth.service', ['ngCookies'])
   //   // console.log(cookie.token)
   //   return cookie || false;
   // };
+    } catch(err){
+      console.error(err);
+    }
+    // console.log(cookie.token)
+    return cookie || false;
+  };
 
   return {
     //checkCookie: checkCookie,

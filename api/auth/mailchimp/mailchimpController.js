@@ -10,7 +10,6 @@ exports.setup = function (User){
     },
     function(req, accessToken, refreshToken, profile, done) {
       //console.log(req.user);
-
       req.user.provider.mailchimp.id = profile.id;
       req.user.provider.mailchimp.token = accessToken;
 

@@ -23,7 +23,7 @@ module.exports = {
   google: {
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
-    callbackUrl: 'http://localhost:3000'
+    callbackUrl: 'http://localhost:3000/auth/g/google/callback'
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID,

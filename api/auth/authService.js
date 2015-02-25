@@ -17,7 +17,7 @@ function isAuthenticated() {
     
     // Attach user to request
     .use(function(req, res, next) {
-      User.findById(req.user.id, function (err, user) {
+      User.findById(req.user.username, function (err, user) {
         if (err) return next(err);
         if (!user) {
           return res.status(401).send('Unauthorized')

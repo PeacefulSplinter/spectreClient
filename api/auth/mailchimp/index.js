@@ -13,8 +13,8 @@ var decode = require('../authService').decode;
 //   });
 // });
 
-// hit the /mailchimp route, decode the 
-router.get('/mailchimp', decode(), passport.authenticate('mailchimp'));
+// hit the /mailchimp route, decode the JWT, authenticate
+router.get('/mailchimp', /*decode()*/ passport.authenticate('mailchimp', {session: false}));
 
 router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (req, res) {
   console.log(req.account);
@@ -24,11 +24,10 @@ router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (
 });
 
 router.get('/demo', decode(),function(req, res) {
-	console.log(req.user)
-	res.send(req.user._id)
+	console.log(req.user);
+	res.send(req.user._id);
 });
 
 
 
 module.exports = router;
-
