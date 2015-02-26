@@ -1,9 +1,9 @@
 angular.module('Daas', [
   'ui.router',
+  'ui.bootstrap',
   'Daas.auth.service',
   'Daas.auth',
-  'Daas.main',
-  'ngMessages'
+  'Daas.main'
   ])
 
 .config(function($stateProvider, $urlRouterProvider){
@@ -15,8 +15,8 @@ angular.module('Daas', [
       template: '<ui-view />'
     })
 })
-.run(function(Auth, $state, $rootScope){
-  $rootScope.$on('$stateChangeStart', function(evt, toState, toStateParams, fromState){
-    Auth.checkCookie(evt, toState);
-  })
-})
+// .run(function(Auth, $state, $rootScope){
+//   $rootScope.$on('$stateChangeStart', function(evt, toState, toStateParams, fromState){
+//     Auth.checkCookie(evt, toState);
+//   })
+// })

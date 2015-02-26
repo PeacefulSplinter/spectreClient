@@ -18,9 +18,9 @@ angular.module('Daas.auth.login', [])
     Auth.authLogin('g');
   };
 
-  $rootScope.$on('noCookie', function(){
-    console.log('There is no cookie');
-    $scope.authError.cookie = true;
-  });
+  // $rootScope.$on('noCookie', function(){
+  //   console.log('There is no cookie');
+  //   $scope.authError.cookie = true;
+  // });
 
 });

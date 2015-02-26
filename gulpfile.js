@@ -9,10 +9,10 @@ var paths = {
 	test: ['./api/user/spec/**/*.js'],
 	api: ['./api/**/*.js'],
 	config: ['./config/**/*.js'],
-	scripts: ['./client/Daas/**/*.js', '!./client/Daas/lib/**/*.js'],
+	scripts: ['./client/app/**/*.js', '!./client/app/lib/**/*.js'],
   styles: ['./client/styles/**/*.styl', './client/styles/main.styl'],
   test: ['./client/specs/**/*.js'],
-  html: ['./client/Daas/**/*.html'],
+  html: ['./client/app/**/*.html'],
   dest: 'client'
 };
 

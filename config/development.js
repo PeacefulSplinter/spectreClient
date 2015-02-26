@@ -34,9 +34,5 @@ module.exports = {
     clientID: process.env.MAILCHIMP_ID,
     clientSecret: process.env.MAILCHIMP_SECRET,
     callbackUrl: 'http://127.0.0.1:3000/auth/mc/mailchimp/callback'
-  },
-  twitch: {
-    clientID: process.env.TWITCH_ID,
-    clientSecret: process.env.TWITCH_SECRET
   }
 };
