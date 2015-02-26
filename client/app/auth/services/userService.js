@@ -37,13 +37,11 @@ angular.module('Daas.auth.service', ['ngCookies'])
         interval = $interval(function(){
 
           if(windowObjectReference.closed){
-            if (checkCookie()){
-              console.log('yo cookie is here');
-              $state.go('app.main.dashboard');
-            } else {
-              $rootScope.cookieStatus = true;
-              console.log('no cookie');
-            }
+            // if (checkCookie()){
+            //   $state.go('app.main.dashboard');
+            // } else {
+
+            // }
             $interval.cancel(interval);
           }
 
