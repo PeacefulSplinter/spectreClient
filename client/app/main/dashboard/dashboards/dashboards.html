@@ -1,5 +1,14 @@
 <div class="all-dashboards">
-  <div class="row" ng-repeat="dashboard in dashboards">
+  <nav class="navbar dash-nav">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="navbar-btn"><a class="newDashboard" ui-sref="app.main.dashboard.dashboardCreator">New</a></li>
+        <li class="navbar-btn"><a class="newDashboard">Edit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row dash-list" ng-repeat="dashboard in dashboards">
     <div class="col-md-8" tooltip-placement="right" tooltip={{dashboard.comments}}>
       <div class="panel panel-default">
         <div class="panel-heading blueJeans">
