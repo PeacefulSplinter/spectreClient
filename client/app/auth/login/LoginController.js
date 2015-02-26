@@ -11,10 +11,6 @@ angular.module('Daas.auth.login', [])
     }
   };
 
-  $scope.test = function(){
-    Auth.twitterapi();
-  }
-
   $scope.loginFacebook = function(){
     Auth.authLogin('fb');
   };
