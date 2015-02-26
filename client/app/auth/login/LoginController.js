@@ -11,6 +11,10 @@ angular.module('Daas.auth.login', [])
     }
   };
 
+  $scope.test = function(){
+    Auth.mailchimapi();
+  }
+
   $scope.loginFacebook = function(){
     Auth.authLogin('fb');
   };

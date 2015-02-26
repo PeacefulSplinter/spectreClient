@@ -116,6 +116,12 @@ body {
   margin-right: 10px;
   margin-left: 30px;
 }
+#intgrations {
+  color: #222;
+}
+.modal-body {
+  background-color: #ecf0f1 !important;
+}
 .redOrange {
   background-color: #dc3023 !important;
 }
