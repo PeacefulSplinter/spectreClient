@@ -214,5 +214,21 @@ body {
   overflow-x: hidden;
 }
 .all-dashboards {
-  margin-top: 15px;
+  margin-top: 10px;
+}
+.dash-nav {
+  background-color: #37bc9b !important;
+}
+.newDashboard:hover {
+  color: #5b3256 !important;
+  background-color: #000;
+}
+.dash-list {
+  margin-top: 10px;
+}
+.checkBox {
+  float: left;
+}
+.newDashboard {
+  color: #000;
 }

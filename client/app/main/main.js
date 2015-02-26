@@ -1,7 +1,6 @@
 angular.module('Daas.main', [
   'Daas.main.home',
-  'Daas.main.dashboard',
-  'Daas.main.dashboardDirective'
+  'Daas.main.dashboard'
 ])
 .config(function($stateProvider){
   $stateProvider

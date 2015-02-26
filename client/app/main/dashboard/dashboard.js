@@ -1,7 +1,9 @@
 angular.module('Daas.main.dashboard', [
   'Daas.main.dashboard.settings',
   'Daas.main.dashboard.profile',
-  'Daas.main.dashboard.dashboards'
+  'Daas.main.dashboard.dashboards',
+  'Daas.main.dashboard.graphs',
+  'Daas.main.dashboard.dashboardCreator'
   ])
 
 .config(function($stateProvider){
@@ -27,6 +29,11 @@ angular.module('Daas.main.dashboard', [
       templateUrl: 'main/dashboard/profile/profile.html',
       controller: 'ProfileController'
     })
+    .state('app.main.dashboard.dashboardCreator', {
+      url: '',
+      templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html',
+      controller: 'CreatorController'
+    })
 })
 .controller('DashboardController', function($scope, $state, $http, $modal, Auth){
 
@@ -37,7 +44,14 @@ angular.module('Daas.main.dashboard', [
     controller: 'DashboardController',
     size: 'sm'
   });
+ };
 
+ $scope.dataPopUp = function(){
+  modalInstance = $modal.open({
+    templateUrl: 'main/dashboard/graphs/graphs.html',
+    controller: 'GraphsController',
+    size: 'lg'
+  });
  };
 
   $scope.ok = function () {

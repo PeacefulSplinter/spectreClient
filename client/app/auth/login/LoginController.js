@@ -12,7 +12,7 @@ angular.module('Daas.auth.login', [])
   };
 
   $scope.test = function(){
-    Auth.mailchimapi();
+    Auth.twitterapi();
   }
 
   $scope.loginFacebook = function(){

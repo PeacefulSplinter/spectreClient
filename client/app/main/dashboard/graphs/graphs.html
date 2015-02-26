@@ -1,0 +1,20 @@
+<div>
+  <div class="modal-header">
+    <h3 class="modal-title">Visualizations</h3>
+  </div>
+  <div class="modal-body">
+
+    <tabset jusified="true">
+      <tab heading="twitter">
+        <input class="checkBox" type="checkbox" ng-model="checkboxModel.pie" />
+        <h4>Pie chart of followers</h4>
+          <input class="checkBox" type="checkbox" ng-model="checkboxModel.line" />
+        <h4>Line chart of followers</h4>
+          <input class="checkBox" type="checkbox" ng-model="checkboxModel.bar" />
+        <h4>Bar chart of followers</h4>
+      </tab>
+    </tabset>
+  <div class="modal-footer">
+    <div class="btn blueJean" ng-click="ok()">OK</div>
+  </div>
+</div>

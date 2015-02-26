@@ -50,15 +50,6 @@ angular.module('Daas.auth.service', ['ngCookies'])
       closed();
 
     },
-    mailchimapi: function(){
-      $http({
-        method: 'POST',
-        url: 'http://spectre-api.herokuapp.com/api/v1/api/mailchimp/mailchimpSub',
-        data: {ye: 'ye'}
-      }).then(function(resp){
-        console.log(resp);
-      })
-    },
     login: function(obj){
       $http({
         method: 'POST',
