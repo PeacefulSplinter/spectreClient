@@ -54,7 +54,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
     login: function(obj){
       $http({
         method: 'POST',
-        url: '/auth/local/login',
+        url: 'http://spectrewidgets.herokuapp.com/auth/local/login',
         data: obj
       }).then(function(resp){
         console.log(resp.data.token);
@@ -63,7 +63,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
     register: function(obj){
       $http({
         method: 'POST',
-        url: '/auth/local/register',
+        url: 'http://spectrewidgets.herokuapp.com/auth/local/register',
         data: obj
       }).then(function(resp){
         console.log(resp.data.token);
