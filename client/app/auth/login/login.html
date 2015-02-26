@@ -1,17 +1,12 @@
 <div>
-    <nav class="navbar navbar-default navbar-static-top">
-  <!-- <nav class="navbar navbar-default navbar-static-top">
-  <div>
   <nav class="navbar navbar-default navbar-static-top">
 
->>>>>>> able to redirect user to dashboard upon login if token is valid
     <div class="container-fluid">
       <div class="navbar-header">
         <h3 class="header">Spectre Widgets</h3>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="navbar-btn"><a class="link" ui-sref="app.main.home">Home</a></li>
-        <li class="navbar-btn"><a class="link" ui-sref="examples">Example</a></li>
         <li class="navbar-btn"><a class="link" ui-sref="app.login">Login</a></li>
       </ul>
     </div>
@@ -19,9 +14,7 @@
 
 
   <div id="login-container">
-
     <form class="form-horizontal">
-
       <div class="form-group">
         <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
         <div class="col-sm-6">
@@ -55,51 +48,6 @@
           <button ng-click="login()" type="submit" class="btn btn-primary">Sign in</button>
         </div>
       </div>
-
-      <div ng-messages="authError">
-        <div ng-message="cookie">
-          There is no cookie
-        </div>
-      </div>
-
-      <div ng-messages="authError">
-        <div ng-message="cookie">
-          There is no cookie
-        </div>
-      </div>
     </form>
-
   </div>
-
-  <div class="footer col-md-12">
-    <div class="container">
-      <div class="clearfix">
-        <dl class="footer-nav">
-          <dt class="nav-title">Team</dt>
-          <dd class="nav-item"><a>Arun Suresh</a></dd>
-          <dd class="nav-item"><a>Benoy Maniara</a></dd>
-          <dd class="nav-item"><a>Mike Moss</a></dd>
-          <dd class="nav-item"><a>Steven Williams</a></dd>
-        </dl>
-        <dl class="footer-nav">
-          <dt class="nav-title">Github</dt>
-          <dd class="nav-item"><a>Something else</a></dd>
-        </dl>
-        <dl class="footer-nav">
-          <dt class="nav-title">Contact</dt>
-          <dd class="nav-item"><a>Something else</a></dd>
-        </dl>
-        <dl class="footer-nav">
-          <dt class="nav-title">Title</dt>
-          <dd class="nav-item"><a>Something else</a></dd>
-        </dl>
-        <dl class="footer-nav">
-          <dt class="nav-title">Title</dt>
-          <dd class="nav-item"><a>Something else</a></dd>
-        </dl>
-      </div>
-      <div class="footer-copyright text-center">Copyright © 2015 All rights reserved.</div>
-    </div>
-  </div>
-
 </div>

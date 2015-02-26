@@ -22,11 +22,15 @@ angular.module('Daas.main.dashboard.dashboards', [])
   var data = [
     {
       'name': 'myFirstDashboard',
-      'integrations': ['Twitter', 'Mailchimp']
+      'lastSaved': '3/4/2012',
+      'integrations': ['Twitter', 'Mailchimp'],
+      'comments': 'This is a really cool dashboard I made back in 2014'
     },
     {
       'name': 'super awesome dashboard',
-      'integrations': ['Twitter', 'Mailchimp', 'Instagram']
+      'lastSaved': '3/4/2012',
+      'integrations': ['Twitter', 'Mailchimp', 'Instagram'],
+      'comments': 'I made this to show some really boring data and make is look dope'
     }
     ];
 

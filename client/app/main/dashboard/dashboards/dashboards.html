@@ -1,9 +1,18 @@
-<div>
-  <span ng-repeat="dashboard in dashboards">
-    {{dashboard.name}}
-    <br>
-    {{dashboard.integrations}}
-    <br>
-    <br>
-  </span>
+<div class="all-dashboards">
+  <div class="row" ng-repeat="dashboard in dashboards">
+    <div class="col-md-8" tooltip-placement="right" tooltip={{dashboard.comments}}>
+      <div class="panel panel-default">
+        <div class="panel-heading blueJeans">
+          <h3 class="panel-title">
+            <h4>{{dashboard.name}}</h4>
+            <span>Last saved: {{dashboard.lastSaved}}</span>
+          </h3>
+        </div>
+        <div class="panel-body">
+          Integrations:
+          <span ng-repeat="item in dashboard.integrations">{{item + " "}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

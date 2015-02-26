@@ -1,5 +1,5 @@
 angular.module('Daas.main.dashboard', [
-  'Daas.main.dashboard.settings'
+  'Daas.main.dashboard.settings',
   'Daas.main.dashboard.profile',
   'Daas.main.dashboard.dashboards'
   ])
