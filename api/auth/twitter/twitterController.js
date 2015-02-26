@@ -9,7 +9,7 @@ exports.setup = function (User){
       passReqToCallback: true
     },
     
-    function(req, accessToken, refreshToken, profile, done) {
+    function(req, token, tokenSecret, profile, done) {
       // //find user with id
       // req.user.provider.twitter.id = profile.id;
       // req.user.provider.twitter.token = accessToken;

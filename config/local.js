@@ -1,6 +1,6 @@
 module.exports = {
-	'TWITTER_ID': 'bL9j8Lj2NCh13knSterEaS9lI',
-	'TWITTER_SECRET': 'mHKrS9WYYEBeF7gNA5wT6HzfsO2HGwp1K2AltiecFBB6OE0ySI',
+	'TWITTER_ID': '9DeclDeLrJfyLLKOx4ZABdio7',
+	'TWITTER_SECRET': 'To0KrrwMy06meHYYIm0O1Md5fF2N0qpPPJt1zUOvGdrtO46q9U',
 	'GOOGLE_ID': '312415623012-njb1l6q4pplpogdt4tjeumih8oe9p25p.apps.googleusercontent.com',
 	'GOOGLE_SECRET': 'YzShQbUay4ZEC1E7QlqWKVWc',
 	'FACEBOOK_ID': '1457822237814153',

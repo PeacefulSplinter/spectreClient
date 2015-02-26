@@ -9,7 +9,7 @@ exports.setup = function (User){
     },
     function(accessToken, refreshToken, profile, done) {
       User.findOne({'providers.facebookID': profile.id }, function(err, user){
-        if (err) return done(err);
+        if (err) return done(err); 
         if (!user) {
           var newUser = new User({'username': profile.id, 'providers.facebookID': profile.id });
           newUser.save(function(err, user){

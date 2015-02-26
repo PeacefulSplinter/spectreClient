@@ -13,6 +13,7 @@ var decode = require('../authService').decode;
 //   });
 // });
 
+// hit the /twitter route, decode the JWT, authenticate
 router.get('/twitter', /*decode()*/ passport.authenticate('twitter'), function (req, res){
 
 });
