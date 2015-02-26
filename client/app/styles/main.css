@@ -232,3 +232,10 @@ body {
 .newDashboard {
   color: #000;
 }
+.resizeme {
+  resize: both;
+  overflow: auto;
+}
+#chartsdisplay {
+  max-height: 100vh;
+}
