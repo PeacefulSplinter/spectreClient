@@ -57,6 +57,7 @@ body {
 #description {
   color: #f7ca18 !important;
 }
+<<<<<<< HEAD
 .navbar-button {
   width: 12vw;
   margin-bottom: 30px;
@@ -66,6 +67,9 @@ body {
   max-height: 200px;
   border-radius: 50%;
   margin-bottom: 30px;
+}
+.sidenav-button {
+  display: block;
 }
 .redOrange {
   background-color: #dc3023 !important;

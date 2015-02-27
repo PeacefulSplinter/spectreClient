@@ -15,7 +15,7 @@ angular.module('Daas.main.dashboard', [
       auth: true
     })
     .state('app.main.dashboard.dashboards', {
-      url: '',
+      url: '/dashboards',
       templateUrl: 'main/dashboard/dashboards/dashboards.html',
       controller: 'DashboardsController'
     })
@@ -25,24 +25,27 @@ angular.module('Daas.main.dashboard', [
       controller: 'SettingsController'
     })
     .state('app.main.dashboard.profile', {
-      url: '',
+      url: '/profile',
       templateUrl: 'main/dashboard/profile/profile.html',
       controller: 'ProfileController'
     })
     .state('app.main.dashboard.dashboardCreator', {
-      url: '',
+      url: '/dashboardCreate',
       templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html',
       controller: 'CreatorController'
     })
 })
 .controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log, $mdDialog){
 
+  $scope.links = [
+  {name: 'My Dashboards', link: 'app.main.dashboard.dashboards'},
+  {name: 'Dashboard Creator', link: 'app.main.dashboard.dashboardCreator'}];
+
+
+  $mdSidenav('left').toggle();
+
   $scope.toggleLeft = function() {
-
-    $mdSidenav('left').toggle().then(function(){
-      $log.debug("toggle left is done");
-    });
-
+    $mdSidenav('left').toggle();
   };
 
   $scope.profile = function(e) {
