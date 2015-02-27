@@ -9,7 +9,7 @@ var UserSchema = new mongoose.Schema({
     sparse: true
   },
 
-  displayName {
+  displayName: {
     type: String
   },
 
