@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
 
   displayName {
     type: String
-  }
+  },
 
   password: {
     type: String
