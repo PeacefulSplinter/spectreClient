@@ -1,20 +1,16 @@
 angular.module('Daas.auth.service', ['ngCookies'])
 
-.factory('Auth', function($http, $window, $interval, $cookieStore, $rootScope, $state){
+.factory('Auth', function($http, $window, $interval, $cookies, $rootScope, $state){
   var checkCookie = function(){
-    var cookie;
-    try{
-      cookie = $cookieStore.get('Token');
-
-    }catch(err){
-      console.error(err);
+    if($cookies.Token){
+      return true
+    } else{
+      return false;
     }
-    // console.log(cookie.token)
-    return cookie || false;
   };
 
   return {
-    //checkCookie: checkCookie,
+    checkCookie: checkCookie,
     authLogin: function(provider){
       var urlMap = {
         'fb': '/auth/fb/facebook',
@@ -26,22 +22,20 @@ angular.module('Daas.auth.service', ['ngCookies'])
 
 
       var url = urlMap[provider];
-
-      console.log(url);
       if(!url)return;
       var windowFeatures = 'location=0,status=0,modal=yes,alwaysRaised=yes,width=800,height=600';
       var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
       var interval;
-      $rootScope.cookieStatus = false;
       var closed = function(){
         interval = $interval(function(){
 
           if(windowObjectReference.closed){
-            // if (checkCookie()){
-            //   $state.go('app.main.dashboard');
-            // } else {
-
-            // }
+            if (checkCookie()){
+              console.log('All good');
+              $state.go('app.main.dashboard');
+            } else {
+              console.log('No cookie, you fucked up!')
+            }
             $interval.cancel(interval);
           }
 

@@ -5,7 +5,8 @@
   padding: 0px;
 }
 .navbar {
-  background-color: #c91f37 !important;
+  /*opacity: 0;*/
+  color: #fff;
   margin-bottom: 0px;
 }
 .btn {
@@ -39,11 +40,10 @@ body {
   margin-right: auto;
   display: inline-block;
 }
+#home-container-view {
+  background-image: url("../assets/spectreBackground.png");
+}
 .bs-header {
-  background-image: url("http://d9hhrg4mnvzow.cloudfront.net/do.thelandingpagecourse.com/e-course-hexagon-pattern.original.png");
-  border: 1px solid #000;
-  background-color: #434a54 !important;
-  background-repeat: repeat;
   background-position: center center;
   padding: 30px 15px 40px;
   background-size: 100% 100%;
@@ -54,17 +54,8 @@ body {
 .title-header {
   color: #fff;
 }
-#dashboard-examples {
-  background-color: #003171 !important;
-  height: 60vh;
-  width: 100vw;
-  display: block;
-}
 #description {
   color: #f7ca18 !important;
-}
-.home-signup {
-  background-color: #4d8fac !important;
 }
 .side-nav {
   height: 100vh;
