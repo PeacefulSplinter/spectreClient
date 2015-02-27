@@ -19,12 +19,6 @@
   router.use('/fb', require('./facebook'));
   router.use('/g', require('./google'));
   router.use('/tw', require('./twitter'));
-  //router.use('/mc', require('./mailchimp'));
-  // require('./facebook/facebookController').setup(User);
-  // require('./google/googleController').setup(User);
-
-  // router.use('/local', require('./local'));
-  // router.use('/fb', require('./facebook'));
-  // router.use('/g', require('./google'));
+  router.use('/mc', require('./mailchimp'));
 
   module.exports = router;
