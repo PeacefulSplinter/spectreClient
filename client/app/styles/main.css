@@ -78,6 +78,12 @@ body {
 #content {
   overflow: scroll;
 }
+#title {
+  float: right;
+}
+#account {
+  float: right;
+}
 .redOrange {
   background-color: #dc3023 !important;
 }

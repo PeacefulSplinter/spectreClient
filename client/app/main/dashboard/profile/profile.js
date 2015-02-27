@@ -3,20 +3,46 @@ angular.module('Daas.main.dashboard.profile', [
   'Daas.main.dashboard.profile.password'
   ])
 
-.config(function($stateProvider){
-  $stateProvider
-    .state('app.main.dashboard.profile.username', {
-      url: '',
-      templateUrl: 'main/dashboard/profile/username/username.html',
-      controller: 'usernameController'
-    })
-    .state('app.main.dashboard.profile.password', {
-      url: '',
-      templateUrl: 'main/dashboard/profile/password/password.html',
-      controller: 'passwordController'
-    })
-})
+.controller('ProfileController', function($scope, $mdDialog){
+  $scope.username = "Benoy"
+  $scope.password = "openme"
+  $scope.valuesChanged = false;
+  $scope.passwordChanged = false;
 
-.controller('ProfileController', function(){
+  $scope.changeUsername = function(ev) {
+    console.log(ev);
+    $mdDialog.show({
+      templateUrl:
+    });
+    /*var confirm = $mdDialog.confirm()
+      .title('Change Username')
+      .content('All of the banks have agreed to forgive you your debts.')
+      .ariaLabel('Lucky day')
+      .ok('Please do it!')
+      .cancel('Sounds like a scam')
+      .targetEvent(ev);
+    $mdDialog.show(confirm).then(function() {
+      $scope.alert = 'You decided to get rid of your debt.';
+    }, function() {
+      $scope.alert = 'You decided to keep your debt.';
+    });*/
+  };
+
+  $scope.changePassword = function(ev) {
+    console.log(ev);
+    var confirm = $mdDialog.confirm()
+      .title('Change Password')
+      .content('All of the banks have agreed to forgive you your debts.')
+      .ariaLabel('Lucky day')
+      .ok('Please do it!')
+      .cancel('Sounds like a scam')
+      .targetEvent(ev);
+    $mdDialog.show(confirm).then(function() {
+      $scope.alert = 'You decided to get rid of your debt.';
+    }, function() {
+      $scope.alert = 'You decided to keep your debt.';
+    });
+  };
+
 
 })
