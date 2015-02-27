@@ -27,6 +27,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
       var windowFeatures = 'location=0,status=0,modal=yes,alwaysRaised=yes,width=800,height=600';
       var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
       var interval;
+      $rootScope.cookieStatus = false;
       var closed = function(){
         interval = $interval(function(){
 
@@ -35,7 +36,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
               console.log('All good');
               $state.go('app.main.dashboard');
             } else {
-              console.log('No cookie, you fucked up!')
+              $rootScope.cookieStatus = true;
             }
             $interval.cancel(interval);
           }
