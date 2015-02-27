@@ -23,7 +23,7 @@ exports.setup = function (User){
           User.findOneAndUpdate({'username': profile.id}, {'grants.twitter': accessToken}, function(err, user){
             if(err) { return done(err); }
             done(null, user);
-          });
+          }); 
         };
       });
     }
