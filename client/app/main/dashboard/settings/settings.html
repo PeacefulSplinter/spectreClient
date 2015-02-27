@@ -19,20 +19,26 @@
     <span class="handle"></span>
   </label> -->
   SETTINGS
-  <md-tabs>
-    <md-tab label='Setting 1'>
-      Setting 1 Content
-    </md-tab>
-    <md-tab label='Setting 2'>
-      Setting 2 Content
-    </md-tab>
-    <md-tab label='Setting 3'>
-      Setting 3 Content
-    </md-tab>
-  </md-tabs>
-  
-
-
+  <div ng-controller="SettingsController">
+  <md-content>
+    <md-list>
+      <md-item ng-repeat="item in todos">
+        <md-item-content>
+          <div class="md-tile-left">
+              <img ng-src="{{item.face}}" class="face" alt="{{item.who}}">
+          </div>
+          <div class="md-tile-content">
+            <h3>{{item.what}}</h3>
+            <h4>{{item.who}}</h4>
+            <p>
+              {{item.notes}}
+            </p>
+          </div>
+        </md-item-content>
+      </md-item>
+    </md-list>
+  </md-content>
+</div>
 
 </div>
  
