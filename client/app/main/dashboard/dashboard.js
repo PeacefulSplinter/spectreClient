@@ -4,7 +4,7 @@ angular.module('Daas.main.dashboard', [
   'Daas.main.dashboard.dashboards',
   'Daas.main.dashboard.graphs',
   'Daas.main.dashboard.dashboardCreator'
-  ])
+])
 
 .config(function($stateProvider){
   $stateProvider
@@ -20,7 +20,7 @@ angular.module('Daas.main.dashboard', [
       controller: 'DashboardsController'
     })
     .state('app.main.dashboard.settings', {
-      url: '',
+      url: '/settings',
       templateUrl: 'main/dashboard/settings/settings.html',
       controller: 'SettingsController'
     })
