@@ -5,8 +5,7 @@ exports.setup = function (User){
   passport.use(new TwitterStrategy({
       consumerKey: $config.twitter.clientID,
       consumerSecret: $config.twitter.clientSecret,
-      callbackURL: $config.twitter.callbackUrl,
-      passReqToCallback: true
+      callbackURL: $config.twitter.callbackUrl
     },
     
     function(accessToken, refreshToken, profile, done) {

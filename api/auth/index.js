@@ -13,7 +13,6 @@
   require('./google/googleController').setup(User);
   require('./twitter/twitterController').setup(User);
   require('./mailchimp/mailchimpController').setup(User);
-  require('./local/localController');
 
   router.use('/local', require('./local'));
   router.use('/fb', require('./facebook'));
