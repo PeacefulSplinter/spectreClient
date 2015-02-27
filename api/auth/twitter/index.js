@@ -5,6 +5,7 @@ var decode = require('../authService').decode;
 
 router.get('/twitter', passport.authenticate('twitter'));
 
+
 router.get('/twitter/callback', passport.authenticate('twitter', {session: false}), function (req, res) {
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
