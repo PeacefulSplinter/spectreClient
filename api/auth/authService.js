@@ -1,7 +1,6 @@
 var compose = require('composable-middleware');
 var expressJwt = require('express-jwt');
 var User = require('../user/userModel');
-
 var validateJwt = expressJwt({ secret: 'cookie'});
 
 function isAuthenticated() {
@@ -14,17 +13,18 @@ function isAuthenticated() {
       }
       validateJwt(req, res, next);
     })
+    
     // Attach user to request
     .use(function(req, res, next) {
-      User.findById(req.user.id, function (err, user) {
+      User.findById(req.user.username, function (err, user) {
         if (err) return next(err);
         if (!user) {
-          return res.status(401).send('Unauthorized')
+          return res.status(401).send('Unauthorized');
         }
-        // {id: 'jdsfhlasdjf'}
 
         req.user = user;
         next();
+
       });
     });
 };

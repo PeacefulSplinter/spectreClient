@@ -8,21 +8,21 @@ exports.setup = function (User){
       callbackURL: $config.google.callbackUrl
     },
     function(accessToken, refreshToken, profile, done) {
-      User.findOne({'providers.google.id': profile.id }, function(err, user){
+      User.findOne({'username': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({'username': profile.id, 'providers.google.id': profile.id, 'providers.google.token': accessToken});
+          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.googleToken': accessToken });
           newUser.save(function(err, user){
             if (err) { return done(err); }
-            done(null, profile);
+            done(null, user);
           });
         }
         if (user){
-          User.findOneAndUpdate({'providers.google.id': profile.id}, {'providers.google.token': accessToken}, function(err, user){
+          User.findOneAndUpdate({'username': profile.id}, {'grants.googleToken': accessToken}, function(err, user){
             if(err) { return done(err); }
-            done(null, profile);
+            done(null, user);
           });
-        }
+        };
       });
     }
   ));

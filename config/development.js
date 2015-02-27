@@ -1,14 +1,13 @@
 var local;
 try {
   local = require('./local');
-}catch(error){
-  console.log('error from '+__dirname+'/development.js: ', error);
+} catch(error){
+	console.log('error from ' + __dirname + '/development.js: ', error);
 }
 
 for(var key in local){
   process.env[key] = local[key];
 }
-
 
 module.exports = {
   mongo: {
@@ -18,12 +17,13 @@ module.exports = {
   JWT_SECRET: 'process.env.JWT_SECRET',
   twitter: {
     clientID: process.env.TWITTER_ID,
-    clientSecret: process.env.TWITTER_SECRET
+    clientSecret: process.env.TWITTER_SECRET,
+    callbackUrl: 'http://127.0.0.1:3000/auth/tw/twitter/callback'
   },
   google: {
     clientID: process.env.GOOGLE_ID,
     clientSecret: process.env.GOOGLE_SECRET,
-    callbackUrl: 'http://localhost:3000'
+    callbackUrl: 'http://localhost:3000/auth/g/google/callback'
   },
   facebook: {
     clientID: process.env.FACEBOOK_ID,

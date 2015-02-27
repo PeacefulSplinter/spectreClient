@@ -1,17 +1,17 @@
 angular.module('Daas.auth.service', ['ngCookies'])
 
 .factory('Auth', function($http, $window, $interval, $cookieStore, $rootScope, $state){
-  // var checkCookie = function(){
-  //   var cookie;
-  //   try{
-  //     cookie = $cookieStore.get('Token');
+  var checkCookie = function(){
+    var cookie;
+    try{
+      cookie = $cookieStore.get('Token');
 
-  //   }catch(err){
-  //     console.error(err);
-  //   }
-  //   // console.log(cookie.token)
-  //   return cookie || false;
-  // };
+    }catch(err){
+      console.error(err);
+    }
+    // console.log(cookie.token)
+    return cookie || false;
+  };
 
   return {
     //checkCookie: checkCookie,
@@ -32,15 +32,16 @@ angular.module('Daas.auth.service', ['ngCookies'])
       var windowFeatures = 'location=0,status=0,modal=yes,alwaysRaised=yes,width=800,height=600';
       var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
       var interval;
+      $rootScope.cookieStatus = false;
       var closed = function(){
         interval = $interval(function(){
 
           if(windowObjectReference.closed){
-            if (checkCookie()){
-              $state.go('app.main.dashboard');
-            } else {
+            // if (checkCookie()){
+            //   $state.go('app.main.dashboard');
+            // } else {
 
-            }
+            // }
             $interval.cancel(interval);
           }
 
@@ -79,3 +80,4 @@ angular.module('Daas.auth.service', ['ngCookies'])
     }
   }
 });
+

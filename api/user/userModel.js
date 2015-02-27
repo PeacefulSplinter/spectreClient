@@ -2,30 +2,27 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var UserSchema = new mongoose.Schema({
+
   username: {
     type: String,
     unique: true,
     sparse: true
   },
 
+  displayName: {
+    type: String
+  },
+
   password: {
     type: String
   },
   
-  providers: {
-    facebookID: String,
-    google: {
-      id: String,
-      token: String
-    },
-    twitter: {
-      id: String,
-      token: String
-    },
-    mailchimp: {
-      id: String,
-      token: String
-    }
+  grants: {
+    facebookToken: String,
+    googleToken: String,
+    twitterToken: String,
+    twitterTokenSecret: String,
+    mailchimpToken: String
   }
 
 });

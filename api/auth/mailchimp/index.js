@@ -3,31 +3,15 @@ var passport = require('passport');
 var router = express.Router();
 var decode = require('../authService').decode;
 
-// passport.serializeUser(function(user, done) {
-//   done(null, user.id);
-// });
+router.get('/mailchimp', /* decode() ,*/ passport.authenticate('mailchimp'));
 
-// passport.deserializeUser(function(id, done) {
-//   User.findOne(id, function (err, user) {
-//     done(err, user);
-//   });
-// });
-
-router.get('/mailchimp', decode(), passport.authenticate('mailchimp'));
-
-router.get('/mailchimp/callback', passport.authenticate('mailchimp'), function (req, res) {
-  console.log(req.account);
-  var cwd = process.cwd();
-  var testFile = cwd + '/api/views/test.html';
-  res.sendFile(testFile);
+router.get('/mailchimp/callback', passport.authenticate('mailchimp', { session: false }), function (req, res) {
+  // var cwd = process.cwd();
+  // var testFile = cwd + '/api/views/test.html';
+  // res.sendFile(testFile);
+  console.log('Mailchimp good to go!');
+  res.send();
 });
-
-router.get('/demo', decode(),function(req, res) {
-	console.log(req.user)
-	res.send(req.user._id)
-});
-
-
 
 module.exports = router;
 
