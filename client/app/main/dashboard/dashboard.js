@@ -35,26 +35,33 @@ angular.module('Daas.main.dashboard', [
       controller: 'CreatorController'
     })
 })
-.controller('DashboardController', function($scope, $state, $http, $modal, Auth){
+.controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log){
 
-  $scope.items = ['yeah', 'yup', 'ye'];
-  $scope.integrate = function(){
-    modalInstance = $modal.open({
-    templateUrl: 'main/dashboard/integrations/integrations.html',
-    controller: 'DashboardController',
-    size: 'sm'
-  });
- };
+  $scope.toggleLeft = function() {
 
- $scope.dataPopUp = function(){
-  modalInstance = $modal.open({
-    templateUrl: 'main/dashboard/graphs/graphs.html',
-    controller: 'GraphsController',
-    size: 'lg'
-  });
- };
-
-  $scope.ok = function () {
-    modalInstance.close();
+    $mdSidenav('left').toggle().then(function(){
+      $log.debug("toggle RIGHT is done");
+    });
   };
+
+ //  $scope.items = ['yeah', 'yup', 'ye'];
+ //  $scope.integrate = function(){
+ //    modalInstance = $modal.open({
+ //    templateUrl: 'main/dashboard/integrations/integrations.html',
+ //    controller: 'DashboardController',
+ //    size: 'sm'
+ //  });
+ // };
+
+ // $scope.dataPopUp = function(){
+ //  modalInstance = $modal.open({
+ //    templateUrl: 'main/dashboard/graphs/graphs.html',
+ //    controller: 'GraphsController',
+ //    size: 'lg'
+ //  });
+ // };
+
+ //  $scope.ok = function () {
+ //    modalInstance.close();
+ //  };
 });
