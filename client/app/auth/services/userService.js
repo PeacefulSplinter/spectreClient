@@ -14,7 +14,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
   };
 
   return {
-    //checkCookie: checkCookie,
+    checkCookie: checkCookie,
     authLogin: function(provider){
       var urlMap = {
         'fb': '/auth/fb/facebook',
