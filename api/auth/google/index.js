@@ -13,10 +13,10 @@ var router = express.Router();
 //   });
 // });
 
-router.get('/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'), function (req, res) {
+router.get('/google', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}), function (req, res) {
 });
 
-router.get('/google/callback', passport.authenticate('google' {session: false}), function (req, res) {
+router.get('/google/callback', passport.authenticate('google', {session: false}), function (req, res) {
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
   var token = jwt.sign({ id: req.user._id }, $config.JWT_SECRET, {expiresInMinutes: 60*5});
