@@ -17,7 +17,8 @@ exports.register = function(req, res, next){
 
   newUser.save(function(err, user){
     if(err) return res.status(401).json('Registration Error: ' + err);
-    // var token = jwt.sign({_id: user._id}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+    var token = jwt.sign( req.body.username, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+    res.cookie('Token', token);
     res.status(200).send(); 
   });
 };
@@ -31,9 +32,9 @@ exports.login = function(req, res, next){
     }
     user.comparePassword(req.body.password, function(err, isMatch){
       if(err) return res.status(401).json('Login Error: ' + err);
-      // var token = jwt.sign({_id: user._id}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
-      // res.cookie('Token', token);
-      res.send();
+      var token = jwt.sign( req.body.username, $config.JWT_SECRET, {expiresInMinutes: 60*5});
+      res.cookie('Token', token);
+      res.status(200).send();
     });
   });
 };

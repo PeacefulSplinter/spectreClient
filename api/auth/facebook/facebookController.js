@@ -8,10 +8,10 @@ exports.setup = function (User){
       callbackURL: $config.facebook.callbackUrl
     },
     function(accessToken, refreshToken, profile, done) {
-      User.findOne({'providers.facebookID': profile.id }, function(err, user){
-        if (err) return done(err); 
+      User.findOne({'username': profile.id }, function(err, user){
+        if (err) return done(err);
         if (!user) {
-          var newUser = new User({'username': profile.id, 'providers.facebookID': profile.id });
+          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.facebookToken': accessToken });
           newUser.save(function(err, user){
             if (err) { 
               return done(err); 
@@ -20,10 +20,12 @@ exports.setup = function (User){
           });
         }
         if (user){
-            done(null, user);    
-          };
-        }
-      );
+          User.findOneAndUpdate({'username': profile.id}, {'grants.facebookToken': accessToken}, function(err, user){
+            if(err) { return done(err); }
+            done(null, user);
+          });
+        };
+      });
     }
   ));
 }

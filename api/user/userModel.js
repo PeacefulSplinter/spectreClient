@@ -9,24 +9,19 @@ var UserSchema = new mongoose.Schema({
     sparse: true
   },
 
+  displayName {
+    type: String
+  }
+
   password: {
     type: String
   },
-
-  providers: {
-    facebookID: String,
-    google: {
-      id: String,
-      token: String
-    },
-    twitter: {
-      id: String,
-      token: String
-    },
-    mailchimp: {
-      id: String,
-      token: String
-    }
+  
+  grants: {
+    facebookToken: String,
+    googleToken: String,
+    twitterToken: String,
+    mailchimpToken: String
   }
 
 });
