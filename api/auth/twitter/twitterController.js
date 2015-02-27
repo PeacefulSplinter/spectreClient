@@ -9,18 +9,18 @@ exports.setup = function (User){
       callbackURL: $config.twitter.callbackUrl
     },
     
-    function(accessToken, refreshToken, profile, done) {
+    function(token, tokenSecret, profile, done) {
       User.findOne({'username': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.twitter': accessToken });
+          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret });
           newUser.save(function(err, user){
             if (err) { return done(err); }
             done(null, user);
           });
         }
         if (user){
-          User.findOneAndUpdate({'username': profile.id}, {'grants.twitter': accessToken}, function(err, user){
+          User.findOneAndUpdate({'username': profile.id}, {'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret}, function(err, user){
             if(err) { return done(err); }
             done(null, user);
           }); 

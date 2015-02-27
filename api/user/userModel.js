@@ -21,6 +21,7 @@ var UserSchema = new mongoose.Schema({
     facebookToken: String,
     googleToken: String,
     twitterToken: String,
+    twitterTokenSecret: String,
     mailchimpToken: String
   }
 

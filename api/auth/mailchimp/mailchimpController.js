@@ -2,7 +2,6 @@ var passport = require('passport');
 var MailChimpStrategy = require('passport-mailchimp').Strategy;
 var User = require('../../user/userModel.js');
 
-
 exports.setup = function (User){
   passport.use(new MailChimpStrategy({
       clientID: $config.mailchimp.clientID,
