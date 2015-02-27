@@ -13,9 +13,7 @@ exports.setup = function (User){
         if (!user) {
           var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.facebookToken': accessToken });
           newUser.save(function(err, user){
-            if (err) { 
-              return done(err); 
-            }
+            if (err) { return done(err); }
             done(null, user);
           });
         }

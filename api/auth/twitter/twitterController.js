@@ -9,23 +9,23 @@ exports.setup = function (User){
       passReqToCallback: true
     },
     
-    function(req, token, tokenSecret, profile, done) {
-      // //find user with id
-      // req.user.provider.twitter.id = profile.id;
-      // req.user.provider.twitter.token = accessToken;
-      
-      // //save accessToken
-      // req.user.save(function(err, saved){
-      //   if (err){
-      //     return done(err);
-      //   }
-      //   res.send('hey');
-      //   done(null, profile);
-        
-      // });
-      // console.log(accessToken, profile);
-      // console.log('hey');
-      done(null, profile);
-
-    }));
+    function(accessToken, refreshToken, profile, done) {
+      User.findOne({'username': profile.id }, function(err, user){
+        if (err) return done(err);
+        if (!user) {
+          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.twitter': accessToken });
+          newUser.save(function(err, user){
+            if (err) { return done(err); }
+            done(null, user);
+          });
+        }
+        if (user){
+          User.findOneAndUpdate({'username': profile.id}, {'grants.twitter': accessToken}, function(err, user){
+            if(err) { return done(err); }
+            done(null, user);
+          });
+        };
+      });
+    }
+  ));
 }

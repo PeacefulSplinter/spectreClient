@@ -3,40 +3,12 @@ var passport = require('passport');
 var router = express.Router();
 var decode = require('../authService').decode;
 
-// passport.serializeUser(function(user, done) {
-//   done(null, user.id);
-// });
-
-// passport.deserializeUser(function(id, done) {
-//   User.findOne(id, function (err, user) {
-//     done(err, user);
-//   });
-// });
-
-// hit the /twitter route, decode the JWT, authenticate
-router.get('/twitter', /*decode()*/ passport.authenticate('twitter'), function (req, res){
-
-});
+router.get('/twitter', passport.authenticate('twitter'));
 
 router.get('/twitter/callback', passport.authenticate('twitter', {session: false}), function (req, res) {
-  //console.log(req.account);
   var cwd = process.cwd();
   var testFile = cwd + '/api/views/test.html';
   res.sendFile(testFile);
-
-  // var cwd = process.cwd();
-  // var testFile = cwd + '/api/views/test.html';
-  // var token = jwt.sign({foo:'foobar'}, 'spectreswagyolosauceboss101', {expiresInMinutes: 60*5});
-  // res.cookie('Token', token);
-  // res.sendFile(testFile);
-  //console.log(res);
-  //   //var token = jwt.sign({foo:'foobar'}, $config.JWT_SECRET, {expiresInMinutes: 60*5});
-     //res.status(200).json({token: token}).end();
-  //   res.status(200).end();
-  // });
-  //});
 });
-
-//router.get('/', )
 
 module.exports = router;

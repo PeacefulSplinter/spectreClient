@@ -11,7 +11,7 @@ exports.setup = function (User){
       User.findOne({'username': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
-          var newUser = new User({ 'username': profile.id, 'displayName': profile.displayName,'grants.googleToken': accessToken });
+          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.googleToken': accessToken });
           newUser.save(function(err, user){
             if (err) { return done(err); }
             done(null, user);
@@ -22,7 +22,7 @@ exports.setup = function (User){
             if(err) { return done(err); }
             done(null, user);
           });
-        }
+        };
       });
     }
   ));
