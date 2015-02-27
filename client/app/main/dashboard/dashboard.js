@@ -40,7 +40,7 @@ angular.module('Daas.main.dashboard', [
   $scope.toggleLeft = function() {
 
     $mdSidenav('left').toggle().then(function(){
-      $log.debug("toggle RIGHT is done");
+      $log.debug("toggle left is done");
     });
   };
 
