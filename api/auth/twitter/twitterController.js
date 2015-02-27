@@ -1,5 +1,6 @@
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
+var User = require('../../user/userModel.js');
 
 exports.setup = function (User){
   passport.use(new TwitterStrategy({
