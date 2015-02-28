@@ -2,9 +2,17 @@
 
   <md-content>
     <md-toolbar>
-      <h2 class="md-toolbar-tools">
-        <span>Spectre Widgets </span>
-      </h2>
+      <div class="md-toolbar-tools">
+        <div class="md-toolbar-item">
+          <h4>Spectre Widgets</h4>
+        </div>
+        <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
+            <md-button class="md-button" ng-click="profile($event)">
+              <i class="mdi mdi-account"></i>
+                PROFILE
+            </md-button>
+        </div>
+      </div>
     </md-toolbar>
   </md-content>
  <!--  <nav id='dashboard-nav'>
@@ -25,6 +33,8 @@
     </section>
  </div> -->
 
+
+
   
   <div>
     <md-button ng-click="toggleLeft()"class="md-fab md-primary">
@@ -33,14 +43,26 @@
   </div>
 
  <section layout="row" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-sidenav class="md-sidenav-left" md-component-id="left">
       <md-toolbar class="md-theme-light">
         <h1 class="md-toolbar-tools">Sidenav left</h1>
       </md-toolbar>
       <md-content class="md-padding">
-        <md-card>
+        <div class="md-tile" class="md-tile-content" layout="row" layout-align="center">
+        <img class="avatar" src="http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg" alt="hello">
+        </div>
+        <md-button class="navbar-button">
+          <span>DATA</span>
+        </md-button>
+        <md-button class="navbar-button">
+          <span>WIDGETS</span>
+        </md-button>
+        <a class="md-default-theme md-button">
+          <span>WIDGETS</span>
+        </a>
+        <!-- <md-card>
           <span>My Dashboards</span>
-        </md-card>
+        </md-card> -->
       </md-content>
     </md-sidenav>
  </section>
