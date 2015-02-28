@@ -37,6 +37,9 @@ angular.module('Daas.main.dashboard', [
 })
 .controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log, $mdDialog){
 
+
+
+
   $scope.links = [
   {name: 'My Dashboards', link: 'app.main.dashboard.dashboards'},
   {name: 'Dashboard Creator', link: 'app.main.dashboard.dashboardCreator'}];

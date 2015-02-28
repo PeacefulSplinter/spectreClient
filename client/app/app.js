@@ -6,7 +6,15 @@ angular.module('Daas', [
   'Daas.main'
   ])
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
+  $mdThemingProvider.theme('default')
+    .primaryPalette('purple', {
+      'default': '600'
+    })
+    .accentPalette('orange', {
+      'default': '700'
+    });
+
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('app',{

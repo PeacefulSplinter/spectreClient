@@ -71,6 +71,14 @@ body {
 .sidenav-button {
   display: block;
 }
+#dragging {
+  border: 2px solid #000;
+  max-width: 250px;
+  max-height: 250px;
+}
+#content {
+  overflow: scroll;
+}
 .redOrange {
   background-color: #dc3023 !important;
 }
