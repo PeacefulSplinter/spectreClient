@@ -1,6 +1,7 @@
 angular.module('Daas', [
   'ui.router',
   'ngMaterial',
+  'ngFx',
   'Daas.auth.service',
   'Daas.auth',
   'Daas.main',

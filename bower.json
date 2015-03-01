@@ -23,7 +23,8 @@
     "c3": "~0.4.9",
     "angular-material": "~0.8.1",
     "mdi": "~0.9.22-alpha",
-    "material-design-icons": "~1.0.1"
+    "material-design-icons": "~1.0.1",
+    "ngFx": "~1.0.5"
   },
   "resolutions": {
     "angular": ">= 1.0.8"
