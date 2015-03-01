@@ -48,8 +48,7 @@
              ng-switch-when="0"
              md-swipe-left="next()"
              md-swipe-right="previous()" >
-            View for Item #1<br/>
-            data.selectedIndex = 0
+            <md-switch ng-model="twitAuth" ng-change="onChange(twitAuth)">Twitter</md-switch>
           </div>
           <div role="tabpanel"
              id="tab2-content"

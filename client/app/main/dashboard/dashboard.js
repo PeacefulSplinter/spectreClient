@@ -2,7 +2,7 @@ angular.module('Daas.main.dashboard', [
   'Daas.main.dashboard.settings',
   'Daas.main.dashboard.profile',
   'Daas.main.dashboard.dashboards',
-  'Daas.main.dashboard.graphs',
+  'Daas.main.dashboard.apiService',
   'Daas.main.dashboard.dashboardCreator'
 ])
 
@@ -31,13 +31,18 @@ angular.module('Daas.main.dashboard', [
     })
     .state('app.main.dashboard.dashboardCreator', {
       url: '/dashboardCreate',
-      templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html',
-      controller: 'CreatorController'
+      templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html'
     })
 })
 .controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log, $mdDialog){
 
+  $scope.twitAuth = false;
 
+  $scope.onChange = function(val){
+    if(val){
+      Auth.authLogin('tw');
+    }
+  };
 
 
   $scope.links = [

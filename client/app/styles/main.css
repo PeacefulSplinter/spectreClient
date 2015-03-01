@@ -193,5 +193,5 @@ body {
   overflow: auto;
 }
 #chartsdisplay {
-  max-height: 100vh;
+  height: 100vh;
 }
