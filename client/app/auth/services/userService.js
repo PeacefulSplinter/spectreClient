@@ -17,7 +17,8 @@ angular.module('Daas.auth.service', ['ngCookies'])
         'facebook': '/auth/fb/facebook',
         'g': '/auth/g/google',
         'google': '/auth/g/google',
-        'mc': '/api/v1/mailchimp/mailchimpcall'
+        'mc': '/api/v1/mailchimp/mailchimpcall',
+        'tw': '/auth/tw/twitter'
       };
 
 

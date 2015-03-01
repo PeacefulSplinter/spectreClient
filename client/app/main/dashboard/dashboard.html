@@ -1,41 +1,70 @@
 <div>
- <!--  <nav id='dashboard-nav'>
-    <span class="navbar-brand">Spectre Widgets</span>
-    <div class="logout-btn"><i class="glyphicon glyphicon-log-out"></i>Logout</div>
-  </nav>
-  <div class="row">
-    <ul class="nav navbar-nav side-nav">
-      <li class="nav-choice" ui-sref="app.main.dashboard.dashboards"><span><i class="glyphicon glyphicon-dashboard"></i>Dashboards</span></li>
-      <li class="nav-choice" ng-click="dataPopUp()"><span><i class="glyphicon glyphicon-hdd"></i>Data</span></li>
-      <li class="nav-choice" ng-click='integrate()'><span><i class="glyphicon glyphicon-list-alt"></i>Services</span></li>
-      <li class="nav-choice" ui-sref="app.main.dashboard.settings"><span><i class="glyphicon glyphicon-cog"></i>Settings</span></li>
-      <li ui-sref="app.main.dashboard.profile" class="nav-choice"><span><i class="glyphicon glyphicon-user"></i>Profile</span></li>
-      <li class="nav-choice"><span><i class="glyphicon glyphicon-log-out"></i>Logout</span></li>
-    </ul>
-    <section class="col-xs-9 dash-content">
-      <ui-view />
-    </section>
- </div> -->
+
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <div class="md-toolbar-item">
+          <h4>Spectre Widgets</h4>
+        </div>
+        <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
+          <md-button class="md-button" ng-click="profile($event)">
+            <i class="mdi mdi-account"></i>
+              PROFILE
+          </md-button>
+        </div>
+      </div>
+    </md-toolbar>
+  </md-content>
 
   <div>
-    <md-button ng-click="toggleLeft()"class="md-primary">
-      Toggle right
+    <md-button ng-click="toggleLeft()"class="md-fab md-accent">
+      <i class="mdi mdi-menu"></i>
     </md-button>
   </div>
 
  <section layout="row" flex>
-    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-sidenav class="md-sidenav-left" md-component-id="left">
       <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools">Sidenav left</h1>
+        <h1 class="md-toolbar-tools">Home</h1>
       </md-toolbar>
       <md-content class="md-padding">
-        <md-button ng-click="close()" class="md-primary">
-          Close Sidenav Right
-        </md-button>
+        <div class="md-tile" class="md-tile-content" layout="row" layout-align="center">
+        <img class="avatar" src="http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg" alt="hello">
+        </div>
+        <!-- Tab creation-->
+        <md-tabs md-selected="data.selectedIndex">
+          <md-tab id="tab1" aria-controls="tab1-content">
+            Data
+          </md-tab>
+          <md-tab id="tab2" aria-controls="tab2-content">
+            Widgets
+          </md-tab>
+        </md-tabs>
+        <!--Functionality of tabs-->
+        <ng-switch on="data.selectedIndex" class="tabpanel-container">
+          <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()" >
+            <md-switch ng-model="twitAuth" ng-change="onChange(twitAuth)">Twitter</md-switch>
+          </div>
+          <div role="tabpanel"
+             id="tab2-content"
+             aria-labelledby="tab2"
+             ng-switch-when="1"
+             md-swipe-left="next()"
+             md-swipe-right="previous()" >
+            View for<br/>
+            data.selectedIndex = 1
+          </div>
+        </ng-switch>
+
       </md-content>
     </md-sidenav>
  </section>
 
-
+<ui-view></ui-view>
 
 </div>

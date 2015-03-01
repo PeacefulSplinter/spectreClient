@@ -3,10 +3,19 @@ angular.module('Daas', [
   'ngMaterial',
   'Daas.auth.service',
   'Daas.auth',
-  'Daas.main'
+  'Daas.main',
+  'Daas.main.dashboard.dashboardCreatorDirective'
   ])
 
-.config(function($stateProvider, $urlRouterProvider){
+.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
+  $mdThemingProvider.theme('default')
+    .primaryPalette('purple', {
+      'default': '600'
+    })
+    .accentPalette('orange', {
+      'default': '700'
+    });
+
   $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('app',{

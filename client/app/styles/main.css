@@ -5,7 +5,7 @@
   padding: 0px;
 }
 .navbar {
-  /*opacity: 0;*/
+  opacity: 0;
   color: #fff;
   margin-bottom: 0px;
 }
@@ -57,61 +57,26 @@ body {
 #description {
   color: #f7ca18 !important;
 }
-.side-nav {
-  height: 100vh;
-  width: 20vw;
-  background-color: #222;
-  border-top: thin solid #000;
-  border-bottom: thin solid #000;
-  overflow: hidden;
-  box-shadow: 1px 1px 1px #000;
+.navbar-button {
+  width: 12vw;
+  margin-bottom: 30px;
 }
-#dashboard-nav {
-  width: 101vw;
-  background-color: #222;
-  height: 8vh;
-  overflow: scroll;
-  box-shadow: 1px 1px 1px #000;
+.avatar {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  margin-bottom: 30px;
 }
-.dashboard-body {
-  padding: 0px;
-}
-.logout-btn {
-  float: right;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #aab2bd;
-  margin-right: 20px;
-}
-.logout-btn:hover {
-  color: #fff !important;
-  cursor: pointer;
-}
-.nav-choice {
+.sidenav-button {
   display: block;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 30vw;
-  color: #9d9d9d;
 }
-.nav-choice:hover {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
+#dragging {
+  border: 2px solid #000;
+  max-width: 250px;
+  max-height: 250px;
 }
-.navbar-brand {
-  color: #9d9d9d;
-}
-.glyphicon {
-  margin-right: 10px;
-  margin-left: 30px;
-}
-#intgrations {
-  color: #222;
-}
-.modal-body {
-  background-color: #ecf0f1 !important;
+#content {
+  overflow: scroll;
 }
 .redOrange {
   background-color: #dc3023 !important;
@@ -228,5 +193,5 @@ body {
   overflow: auto;
 }
 #chartsdisplay {
-  max-height: 100vh;
+  height: 100vh;
 }

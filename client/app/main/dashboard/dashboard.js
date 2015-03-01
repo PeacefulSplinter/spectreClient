@@ -2,9 +2,9 @@ angular.module('Daas.main.dashboard', [
   'Daas.main.dashboard.settings',
   'Daas.main.dashboard.profile',
   'Daas.main.dashboard.dashboards',
-  'Daas.main.dashboard.graphs',
+  'Daas.main.dashboard.apiService',
   'Daas.main.dashboard.dashboardCreator'
-  ])
+])
 
 .config(function($stateProvider){
   $stateProvider
@@ -15,53 +15,60 @@ angular.module('Daas.main.dashboard', [
       auth: true
     })
     .state('app.main.dashboard.dashboards', {
-      url: '',
+      url: '/dashboards',
       templateUrl: 'main/dashboard/dashboards/dashboards.html',
       controller: 'DashboardsController'
     })
     .state('app.main.dashboard.settings', {
-      url: '',
+      url: '/settings',
       templateUrl: 'main/dashboard/settings/settings.html',
       controller: 'SettingsController'
     })
     .state('app.main.dashboard.profile', {
-      url: '',
+      url: '/profile',
       templateUrl: 'main/dashboard/profile/profile.html',
       controller: 'ProfileController'
     })
     .state('app.main.dashboard.dashboardCreator', {
-      url: '',
-      templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html',
-      controller: 'CreatorController'
+      url: '/dashboardCreate',
+      templateUrl: 'main/dashboard/dashboardCreator/dashboardCreator.html'
     })
 })
-.controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log){
+.controller('DashboardController', function($scope, $state, $http, Auth, $mdSidenav, $log, $mdDialog){
 
-  $scope.toggleLeft = function() {
+  $scope.twitAuth = false;
 
-    $mdSidenav('left').toggle().then(function(){
-      $log.debug("toggle RIGHT is done");
-    });
+  $scope.onChange = function(val){
+    if(val){
+      Auth.authLogin('tw');
+    }
   };
 
- //  $scope.items = ['yeah', 'yup', 'ye'];
- //  $scope.integrate = function(){
- //    modalInstance = $modal.open({
- //    templateUrl: 'main/dashboard/integrations/integrations.html',
- //    controller: 'DashboardController',
- //    size: 'sm'
- //  });
- // };
 
- // $scope.dataPopUp = function(){
- //  modalInstance = $modal.open({
- //    templateUrl: 'main/dashboard/graphs/graphs.html',
- //    controller: 'GraphsController',
- //    size: 'lg'
- //  });
- // };
+  $scope.links = [
+  {name: 'My Dashboards', link: 'app.main.dashboard.dashboards'},
+  {name: 'Dashboard Creator', link: 'app.main.dashboard.dashboardCreator'}];
 
- //  $scope.ok = function () {
- //    modalInstance.close();
- //  };
+
+  $mdSidenav('left').toggle();
+
+  $scope.toggleLeft = function() {
+    $mdSidenav('left').toggle();
+  };
+
+  $scope.profile = function(e) {
+    $mdDialog.show({
+      contoller: function($scope, $mdDialog) {
+        $scope.ok = function() {
+          $mdDialog.hide();
+        };
+        $scope.cancel = function() {
+          $mdDialog.cancel();
+        };
+      },
+      templateUrl: 'main/dashboard/profile/profile.html',
+      targetEvent: e
+    });
+  }
+
 });
