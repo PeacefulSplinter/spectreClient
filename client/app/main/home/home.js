@@ -1,4 +1,4 @@
-angular.module('Daas.main.home', [])
+angular.module('Daas.main.home', ['ngFx'])
 
 .config(function($stateProvider){
   $stateProvider

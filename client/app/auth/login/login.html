@@ -1,54 +1,43 @@
 <div>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <h3 class="header">Spectre Widgets</h3>
-      </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="navbar-btn"><a class="link" ui-sref="app.main.home">Home</a></li>
-        <li class="navbar-btn"><a class="link" ui-sref="app.login">Login</a></li>
-      </ul>
-    </div>
-  </nav>
-
-
-  <div id="login-container">
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
-        <div class="col-sm-6">
-          <input id="inputUsername" type="text" placeholder="Username" class="form-control" ng-model="username">
+  <div layout="row">
+    <div flex="33"></div>
+    <div flex="34" class="signupBox">
+      <div layout="row" layout-align="center">
+        <div flex="20">
+          <label for="inputUsername">Username:</label><br />
+        </div>
+        <div>
+          <input id="inputUsername" type="text" placeholder="Username" ng-model="username">
         </div>
       </div>
-
-      <div class="form-group">
-        <label for="inputPassword" class="col-sm-2 control-label">Password:</label>
-        <div class="col-sm-6">
-          <input id="inputPassword" type="password" placeholder="Password" class="form-control" ng-model="password">
+      <div layout="row" layout-align="center">
+        <div flex="20">
+          <label for="inputPassword">Password:</label>
+        </div>
+        <div>
+          <input id="inputPassword" type="password" placeholder="Password" ng-model="password">
         </div>
       </div>
-
-      <button class="col-sm-offset-2 col-sm-3 btn btn-primary" ng-click="loginFacebook()">Log in with Facebook</button>
-      <button class="col-sm-offset-1 col-sm-3 btn btn-primary" ng-click="loginGoogle()">Log in with Google</button>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
+      <br />
+      <div layout="row" layout-align="center">
+        <div flex="45">
           <div class="checkbox">
             <label>
              <input type="checkbox"> Remember me
             </label>
-            <span><a ui-sref="app.signup">Not Registered? Signup Here</a></span>
-          </div>
+            <md-button class="md-raised" ng-click="register()" type="submit">Submit</md-button>
+          </div>     
+        </div>
+        <div flex="20">
+          <img class="iconSize" src="/../../assets/facebook.png" ng-click="loginFacebook()">
+          <img class="iconSize" src="/../../assets/google.png" ng-click="loginGoogle()">
         </div>
       </div>
-
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-4">
-          <button ng-click="login()" type="submit" class="btn btn-primary">Sign in</button>
-        </div>
+      <br />
+      <div layout="row" layout-align="center">
+        <span><a ui-sref="app.signup">Sign up here!</a></span>
       </div>
-
-      <div><alert type="danger" ng-show="cookieStatus">'Login failed.  Please try again.'</alert></div>
-    </form>
+    </div>  
+    <div flex="33"></div>
   </div>
 </div>

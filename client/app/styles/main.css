@@ -28,7 +28,8 @@
   margin-top: -10px;
 }
 body {
-  background-color: #f5f7fa !important;
+  background-image: url("../assets/spectreBackground.png");
+  font-family: 'Advent Pro', sans-serif;
 }
 .container {
   color: #f7ca18 !important;
@@ -40,8 +41,14 @@ body {
   margin-right: auto;
   display: inline-block;
 }
-#home-container-view {
-  background-image: url("../assets/spectreBackground.png");
+.logoSize {
+  height: 50px;
+  width: 50px;
+  padding-right: 10px;
+}
+.titleSize {
+  font-size: 55px;
+  margin-bottom: 0px;
 }
 .bs-header {
   background-position: center center;
@@ -200,4 +207,36 @@ body {
 }
 #chartsdisplay {
   height: 100vh;
+}
+.buttondemoBasicUsage {
+  /** From vulcanized demo **/ }
+  .buttondemoBasicUsage section {
+    background: #f7f7f7;
+    border-radius: 3px;
+    text-align: center;
+    margin: 1em;
+    position: relative !important;
+    padding-bottom: 10px; }
+  .buttondemoBasicUsage md-content {
+    margin-right: 7px; }
+  .buttondemoBasicUsage section .md-button:not(.md-fab) {
+    min-width: 10em; }
+  .buttondemoBasicUsage section .md-button {
+    display: block;
+    margin: 1em;
+    line-height: 25px; }
+  .buttondemoBasicUsage .label {
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: #ccc;
+    font-size: 14px; }
+
+.signupBox {
+  padding: 10px 0px;
+  margin-top: 15%;
+}
+.iconSize {
+  height: 35px;
+  width: 35px;
 }
