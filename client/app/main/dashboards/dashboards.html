@@ -1,26 +1,31 @@
-<div>
-
-  <md-content>
+<md-content>
     <md-toolbar>
       <div class="md-toolbar-tools">
         <div class="md-toolbar-item">
-          <h4>Spectre Widgets</h4>
+          <h4>
+            <md-button aria-label="Sidenav" ng-click="toggleLeft()" class="md-primary">
+              <ng-md-icon icon="dehaze"></ng-md-icon>
+            </md-button>
+            Spectre Widgets
+          </h4>
         </div>
         <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
           <md-button class="md-button" ng-click="profile($event)">
-            <i class="mdi mdi-account"></i>
+            <ng-md-icon icon="account_box" size="20"></ng-md-icon>
               PROFILE
-          </md-button>
+          <!-- </md-button> -->
         </div>
       </div>
     </md-toolbar>
+    <md-subheader class="md-accent">
+      <span class="dash-buttons">
+        <md-button ui-sref="app.main.dashboards.dashboardCreator">New</md-button>
+        <md-button>Edit</md-button>
+      </span>
+    </md-subheader>
   </md-content>
 
-  <div>
-    <md-button ng-click="toggleLeft()"class="md-fab md-accent">
-      <i class="mdi mdi-menu"></i>
-    </md-button>
-  </div>
+  <ui-view></ui-view>
 
  <section layout="row" flex>
     <md-sidenav class="md-sidenav-left" md-component-id="left">
@@ -60,9 +65,6 @@
             data.selectedIndex = 1
           </div>
         </ng-switch>
-
       </md-content>
     </md-sidenav>
  </section>
-<ui-view></ui-view>
-</div>

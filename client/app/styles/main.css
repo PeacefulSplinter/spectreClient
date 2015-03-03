@@ -1,69 +1,3 @@
-#login-container {
-  margin-left: 350px;
-  margin-top: 100px;
-  width: 50vw;
-  padding: 0px;
-}
-.navbar {
-  opacity: 0;
-  color: #fff;
-  margin-bottom: 0px;
-}
-.btn {
-  background-color: #4a89dc !important;
-}
-.footer {
-  background-color: #141414 !important;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 10px;
-  height: 200px;
-}
-.link {
-  margin-top: 5px;
-  color: #434a54 !important;
-}
-.navbar-header {
-  margin-top: -10px;
-}
-body {
-  background-image: url("../assets/spectreBackground.png");
-  font-family: 'Advent Pro', sans-serif;
-}
-.container {
-  color: #f7ca18 !important;
-  width: 100%;
-  height: 300px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  display: inline-block;
-}
-.logoSize {
-  height: 50px;
-  width: 50px;
-  padding-right: 10px;
-}
-.titleSize {
-  font-size: 55px;
-  margin-bottom: 0px;
-}
-.bs-header {
-  background-position: center center;
-  padding: 30px 15px 40px;
-  background-size: 100% 100%;
-}
-.text-center {
-  text-align: center;
-}
-.title-header {
-  color: #fff;
-}
-#description {
-  color: #f7ca18 !important;
-}
 .navbar-button {
   width: 12vw;
   margin-bottom: 30px;
@@ -78,128 +12,20 @@ body {
   display: block;
 }
 #dragging {
-  border: 2px solid #000;
   max-width: 250px;
   max-height: 250px;
 }
 #content {
   overflow: scroll;
 }
-#title {
+.dash-buttons {
   float: right;
 }
-#account {
-  float: right;
-}
-.redOrange {
-  background-color: #dc3023 !important;
-}
-.crimson {
-  background-color: #c91f37 !important;
-}
-.trueRed {
-  background-color: #8f1d21 !important;
-}
-.pinkRose {
-  background-color: #ec87c0 !important;
-}
-.rose {
-  background-color: #d24d57 !important;
-}
-.peach {
-  background-color: #f47983 !important;
-}
-.cherryBlossom {
-  background-color: #fcc9b9 !important;
-}
-.violet {
-  background-color: #5b3256 !important;
-}
-.lavender {
-  background-color: #967adc !important;
-}
-.bellFlower {
-  background-color: #5d3f6a !important;
-}
-.navyBlue {
-  background-color: #003171 !important;
-}
-.steelBlue {
-  background-color: #4b77be !important;
-}
-.aqua {
-  background-color: #3bafda !important;
-}
-.blueJeans {
-  background-color: #4a89dc !important;
-}
-.skyBlue {
-  background-color: #4d8fac !important;
-}
-.moutainMeadow {
-  background-color: #16a085 !important;
-}
-.greenBamboo {
-  background-color: #006442 !important;
-}
-.mint {
-  background-color: #37bc9b !important;
-}
-.turquoise {
-  background-color: #36d7b7 !important;
-}
-.oceanGreen {
-  background-color: #4daf7c !important;
-}
-.limon {
-  background-color: limon;
-}
-.amber {
-  background-color: #ca6924 !important;
-}
-.saffron {
-  background-color: #f4d03f !important;
-}
-.silver {
-  background-color: #bfbfbf !important;
-}
-.porcelain {
-  background-color: #ecf0f1 !important;
-}
-.selecter-selected {
-  position: relative;
-  z-index: 2;
-  display: block;
-  overflow: hidden;
-  text-overflow: clip;
-  cursor: pointer;
-}
-.selecter-options {
-  position: absolute;
-  z-index: 50;
-  width: 100%;
-  max-height: 260px;
-  overflow: auto;
-  overflow-x: hidden;
-}
-.all-dashboards {
-  margin-top: 10px;
-}
-.dash-nav {
-  background-color: #37bc9b !important;
-}
-.newDashboard:hover {
-  color: #5b3256 !important;
-  background-color: #000;
-}
-.dash-list {
-  margin-top: 10px;
-}
-.checkBox {
-  float: left;
-}
-.newDashboard {
-  color: #000;
+#dashboard-list {
+  max-width: 80vw;
+  max-height: 250px;
+  margin-bottom: 20px;
+  margin-left: 125px;
 }
 .resizeme {
   resize: both;
@@ -207,36 +33,8 @@ body {
 }
 #chartsdisplay {
   height: 100vh;
-}
-.buttondemoBasicUsage {
-  /** From vulcanized demo **/ }
-  .buttondemoBasicUsage section {
-    background: #f7f7f7;
-    border-radius: 3px;
-    text-align: center;
-    margin: 1em;
-    position: relative !important;
-    padding-bottom: 10px; }
-  .buttondemoBasicUsage md-content {
-    margin-right: 7px; }
-  .buttondemoBasicUsage section .md-button:not(.md-fab) {
-    min-width: 10em; }
-  .buttondemoBasicUsage section .md-button {
-    display: block;
-    margin: 1em;
-    line-height: 25px; }
-  .buttondemoBasicUsage .label {
-    position: absolute;
-    bottom: 5px;
-    left: 7px;
-    color: #ccc;
-    font-size: 14px; }
-
-.signupBox {
-  padding: 10px 0px;
-  margin-top: 15%;
-}
-.iconSize {
-  height: 35px;
-  width: 35px;
+  max-width: 1250px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px dotted #000;
 }

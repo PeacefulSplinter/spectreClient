@@ -2,10 +2,11 @@ angular.module('Daas', [
   'ui.router',
   'ngMaterial',
   'ngFx',
+  'ngMdIcons',
   'Daas.auth.service',
   'Daas.auth',
   'Daas.main',
-  'Daas.main.dashboard.dashboardCreatorDirective'
+  'Daas.main.dashboards'
   ])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
@@ -17,7 +18,7 @@ angular.module('Daas', [
       'default': '700'
     });
 
-  $urlRouterProvider.otherwise('/');
+  // $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('app',{
       url: '',

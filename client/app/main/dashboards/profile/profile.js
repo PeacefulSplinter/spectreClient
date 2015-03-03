@@ -1,6 +1,6 @@
-angular.module('Daas.main.dashboard.profile', [
-  'Daas.main.dashboard.profile.username',
-  'Daas.main.dashboard.profile.password'
+angular.module('Daas.main.dashboards.profile', [
+  'Daas.main.dashboards.profile.username',
+  'Daas.main.dashboards.profile.password'
   ])
 
 .controller('ProfileController', function($scope, $mdDialog){

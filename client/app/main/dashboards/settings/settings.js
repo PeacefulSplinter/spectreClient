@@ -1,4 +1,4 @@
-angular.module('Daas.main.dashboard.settings', ['ngMaterial'])
+angular.module('Daas.main.dashboards.settings', [])
 
 // .config(function($stateProvider){
 //   $stateProvider
@@ -10,5 +10,5 @@ angular.module('Daas.main.dashboard.settings', ['ngMaterial'])
 // })
 
 .controller('SettingsController', function(){
-	
+
 });

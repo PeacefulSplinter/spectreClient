@@ -1,0 +1,16 @@
+<div id="dashboard-list" ng-repeat="item in dashboards">
+  <md-content>
+    <md-card>
+      <md-toolbar class="md-accent">
+        <h2 class="md-toolbar-tools">
+          <span>{{item.name}}</span>
+        </h2>
+      </md-toolbar>
+      <md-card-content>
+        <span>{{item.lastSaved}}</span>
+        <p>
+          {{item.comments}}
+        </p>
+      </md-card-content>
+    </md-card>
+</div>
