@@ -4,9 +4,11 @@
   width: 50vw;
   padding: 0px;
 }
+
 #login-view {
   background-image: url("../assets/spectreBackground.png");
 }
+
 .buttondemoBasicUsage section {
   background: #f7f7f7;
   border-radius: 3px;
@@ -116,6 +118,7 @@
 .navbar-header {
   margin-top: -10px;
 }
+
 .container {
   color: #f7ca18 !important;
   width: 100%;
@@ -143,6 +146,7 @@
 #description {
   color: #f7ca18 !important;
 }
+
 .navbar-button {
   width: 12vw;
   margin-bottom: 30px;
@@ -168,6 +172,7 @@
 #content {
   overflow: scroll;
 }
+
 .dash-buttons {
   float: right;
 }
@@ -281,11 +286,49 @@
 .dash-list {
   margin-top: 10px;
 }
+
 .edit-btn {
   position: absolute;
   left: 900px;
   max-height: 80px;
   max-width: 80px;
+}
+
+.selecter-selected {
+  position: relative;
+  z-index: 2;
+  display: block;
+  overflow: hidden;
+  text-overflow: clip;
+  cursor: pointer;
+}
+
+.selecter-options {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  max-height: 260px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+.all-dashboards {
+  margin-top: 10px;
+}
+.dash-nav {
+  background-color: #37bc9b !important;
+}
+.newDashboard:hover {
+  color: #5b3256 !important;
+  background-color: #000;
+}
+.dash-list {
+  margin-top: 10px;
+}
+.checkBox {
+  float: left;
+}
+.newDashboard {
+  color: #000;
 }
 .resizeme {
   resize: both;
@@ -298,6 +341,7 @@
   margin-right: 15px;
   border: 1px dotted #000;
 }
+
 .buttondemoBasicUsage {
   /** From vulcanized demo **/ }
   .buttondemoBasicUsage section {
@@ -328,7 +372,7 @@
 .iconSize {
   height: 35px;
   width: 35px;
->>>>>>> completed styling to landing page, login page, and sign up page
+
 }
 
 .buttonBackFB {
@@ -354,3 +398,4 @@
 .checkboxAuth {
   margin: 0px;
 }
+
