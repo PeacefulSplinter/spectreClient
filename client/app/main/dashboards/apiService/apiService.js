@@ -1,4 +1,4 @@
-angular.module('Daas.main.dashboard.apiService', ['ngCookies'])
+angular.module('Daas.main.dashboards.apiService', ['ngCookies'])
 
 .factory('GetData', function($http, $cookies){
 

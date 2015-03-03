@@ -1,4 +1,4 @@
-angular.module('Daas.main.dashboard.profile.username', [])
+angular.module('Daas.main.dashboards.profile.username', [])
 
 .controller('usernameController',function($scope){
   $scope.username = 'Benoy'

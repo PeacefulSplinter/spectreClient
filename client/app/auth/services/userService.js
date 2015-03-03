@@ -34,7 +34,7 @@ angular.module('Daas.auth.service', ['ngCookies'])
           if(windowObjectReference.closed){
             if (checkCookie()){
               console.log('All good');
-              $state.go('app.main.dashboard');
+              $state.go('app.main.dashboards');
             } else {
               $rootScope.cookieStatus = true;
             }

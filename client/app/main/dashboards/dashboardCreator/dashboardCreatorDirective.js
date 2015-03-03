@@ -1,14 +1,13 @@
 (function(){
-  angular.module('Daas.main.dashboard.dashboardCreatorDirective', [
-    'Daas.main.dashboard.apiService'
+  angular.module('Daas.main.dashboards.dashboardCreatorDirective', [
+    'Daas.main.dashboards.apiService'
     ])
 
     .directive('barchartLayout', function(){
       return function(scope, element, attr){
         element.css({
-          border: "1px solid black",
           maxHeight: "40px",
-          maxWidth: "320px"
+          maxWidth: "350px"
         });
       };
     })
