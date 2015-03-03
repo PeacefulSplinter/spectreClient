@@ -1,8 +1,7 @@
 angular.module('Daas.auth',[
   'Daas.auth.login',
   'Daas.auth.signup',
-  'Daas.auth.service',
-  'ngFx'
+  'Daas.auth.service'
   ])
 
 

@@ -1,6 +1,15 @@
 angular.module('Daas.auth.signup', [])
 
 .controller('SignupController', function($scope, $state, Auth){
+  $scope.user = {
+      username: '',
+      password: '',
+      title: 'Spectre Widgets Sign Up'
+    };
+
+  $scope.data = {};
+  $scope.data.cb1 = false;
+
   $scope.register = function(){
   	if($scope.username && $scope.password){
   	 var obj = {};
@@ -8,9 +17,12 @@ angular.module('Daas.auth.signup', [])
      obj.password = $scope.password;
      Auth.register(obj);
     }else{
-      console.log('fucked');
+     console.log('fucked');
     }
   };
-
-
+})
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('purple')
+    .accentPalette('orange');
 });

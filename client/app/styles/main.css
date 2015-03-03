@@ -38,3 +38,59 @@
   margin-right: 15px;
   border: 1px dotted #000;
 }
+.buttondemoBasicUsage {
+  /** From vulcanized demo **/ }
+  .buttondemoBasicUsage section {
+    background: #f7f7f7;
+    border-radius: 3px;
+    text-align: center;
+    margin: 1em;
+    position: relative !important;
+    padding-bottom: 10px; }
+  .buttondemoBasicUsage md-content {
+    margin-right: 7px; }
+  .buttondemoBasicUsage section .md-button:not(.md-fab) {
+    min-width: 10em; }
+  .buttondemoBasicUsage section .md-button {
+    display: block;
+    margin: 1em;
+    line-height: 25px; }
+  .buttondemoBasicUsage .label {
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    color: #ccc;
+    font-size: 14px; }
+
+.signupBox {
+  margin-top: 15%;
+}
+.iconSize {
+  height: 35px;
+  width: 35px;
+>>>>>>> completed styling to landing page, login page, and sign up page
+}
+
+.buttonBackFB {
+  background-image: url(../assets/facebook.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.buttonBackG {
+  background-image: url(../assets/google.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+}
+
+.authHeader {
+  background-color: rgba(131,35,157,0.8) !important;
+}
+
+.checkboxAuth {
+  margin: 0px;
+}
