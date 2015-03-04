@@ -6,17 +6,12 @@ exports.save = function(req, res){
 	// update saved dashboard
 	User.findOne({username: 2773629894006}, function(err, user){
 
-		var dashboardObj = {
-			title: 'title',
-			integration: 'integration'
-		}
-
 		if (err) {
 			console.log('Error: ' + err);
 		}
 
 		if (user) {
-			user.savedDashboards = dashboardObj;
+			user.savedDashboards;
 			user.save();
 		}
 

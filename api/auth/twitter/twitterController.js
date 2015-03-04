@@ -14,23 +14,27 @@ exports.setup = function (User){
     },
     
     function(token, tokenSecret, profile, done) {
-      console.log('makes it to token');
-      User.findOne({'username': profile.id }, function(err, user){
-        if (err) return done(err);
-        if (!user) {
-          var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret });
-          newUser.save(function(err, user){
-            if (err) { return done(err); }
-            done(null, user);
-          });
-        }
-        if (user){
-          User.findOneAndUpdate({'username': profile.id}, {'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret}, function(err, user){
-            if(err) { return done(err); }
-            done(null, user);
-          }); 
-        };
-      });
-    }
+      var twitterTokens = {token: token, tokenSecret: tokenSecret};
+      console.log(token, tokenSecret, twitterTokens);
+      done(null, twitterTokens);
+
+
+      // console.log('makes it to token');
+      // User.findOne({'username': profile.id }, function(err, user){
+        // if (err) return done(err);
+        // if (!user) {
+        //   var newUser = new User({'username': profile.id, 'displayName': profile.displayName,'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret });
+        //   newUser.save(function(err, user){
+        //     if (err) { return done(err); }
+        //     done(null, user);
+        //   });
+        // }
+        // if (user){
+        //   User.findOneAndUpdate({'username': profile.id}, {'grants.twitterToken': token, 'grants.twitterTokenSecret': tokenSecret}, function(err, user){
+        //     if(err) { return done(err); }
+        //     done(null, user);
+        //   }); 
+        // };
+      }
   ));
 }
