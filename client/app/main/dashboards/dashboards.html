@@ -10,19 +10,12 @@
           </h4>
         </div>
         <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
-          <md-button class="md-button" ng-click="profile($event)">
-            <ng-md-icon icon="account_box" size="20"></ng-md-icon>
-              PROFILE
-          <!-- </md-button> -->
+          <div>
+            <md-button ng-click="logout()">logout</md-button>
+          </div>
         </div>
       </div>
     </md-toolbar>
-    <md-subheader class="md-accent">
-      <span class="dash-buttons">
-        <md-button ui-sref="app.main.dashboards.dashboardCreator">New</md-button>
-        <md-button>Edit</md-button>
-      </span>
-    </md-subheader>
   </md-content>
 
   <ui-view></ui-view>
@@ -30,19 +23,19 @@
  <section layout="row" flex>
     <md-sidenav class="md-sidenav-left" md-component-id="left">
       <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools">Home</h1>
+        <h1 class="md-toolbar-tools">Profile</h1>
       </md-toolbar>
       <md-content class="md-padding">
         <div class="md-tile" class="md-tile-content" layout="row" layout-align="center">
-        <img class="avatar" src="http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg" alt="hello">
+        <img class="avatar" src={{picture}} alt="hello">
         </div>
         <!-- Tab creation-->
-        <md-tabs md-selected="data.selectedIndex">
+        <md-tabs style="margin-left: 30px" md-selected="data.selectedIndex">
           <md-tab id="tab1" aria-controls="tab1-content">
             Data
           </md-tab>
           <md-tab id="tab2" aria-controls="tab2-content">
-            Widgets
+            Settings
           </md-tab>
         </md-tabs>
         <!--Functionality of tabs-->
@@ -60,9 +53,8 @@
              aria-labelledby="tab2"
              ng-switch-when="1"
              md-swipe-left="next()"
-             md-swipe-right="previous()" >
-            View for<br/>
-            data.selectedIndex = 1
+             md-swipe-right="previous()">
+            <!--insert content here-->
           </div>
         </ng-switch>
       </md-content>

@@ -4,11 +4,12 @@ angular.module('Daas.main.dashboards.dashboardCreator', [])
   $stateProvider
     .state('app.main.dashboards.dashboardCreator', {
       url: '/dashboardcreator',
-      templateUrl: 'main/dashboards/dashboardCreator/dashboardCreator.html'
+      templateUrl: 'main/dashboards/dashboardCreator/dashboardCreator.html',
+      controller: 'CreatorController'
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $timeout){
+.controller('CreatorController', function($scope, $rootScope, $mdDialog){
   var data = [['2009', 55],['2011', 20],['2012', 39],['2013', 60],['2014', 38]];
 
   $scope.save = function(){
@@ -21,5 +22,11 @@ angular.module('Daas.main.dashboards.dashboardCreator', [])
     // console.log('being saved', kids);
   };
 
+  $scope.addWidget = function(){
+    $mdDialog.show({
+      controller: 'CreatorController',
+      templateUrl: 'main/dashboards/dashboardcreator/templates/twitterFollowerPieChart.html',
+    });
+  };
 
 });
