@@ -1,0 +1,71 @@
+<div>
+
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <div class="md-toolbar-item">
+          <h4>Spectre Widgets</h4>
+        </div>
+        <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
+            <md-button class="md-button" ng-click="profile($event)">
+              <i class="mdi mdi-account"></i>
+                PROFILE
+            </md-button>
+        </div>
+      </div>
+    </md-toolbar>
+  </md-content>
+ <!--  <nav id='dashboard-nav'>
+    <span class="navbar-brand">Spectre Widgets</span>
+    <div class="logout-btn"><i class="glyphicon glyphicon-log-out"></i>Logout</div>
+  </nav>)
+  <div class="row">
+    <ul class="nav navbar-nav side-nav">
+      <li class="nav-choice" ui-sref="app.main.dashboard.dashboards"><span><i class="glyphicon glyphicon-dashboard"></i>Dashboards</span></li>
+      <li class="nav-choice" ng-click="dataPopUp()"><span><i class="glyphicon glyphicon-hdd"></i>Data</span></li>
+      <li class="nav-choice" ng-click='integrate()'><span><i class="glyphicon glyphicon-list-alt"></i>Services</span></li>
+      <li class="nav-choice" ui-sref="app.main.dashboard.settings"><span><i class="glyphicon glyphicon-cog"></i>Settings</span></li>
+      <li ui-sref="app.main.dashboard.profile" class="nav-choice"><span><i class="glyphicon glyphicon-user"></i>Profile</span></li>
+      <li class="nav-choice"><span><i class="glyphicon glyphicon-log-out"></i>Logout</span></li>
+    </ul>
+    <section class="col-xs-9 dash-content">
+      <ui-view />
+    </section>
+ </div> -->
+
+
+
+  
+  <div>
+    <md-button ng-click="toggleLeft()"class="md-fab md-primary">
+      <i class="mdi mdi-menu"></i>
+    </md-button>
+  </div>
+
+ <section layout="row" flex>
+    <md-sidenav class="md-sidenav-left" md-component-id="left">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">Sidenav left</h1>
+      </md-toolbar>
+      <md-content class="md-padding">
+        <div class="md-tile" class="md-tile-content" layout="row" layout-align="center">
+        <img class="avatar" src="http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg" alt="hello">
+        </div>
+        <md-button class="navbar-button">
+          <span>DATA</span>
+        </md-button>
+        <md-button class="navbar-button">
+          <span>WIDGETS</span>
+        </md-button>
+        <a class="md-default-theme md-button">
+          <span>WIDGETS</span>
+        </a>
+        <!-- <md-card>
+          <span>My Dashboards</span>
+        </md-card> -->
+      </md-content>
+    </md-sidenav>
+ </section>
+<ui-view></ui-view>
+
+</div>
