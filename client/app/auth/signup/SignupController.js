@@ -20,6 +20,14 @@ angular.module('Daas.auth.signup', [])
      console.log('fucked');
     }
   };
+
+  $scope.loginFacebook = function(){
+    Auth.authLogin('fb');
+  };
+  $scope.loginGoogle = function(){
+    Auth.authLogin('g');
+  };
+  
 })
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')

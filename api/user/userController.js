@@ -1,66 +1,36 @@
 var User = require('./userModel.js');
 
 exports.save = function(req, res){
-	// query for user
 
-	// update saved dashboard
-	User.findOne({username: 2773629894006}, function(err, user){
+	var userID = ''; // replace with token value sent on request
+	var dashTest = {
+		title: 'Aww yes!!',
+		dash: '<div></div>',
+		whenCreated: '9:00pm',
+		integrations: 'google, twitter, mailchimp'
+	}; // replace with dashboard object from req.header? or maybe req.body. We'll see.
 
-		if (err) {
-			console.log('Error: ' + err);
-		}
-
-		if (user) {
-			user.savedDashboards;
-			user.save();
-		}
-
+	User.findOne({'username': userID }, function(err, user){
+		if (err) { return err; }
+		if (!user){ return err; }
+		user.savedDashboards.push(dashTest);
+		user.save();
+		res.status(200).send();
 	});
-
-	res.send('hey');
-
 };
 
 exports.load = function(req, res) {
-	// query DB
 
-	// title of dashboard
+	var userID = ''; // replace with token value sent on request
+	var dashTitle = "Aww yes!!"; // replace with title from req object sent on request
 
-	// find user with username
-	User.findOne({username: 2773629894006/* result from jwt */  /*title of dashboard */ }, function(err, user){
-
-		console.log(user.savedDashboards);
-		// iterate through savedDashboards
-		
+	User.findOne({'username': userID }, function(err, user){
+		if (err || !user || user.savedDashboards.length === 0) { return err; }
 		for (var i = 0; i < user.savedDashboards.length; i++) {
-			// find a match with dashboard title
-			//if (user.savedDashboards[i] === )
-
-		}
-
-		if (err) {
-			console.log('Error is ' + err);
-			throw err;
-		}
-
-		// if user's found
-		if (user) {
-			console.log('user exists!');
-			console.log(user);
-			// grab data object
-			// console.log(req.body.dashboardObj);
-			// serve it to client	
-			// res.send(req.body.dashboardObj);	
-
-		}
-
-		if (!user) {
-			console.log('dashboard does not exist!');
-		}
-
-		res.send('we are in here');
-
+			if(user.savedDashboards[i].title === dashTitle){
+				res.status(200).json(user.savedDashboards[i]);
+			}
+		};
 	});
-
 }
 

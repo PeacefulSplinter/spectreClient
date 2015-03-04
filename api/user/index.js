@@ -4,9 +4,9 @@ var dashboard = require('./userController.js');
 var decode = require('../auth/authService.js').decode;
 
 // save dashboards to the database
-router.get('/dashboardSave', decode(), dashboard.save);
+router.get('/dashboardSave', dashboard.save);
 
 // loading dashboards to the database
-router.get('/dashboardLoad', decode(), dashboard.load);
+router.get('/dashboardLoad', dashboard.load);
 
 module.exports = router;
