@@ -24,7 +24,7 @@ var UserSchema = new mongoose.Schema({
     twitterTokenSecret: String,
     mailchimpToken: String
   },
-
+  
   savedDashboards: []
 
 });
