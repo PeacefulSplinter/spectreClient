@@ -43,9 +43,9 @@ angular.module('Daas.auth.service', ['ngCookies'])
 
         }, 500);
       };
-
+      
       closed();
-
+      
     },
     login: function(obj){
       $http({
