@@ -1,10 +1,15 @@
 <md-dialog>
   <md-content >
     <h4>Select a widget</h4>
-    <section layout="column" layout-sm="column" layout-align="center center">
-      <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Twitter Follower Bar Chart</md-button>
-      <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Twitter Follower Donut Chart</md-button>
-      <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Twitter Follower Pie Chart</md-button>
-    </section>
+    <md-tabs>
+      <md-tab label="Twitter">
+        <section layout="column" layout-sm="column" layout-align="center">
+          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Follower Bar Chart</md-button>
+          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Follower Donut Chart</md-button>
+          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Follower Pie Chart</md-button>
+        </section>
+      </md-tab>
+    </md-tabs>
+    <md-button style="float: right">Done</md-button>
   </md-content >
 </md-dialog>

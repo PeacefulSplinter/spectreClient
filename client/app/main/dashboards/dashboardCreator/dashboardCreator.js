@@ -16,6 +16,7 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
 
   $scope.save = function(){
     var children = angular.element(document.getElementById('chartsdisplay')).children();
+    console.log("HERE:", children)
     for(var i=0; i< children.length; i++){
       children[i] = JSON.stringify(children[i]);
     }
