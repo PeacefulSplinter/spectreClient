@@ -19,8 +19,12 @@ angular.module('Daas.main.dashboards', [
     $urlRouterProvider.otherwise('/dashboards');
 })
 
-.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookieStore){
-  $state.go('app.main.dashboards.list');
+.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies){
+  if($cookies.Token){
+    $state.go('app.main.dashboards.list');
+  }else{
+    $state.go('app.login');
+  }
   var data = [
     {
       'name': 'myFirstDashboard',

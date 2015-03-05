@@ -1,4 +1,4 @@
-angular.module('Daas.main.dashboards.dashboardCreator', [])
+angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.dashboardCreatorDirective'])
 
 .config(function($stateProvider){
   $stateProvider
