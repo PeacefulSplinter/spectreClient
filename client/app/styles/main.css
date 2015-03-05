@@ -152,6 +152,11 @@
   border-radius: 50%;
   margin-bottom: 30px;
 }
+.user-avi {
+  max-height: 20px;
+  max-height: 20px;
+  border-radius: 20%;
+}
 .sidenav-button {
   display: block;
 }
@@ -172,6 +177,7 @@
   margin-bottom: 20px;
   margin-left: 125px;
 }
+<<<<<<< HEAD
 .redOrange {
   background-color: #dc3023 !important;
 }
@@ -281,6 +287,13 @@
 }
 .newDashboard {
   color: #000;
+=======
+.edit-btn {
+  position: absolute;
+  left: 900px;
+  max-height: 80px;
+  max-width: 80px;
+>>>>>>> refactor dashboards view. changed styling of dashboard creator
 }
 .resizeme {
   resize: both;

@@ -15,7 +15,7 @@
     .directive('twitterFollowerBarchart', function(){
       return {
         restrict: 'E',
-        templateUrl: '/main/dashboard/dashboardCreator/templates/twitterFollowerBarChart.html',
+        templateUrl: '/main/dashboards/dashboardCreator/templates/twitterFollowerBarChart.html',
         controller: function(){
           c3.generate({
             bindto: '#tbar',
@@ -35,7 +35,7 @@
     .directive('twitterFollowerPiechart', function(){
       return {
         restrict: 'E',
-        templateUrl: '/main/dashboard/dashboardCreator/templates/twitterFollowerPieChart.html',
+        templateUrl: '/main/dashboards/dashboardCreator/templates/twitterFollowerPieChart.html',
         controller: function(){
           c3.generate({
             bindto: '#tpie',
@@ -56,7 +56,7 @@
       // var data = GetData.twitterapi();
       return {
         restrict: 'E',
-        templateUrl: '/main/dashboard/dashboardCreator/templates/twitterFollowerDonutChart.html',
+        templateUrl: '/main/dashboards/dashboardCreator/templates/twitterFollowerDonutChart.html',
         controller: function(){
           c3.generate({
             bindto: '#tdonut',

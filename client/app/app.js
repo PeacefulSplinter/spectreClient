@@ -1,11 +1,13 @@
 angular.module('Daas', [
   'ui.router',
   'ngMaterial',
-  'Daas.auth.service',
+  'ngMdIcons',
   'Daas.auth',
   'Daas.main',
-  'Daas.main.dashboards'
-  ])
+  'Daas.auth.service',
+  'Daas.main.dashboards',
+  'Daas.main.dashboards.apiService'
+])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
   $mdThemingProvider.theme('default')
@@ -15,8 +17,6 @@ angular.module('Daas', [
     .accentPalette('orange', {
       'default': '700'
     });
-
-  // $urlRouterProvider.otherwise('/');
   $stateProvider
     .state('app',{
       url: '',
@@ -24,8 +24,4 @@ angular.module('Daas', [
       template: '<ui-view />'
     })
 })
-// .run(function(Auth, $state, $rootScope){
-//   $rootScope.$on('$stateChangeStart', function(evt, toState, toStateParams, fromState){
-//     Auth.checkCookie(evt, toState);
-//   })
-// })
+

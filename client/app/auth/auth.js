@@ -6,7 +6,6 @@ angular.module('Daas.auth',[
 
 
 .config(function($stateProvider){
-
   $stateProvider
     .state('app.login', {
       url: '/login',
