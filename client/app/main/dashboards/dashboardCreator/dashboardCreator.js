@@ -9,13 +9,10 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document){
-  var data = [['2009', 55],['2011', 20],['2012', 39],['2013', 60],['2014', 38]];
-  $rootScope.myContainer = angular.element('<div id="chartsdisplay" class="ng-scope"></div>');
+.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData){
+  $scope.data = GetData.twitterapi();
 
-  var toAppendTo = angular.element(window.document.getElementById('chartsdisplay'));
-  var el = '<twitter-follower-barchart></twitter-follower-barchart>';
-  el = $compile(el)($rootScope);
+  var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
 
   $scope.save = function(){
     var children = angular.element(document.getElementById('chartsdisplay')).children();
@@ -36,8 +33,18 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
   };
 
-  $scope.appendWidget = function(){
-    console.log(el);
+  $scope.appendWidget = function(event, type){
+
+    if(type === 'pie') {
+      el = '<twitter-follower-piechart></twitter-follower-piechart>'
+    }
+    if(type === 'bar') {
+      el = '<twitter-follower-barchart></twitter-follower-barchart>'
+    }
+    if(type === 'donut') {
+      el = '<twitter-follower-donutchart></twitter-follower-donutchart>';
+    }
+    el = $compile(el)($scope);
     toAppendTo.append(el);
   };
 

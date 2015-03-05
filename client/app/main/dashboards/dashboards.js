@@ -25,23 +25,9 @@ angular.module('Daas.main.dashboards', [
   }else{
     $state.go('app.login');
   }
-  var data = [
-    {
-      'name': 'myFirstDashboard',
-      'lastSaved': '3/4/2012',
-      'integrations': ['Twitter', 'Mailchimp'],
-      'comments': 'This is a really cool dashboard I made back in 2014'
-    },
-    {
-      'name': 'super awesome dashboard',
-      'lastSaved': '3/4/2012',
-      'integrations': ['Twitter', 'Mailchimp', 'Instagram'],
-      'comments': 'I made this to show some really boring data and make is look dope'
-    }
-  ];
+
   $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
-  $scope.name = 'Mike';
-  $scope.dashboards = data;
+  $scope.name = 'Mike'
   $scope.twitAuth = false;
 
   $scope.onChange = function(val){

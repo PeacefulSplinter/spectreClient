@@ -2,11 +2,11 @@ angular.module('Daas', [
   'ui.router',
   'ngMaterial',
   'ngMdIcons',
-  'Daas.auth.service',
-  'Daas.main.dashboards.apiService',
   'Daas.auth',
   'Daas.main',
-  'Daas.main.dashboards'
+  'Daas.auth.service',
+  'Daas.main.dashboards',
+  'Daas.main.dashboards.apiService'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
