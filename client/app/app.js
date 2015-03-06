@@ -6,7 +6,8 @@ angular.module('Daas', [
   'Daas.main',
   'Daas.auth.service',
   'Daas.main.dashboards',
-  'Daas.main.dashboards.apiService'
+  'Daas.main.dashboards.apiService',
+  'Daas.main.dashboards.dashboardService'
 ])
 
 .config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
