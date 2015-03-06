@@ -15,15 +15,22 @@ exports.save = function(req, res){
 };
 
 exports.load = function(req, res) {
-
 	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
 		res.status(200).json(user.savedDashboards);
-		// for (var i = 0; i < user.savedDashboards.length; i++) {
-		// 	if(user.savedDashboards[i].title === dashTitle){
-		// 		res.status(200).json(user.savedDashboards[i]);
-		// 	}
-		// };
+	});
+}
+
+exports.loadOne = function(req, res) {
+	User.findOne({'username': req.user.username }, function(err, user){
+		if (err || !user || user.savedDashboards.length === 0) { return err; }
+		for (var i = 0; i < user.savedDashboards.length; i++) {
+			if(user.savedDashboards[i].id === req.param(':id')){
+				res.status(200).json(user.savedDashboards[i]);
+			}
+		};
+		console.log('dashboard not found!');
+		res.status(200).send('Dashboard not found!');
 	});
 }
 
