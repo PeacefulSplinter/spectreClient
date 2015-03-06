@@ -31,8 +31,16 @@ angular.module('Daas.main.dashboards', [
   $scope.twitAuth = false;
 
   $scope.onChange = function(val){
-    if(val){
+    if(val === 'twitAuth'){
       Auth.authLogin('tw');
+    } else if (val === 'fbAuth'){
+      Auth.authLogin('fb');
+    } else if (val === 'googleAuth'){
+      Auth.authLogin('g');
+    } else if (val === 'mailchimpAuth'){
+      Auth.authLogin('mc');
+    } else {
+      console.log('no auth by that name');
     }
   };
 

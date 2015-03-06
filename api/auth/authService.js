@@ -8,21 +8,22 @@ function isAuthenticated() {
     // Validate jwt
     .use(function(req, res, next) {
       // allow access_token to be passed through query parameter as well
-      if(req.query && req.query.hasOwnProperty('access_token')) {
+      if(req.body && req.body.hasOwnProperty('token')) {
         console.log('we in here!');
-        req.headers.authorization = 'Bearer ' + req.query.access_token;
+        req.body.authorization = req.body.token;
       }
       validateJwt(req, res, next);
     })
     
     // Attach user to request
     .use(function(req, res, next) {
-      User.findById(req.user.username, function (err, user) {
+      var decodedValue = jwt.decode(req.body.authorization);
+      User.findById(decodedValue, function (err, user) {
         if (err) return next(err);
         if (!user) {
           return res.status(401).send('Unauthorized');
         }
-
+        console.log('successful decode');
         req.user = user;
         next();
 

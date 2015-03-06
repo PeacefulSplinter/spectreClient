@@ -1,11 +1,13 @@
 var User = require('./userModel.js');
 
 exports.save = function(req, res){
-
-	User.findOne({'username': userID }, function(err, user){
+	console.log(req.body);
+	User.findOne({'username': req.user.username }, function(err, user){
 		if (err) { return err; }
 		if (!user){ return err; }
-		user.savedDashboards.push(dashTest);
+		console.log('before save', user.savedDashboards);
+		user.savedDashboards.push(req.body.obj);
+		console.log('after save', user.savedDashboards);
 		user.save();
 		res.status(200).send();
 	});
