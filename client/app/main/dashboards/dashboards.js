@@ -19,7 +19,7 @@ angular.module('Daas.main.dashboards', [
     $urlRouterProvider.otherwise('/dashboards');
 })
 
-.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies){
+.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies, DashboardLoad){
   if($cookies.Token){
     $state.go('app.main.dashboards.list');
   }else{
@@ -29,6 +29,10 @@ angular.module('Daas.main.dashboards', [
   $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
   $scope.name = 'Mike'
   $scope.twitAuth = false;
+
+  $scope.load = function(){
+    DashboardLoad.loadDash();
+  }
 
   $scope.onChange = function(val){
     if(val === 'twitAuth'){

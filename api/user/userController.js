@@ -6,7 +6,8 @@ exports.save = function(req, res){
 		if (err) { return err; }
 		if (!user){ return err; }
 		console.log('before save', user.savedDashboards);
-		user.savedDashboards.push(req.body.obj);
+		req.body.token = null;
+		user.savedDashboards.push(req.body);
 		console.log('after save', user.savedDashboards);
 		user.save();
 		res.status(200).send();
@@ -15,16 +16,14 @@ exports.save = function(req, res){
 
 exports.load = function(req, res) {
 
-	var userID = ''; // replace with token value sent on request
-	var dashTitle = "Aww yes!!"; // replace with title from req object sent on request
-
-	User.findOne({'username': userID }, function(err, user){
+	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
-		for (var i = 0; i < user.savedDashboards.length; i++) {
-			if(user.savedDashboards[i].title === dashTitle){
-				res.status(200).json(user.savedDashboards[i]);
-			}
-		};
+		res.status(200).json(user.savedDashboards);
+		// for (var i = 0; i < user.savedDashboards.length; i++) {
+		// 	if(user.savedDashboards[i].title === dashTitle){
+		// 		res.status(200).json(user.savedDashboards[i]);
+		// 	}
+		// };
 	});
 }
 
