@@ -2,11 +2,12 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
 
 .factory('DashboardLoad', function($http, $cookies){
   return {
-    saveDash: function(data){
+    data: [],
+    saveDash: function(){
       var counter = 1;
       var obj = {
         title: 'dashboard' + counter++,
-        widgets: data,
+        widgets: this.data,
         token: $cookies.Token
       };
       $http({
@@ -16,6 +17,15 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
       }).then(function(resp){
         console.log(resp);
       });
+    },
+    loadDash: function(){
+      $http({
+        method: 'POST',
+        url: '/user/dashboardLoad',
+        data: { token: $cookies.Token }
+      }).then(function(resp){
+        console.log(resp);
+      })
     }
   }
 });

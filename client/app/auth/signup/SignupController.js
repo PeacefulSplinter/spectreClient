@@ -27,7 +27,6 @@ angular.module('Daas.auth.signup', [])
   $scope.loginGoogle = function(){
     Auth.authLogin('g');
   };
-  
 })
 .config(function($mdThemingProvider) {
   $mdThemingProvider.theme('default')

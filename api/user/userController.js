@@ -1,19 +1,14 @@
 var User = require('./userModel.js');
 
 exports.save = function(req, res){
-
-	var userID = ''; // replace with token value sent on request
-	var dashTest = {
-		title: 'Aww yes!!',
-		dash: '<div></div>',
-		whenCreated: '9:00pm',
-		integrations: 'google, twitter, mailchimp'
-	}; // replace with dashboard object from req.header? or maybe req.body. We'll see.
-
-	User.findOne({'username': userID }, function(err, user){
+	console.log(req.body);
+	User.findOne({'username': req.user.username }, function(err, user){
 		if (err) { return err; }
 		if (!user){ return err; }
-		user.savedDashboards.push(dashTest);
+		console.log('before save', user.savedDashboards);
+		req.body.token = null;
+		user.savedDashboards.push(req.body);
+		console.log('after save', user.savedDashboards);
 		user.save();
 		res.status(200).send();
 	});
@@ -21,16 +16,14 @@ exports.save = function(req, res){
 
 exports.load = function(req, res) {
 
-	var userID = ''; // replace with token value sent on request
-	var dashTitle = "Aww yes!!"; // replace with title from req object sent on request
-
-	User.findOne({'username': userID }, function(err, user){
+	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
-		for (var i = 0; i < user.savedDashboards.length; i++) {
-			if(user.savedDashboards[i].title === dashTitle){
-				res.status(200).json(user.savedDashboards[i]);
-			}
-		};
+		res.status(200).json(user.savedDashboards);
+		// for (var i = 0; i < user.savedDashboards.length; i++) {
+		// 	if(user.savedDashboards[i].title === dashTitle){
+		// 		res.status(200).json(user.savedDashboards[i]);
+		// 	}
+		// };
 	});
 }
 

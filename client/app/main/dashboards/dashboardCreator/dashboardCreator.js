@@ -14,9 +14,6 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
   var widgets = [];
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
 
-  $scope.save = function(){
-    DashboardLoad.saveDash(widgets);
-  };
 
   $scope.addWidget = function(){
     var parentEl = document.getElementById('chartsdisplay');
@@ -46,10 +43,14 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     if(type === 'areaSpline') {
       el = '<twitter-follower-area-spline-chart></twitter-follower-area-spline-chart>';
     }
-    widgets.push(el);
+    DashboardLoad.data.push(el);
     el = $compile(el)($scope);
     toAppendTo.append(el);
-    console.log(widgets);
+    console.log('widgets', widgets);
+  };
+
+  $scope.save = function(){
+    DashboardLoad.saveDash();
   };
 
 });

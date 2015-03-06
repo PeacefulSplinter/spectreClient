@@ -18,6 +18,8 @@
     </md-toolbar>
   </md-content>
 
+  <md-button ng-click="load()">Load</md-button>
+
   <ui-view></ui-view>
 
  <section layout="row" flex>
@@ -46,15 +48,47 @@
              ng-switch-when="0"
              md-swipe-left="next()"
              md-swipe-right="previous()" >
-            <md-switch ng-model="twitAuth" ng-change="onChange(twitAuth)">Twitter</md-switch>
+            <md-switch ng-model="twitAuth" ng-change="onChange('twitAuth')">Twitter</md-switch>
           </div>
           <div role="tabpanel"
-             id="tab2-content"
-             aria-labelledby="tab2"
-             ng-switch-when="1"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
              md-swipe-left="next()"
              md-swipe-right="previous()">
-            <!--insert content here-->
+            <md-switch ng-model="fbAuth" ng-change="onChange('fbAuth')">Facebook</md-switch>
+          </div>
+          <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()">
+            <md-switch ng-model="googleAuth" ng-change="onChange('googleAuth')">Google</md-switch>
+          </div>
+          <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()">
+            <md-switch ng-model="githubAuth" ng-change="onChange('githubAuth')">Github</md-switch>
+          </div>
+          <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()">
+            <md-switch ng-model="mailchimpAuth" ng-change="onChange('mailchimpAuth')">Mail Chimp</md-switch>
+          </div>
+          <div role="tabpanel"
+             id="tab1-content"
+             aria-labelledby="tab1"
+             ng-switch-when="0"
+             md-swipe-left="next()"
+             md-swipe-right="previous()">
+            <md-switch ng-model="instagramAuth" ng-change="onChange('InstagramAuth')">Instagram</md-switch>
           </div>
         </ng-switch>
       </md-content>

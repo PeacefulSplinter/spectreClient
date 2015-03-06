@@ -1,28 +1,29 @@
 var compose = require('composable-middleware');
-var expressJwt = require('express-jwt');
+var jwt = require('jsonwebtoken');
 var User = require('../user/userModel');
-var validateJwt = expressJwt({ secret: 'cookie'});
 
 function isAuthenticated() {
   return compose()
     // Validate jwt
     .use(function(req, res, next) {
       // allow access_token to be passed through query parameter as well
-      if(req.query && req.query.hasOwnProperty('access_token')) {
+      if(req.body && req.body.hasOwnProperty('token')) {
+        var decodedValue = jwt.decode(req.body.token);
+        req.body.token = decodedValue;
         console.log('we in here!');
-        req.headers.authorization = 'Bearer ' + req.query.access_token;
       }
-      validateJwt(req, res, next);
+      next();
     })
     
     // Attach user to request
     .use(function(req, res, next) {
-      User.findById(req.user.username, function (err, user) {
+      
+      User.findOne({'username': req.body.token}, function (err, user) {
         if (err) return next(err);
         if (!user) {
           return res.status(401).send('Unauthorized');
         }
-
+        console.log('successful decode');
         req.user = user;
         next();
 
@@ -30,6 +31,4 @@ function isAuthenticated() {
     });
 };
 
-module.exports = {
-  decode: isAuthenticated
-};
+exports.decode = isAuthenticated;

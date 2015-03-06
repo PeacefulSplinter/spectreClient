@@ -19,7 +19,7 @@ angular.module('Daas.main.dashboards', [
     $urlRouterProvider.otherwise('/dashboards');
 })
 
-.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies){
+.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies, DashboardLoad){
   if($cookies.Token){
     $state.go('app.main.dashboards.list');
   }else{
@@ -30,9 +30,21 @@ angular.module('Daas.main.dashboards', [
   $scope.name = 'Mike'
   $scope.twitAuth = false;
 
+  $scope.load = function(){
+    DashboardLoad.loadDash();
+  }
+
   $scope.onChange = function(val){
-    if(val){
+    if(val === 'twitAuth'){
       Auth.authLogin('tw');
+    } else if (val === 'fbAuth'){
+      Auth.authLogin('fb');
+    } else if (val === 'googleAuth'){
+      Auth.authLogin('g');
+    } else if (val === 'mailchimpAuth'){
+      Auth.authLogin('mc');
+    } else {
+      console.log('no auth by that name');
     }
   };
 
