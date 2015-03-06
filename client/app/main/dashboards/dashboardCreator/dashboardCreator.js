@@ -9,9 +9,8 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad){
-  $scope.data = GetData.twitterapi();
-  var widgets = [];
+.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad, $timeout){
+  // $scope.data = GetData.twitterapi();
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
 
 
@@ -46,7 +45,6 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     DashboardLoad.data.push(el);
     el = $compile(el)($scope);
     toAppendTo.append(el);
-    console.log('widgets', widgets);
   };
 
   $scope.save = function(){

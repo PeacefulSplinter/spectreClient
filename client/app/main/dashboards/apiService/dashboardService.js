@@ -7,8 +7,7 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
       var counter = 1;
       var obj = {
         title: 'dashboard' + counter++,
-        widgets: this.data,
-        token: $cookies.Token
+        widgets: this.data
       };
       $http({
         method: 'POST',
