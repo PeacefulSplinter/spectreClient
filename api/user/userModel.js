@@ -25,6 +25,8 @@ var UserSchema = new mongoose.Schema({
     mailchimpToken: String
   },
   
+  profile: String,
+
   savedDashboards: []
 
 });

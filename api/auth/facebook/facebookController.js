@@ -8,6 +8,8 @@ exports.setup = function (User){
       callbackURL: $config.facebook.callbackUrl
     },
     function(accessToken, refreshToken, profile, done) {
+      console.log('This is my profile photo', profile.photos);
+
       User.findOne({'username': profile.id }, function(err, user){
         if (err) return done(err);
         if (!user) {
