@@ -1,24 +1,22 @@
 <md-content>
-    <md-toolbar>
-      <div class="md-toolbar-tools">
-        <div class="md-toolbar-item">
-          <h4>
-            <md-button aria-label="Sidenav" ng-click="toggleLeft()" class="md-primary">
-              <ng-md-icon icon="dehaze"></ng-md-icon>
-            </md-button>
-            Spectre Widgets
-          </h4>
-        </div>
-        <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
-          <div>
-            <md-button ng-click="logout()">logout</md-button>
-          </div>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <div class="md-toolbar-item">
+        <h4>
+          <md-button aria-label="Sidenav" ng-click="toggleLeft()" class="md-primary">
+            <ng-md-icon icon="dehaze"></ng-md-icon>
+          </md-button>
+          Spectre Widgets
+        </h4>
+      </div>
+      <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
+        <div>
+          <md-button ng-click="logout()">logout</md-button>
         </div>
       </div>
-    </md-toolbar>
-  </md-content>
-
-  <md-button ng-click="load()">Load</md-button>
+    </div>
+  </md-toolbar>
+</md-content>
 
   <ui-view></ui-view>
 

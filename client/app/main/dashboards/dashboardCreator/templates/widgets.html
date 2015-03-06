@@ -1,18 +1,40 @@
-<md-dialog>
+<md-dialog style="width: 1000px">
   <md-content >
     <h4>Select a widget</h4>
     <md-tabs>
       <md-tab label="Twitter">
-        <section layout="column" layout-sm="column" layout-align="center">
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Follower Bar Chart</md-button>
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Follower Donut Chart</md-button>
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Follower Pie Chart</md-button>
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'line')">Follower Line Chart</md-button>
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'spline')">Follower Spline Chart</md-button>
-          <md-button class="md-raised md-primary" ng-click="appendWidget($event, 'areaSpline')">Follower Area Spline Chart</md-button>
+        <section>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Follower Bar Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Follower Donut Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Follower Pie Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'line')">Follower Line Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'spline')">Follower Spline Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'areaSpline')">Follower Area Spline Chart</md-button>
         </section>
       </md-tab>
+      <md-tab label="MailChimp">
+         <section>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Follower Bar Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Follower Donut Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Follower Pie Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'line')">Follower Line Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'spline')">Follower Spline Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'areaSpline')">Follower Area Spline Chart</md-button>
+        </section>
+      </md-tab>
+      </md-tab>
+      <md-tab label="Google">
+         <section>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'bar')">Follower Bar Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'donut')">Follower Donut Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'pie')">Follower Pie Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'line')">Follower Line Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'spline')">Follower Spline Chart</md-button>
+          <md-button style="margin: 10px" class="md-raised md-primary" ng-click="appendWidget($event, 'areaSpline')">Follower Area Spline Chart</md-button>
+        </section>
+      </md-tab>
+      </md-tab>
     </md-tabs>
-    <md-button style="float: right">Done</md-button>
+    <md-button style="float: right" ng-click="done()">Done</md-button>
   </md-content >
 </md-dialog>

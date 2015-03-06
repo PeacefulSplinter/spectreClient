@@ -23,6 +23,10 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
   };
 
+  $scope.done = function(){
+    $mdDialog.hide();
+  };
+
   $scope.appendWidget = function(event, type){
     if(type === 'pie') {
       el = '<twitter-follower-piechart></twitter-follower-piechart>'
