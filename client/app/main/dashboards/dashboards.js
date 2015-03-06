@@ -19,8 +19,7 @@ angular.module('Daas.main.dashboards', [
     $urlRouterProvider.otherwise('/dashboards');
 })
 
-.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookies, DashboardLoad){
-  console.log(DashboardLoad.loadDash());
+.controller('DashboardsController', function($scope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookieStore, DashboardLoad){
 
   if($cookies.Token){
     $state.go('app.main.dashboards.list');
@@ -28,9 +27,7 @@ angular.module('Daas.main.dashboards', [
     $state.go('app.login');
   }
 
-  $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
-  $scope.name = 'Mike';
-
+  $scope.dashlist = DashboardLoad.loadDash()
 
 
   $scope.onChange = function(val){

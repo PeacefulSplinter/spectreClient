@@ -4,10 +4,10 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
   return {
     data: [],
     saveDash: function(){
-      var counter = 1;
       var obj = {
-        title: 'dashboard' + counter++,
-        widgets: this.data
+        title: 'dashboard',
+        widgets: this.data,
+        token: $cookies.Token
       };
       $http({
         method: 'POST',
@@ -23,7 +23,7 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
         url: '/user/dashboardLoad',
         data: { token: $cookies.Token }
       }).then(function(resp){
-        console.log(resp);
+        return resp;
       })
     }
   }
