@@ -4,6 +4,9 @@
   width: 50vw;
   padding: 0px;
 }
+#login-view {
+  background-image: url("../assets/spectreBackground.png");
+}
 .buttondemoBasicUsage section {
   background: #f7f7f7;
   border-radius: 3px;
@@ -113,7 +116,6 @@
 .navbar-header {
   margin-top: -10px;
 }
-
 .container {
   color: #f7ca18 !important;
   width: 100%;
@@ -141,7 +143,6 @@
 #description {
   color: #f7ca18 !important;
 }
-
 .navbar-button {
   width: 12vw;
   margin-bottom: 30px;
@@ -167,17 +168,9 @@
 #content {
   overflow: scroll;
 }
-
 .dash-buttons {
   float: right;
 }
-#dashboard-list {
-  max-width: 80vw;
-  max-height: 250px;
-  margin-bottom: 20px;
-  margin-left: 125px;
-}
-<<<<<<< HEAD
 .redOrange {
   background-color: #dc3023 !important;
 }
@@ -269,6 +262,12 @@
   overflow: auto;
   overflow-x: hidden;
 }
+#dashboard-list {
+  max-width: 80vw;
+  max-height: 250px;
+  margin-bottom: 20px;
+  margin-left: 125px;
+}
 .all-dashboards {
   margin-top: 10px;
 }
@@ -282,18 +281,11 @@
 .dash-list {
   margin-top: 10px;
 }
-.checkBox {
-  float: left;
-}
-.newDashboard {
-  color: #000;
-=======
 .edit-btn {
   position: absolute;
   left: 900px;
   max-height: 80px;
   max-width: 80px;
->>>>>>> refactor dashboards view. changed styling of dashboard creator
 }
 .resizeme {
   resize: both;
@@ -306,61 +298,3 @@
   margin-right: 15px;
   border: 1px dotted #000;
 }
-
-.buttondemoBasicUsage {
-  /** From vulcanized demo **/ }
-  .buttondemoBasicUsage section {
-    background: #f7f7f7;
-    border-radius: 3px;
-    text-align: center;
-    margin: 1em;
-    position: relative !important;
-    padding-bottom: 10px; }
-  .buttondemoBasicUsage md-content {
-    margin-right: 7px; }
-  .buttondemoBasicUsage section .md-button:not(.md-fab) {
-    min-width: 10em; }
-  .buttondemoBasicUsage section .md-button {
-    display: block;
-    margin: 1em;
-    line-height: 25px; }
-  .buttondemoBasicUsage .label {
-    position: absolute;
-    bottom: 5px;
-    left: 7px;
-    color: #ccc;
-    font-size: 14px; }
-
-.signupBox {
-  margin-top: 15%;
-}
-.iconSize {
-  height: 35px;
-  width: 35px;
-
-}
-
-.buttonBackFB {
-  background-image: url(../assets/facebook.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 40px;
-  height: 40px;
-}
-
-.buttonBackG {
-  background-image: url(../assets/google.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 40px;
-  height: 40px;
-}
-
-.authHeader {
-  background-color: rgba(131,35,157,0.8) !important;
-}
-
-.checkboxAuth {
-  margin: 0px;
-}
-

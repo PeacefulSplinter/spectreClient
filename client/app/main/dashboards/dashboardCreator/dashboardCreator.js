@@ -9,20 +9,13 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData){
+.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad){
   $scope.data = GetData.twitterapi();
-
+  var widgets = [];
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
 
   $scope.save = function(){
-    var children = angular.element(document.getElementById('chartsdisplay')).children();
-    console.log("HERE:", children)
-    for(var i=0; i< children.length; i++){
-      children[i] = JSON.stringify(children[i]);
-    }
-    console.log('being saved', children);
-    // var kids = JSON.stringify(children);
-    // console.log('being saved', kids);
+    DashboardLoad.saveDash(widgets);
   };
 
   $scope.addWidget = function(){
@@ -35,7 +28,6 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
   };
 
   $scope.appendWidget = function(event, type){
-
     if(type === 'pie') {
       el = '<twitter-follower-piechart></twitter-follower-piechart>'
     }
@@ -45,8 +37,19 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     if(type === 'donut') {
       el = '<twitter-follower-donutchart></twitter-follower-donutchart>';
     }
+     if(type === 'line') {
+      el = '<twitter-follower-line-chart><twitter-follower-line-chart>';
+    }
+    if(type === 'spline') {
+      el = '<twitter-follower-spline-chart></twitter-follower-spline-chart>';
+    }
+    if(type === 'areaSpline') {
+      el = '<twitter-follower-area-spline-chart></twitter-follower-area-spline-chart>';
+    }
+    widgets.push(el);
     el = $compile(el)($scope);
     toAppendTo.append(el);
+    console.log(widgets);
   };
 
 });
