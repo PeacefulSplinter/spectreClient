@@ -9,7 +9,8 @@
       <md-toolbar class="md-accent">
         <h2 class="md-toolbar-tools">
           <span>{{item.title}}</span>
-          <md-button class="md-toolbar-tools edit-btn">Edit</md-button>
+
+          <md-button class="md-toolbar-tools edit-btn" ng-click="loadDash(item.$$hashKey)">Load</md-button>
         </h2>
       </md-toolbar>
       <md-card-content>

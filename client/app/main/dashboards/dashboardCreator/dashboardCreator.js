@@ -38,15 +38,14 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
       el = '<twitter-follower-donutchart></twitter-follower-donutchart>';
     }
      if(type === 'line') {
-      el = '<twitter-follower-line-chart><twitter-follower-line-chart>';
+      el = '<twitter-follower-line-chart></twitter-follower-line-chart>';
     }
     if(type === 'spline') {
       el = '<twitter-follower-spline-chart></twitter-follower-spline-chart>';
     }
     if(type === 'areaSpline') {
       el = '<twitter-follower-area-spline-chart></twitter-follower-area-spline-chart>';
-    }
-    DashboardLoad.data.push(el);
+    };
     el = $compile(el)($scope);
     toAppendTo.append(el);
   };
@@ -60,7 +59,7 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
 
   $scope.save = function(){
     $mdDialog.hide();
-    var name = $scope.dashboardName;
+    name = $scope.dashboardName;
     var comments = $scope.dashboardComment;
     DashboardLoad.saveDash(name, comments);
   };

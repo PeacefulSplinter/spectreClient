@@ -7,7 +7,7 @@ angular.module('Daas.main.dashboards.apiService', ['ngCookies'])
       $http({
         method: 'POST',
         url: 'http://spectre-api.herokuapp.com/api/v1/api/twitter/twitterFollowers',
-        data: {token: $cookies.Token}
+        data: {token: $cookies.twitterToken}
       }).then(function(resp){
         console.log('I am the response', resp.data.followDate);
         var tData = resp.data.followDate;

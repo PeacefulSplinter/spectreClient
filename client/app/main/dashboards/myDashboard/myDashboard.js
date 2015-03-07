@@ -4,7 +4,7 @@ angular.module('Daas.main.dashboards.mydashboard', [])
   $stateProvider
     .state('app.main.dashboards.mydashboard', {
       url: '/mydashboard',
-      templateUrl: 'main/dashboard/dashboard.html',
+      templateUrl: 'main/dashboards/myDashboard/myDashboard.html',
       controller: 'MyDashboardController'
     })
 })

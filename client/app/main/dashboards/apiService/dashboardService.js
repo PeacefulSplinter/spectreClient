@@ -2,16 +2,19 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
 
 .factory('DashboardLoad', function($http, $cookies){
   return {
-    data: [],
-    loc: [],
     saveDash: function(name, comments){
-      var savedDate = JSON.stringify(new Date()).slice(1, 11)
+      var directives = [].map.call(document.querySelectorAll('.uchart'), function(el){
+        return {
+          directive: '<' + el.parentElement.localName + '>' + '</' + el.parentElement.localName + '>',
+          location: el.style.cssText
+        }
+      })
+      var savedDate = JSON.stringify(new Date()).slice(1, 11);
       var obj = {
         title: name,
         comment: comments || 'none',
         lastSaved: savedDate,
-        location: this.loc,
-        widgets: this.data,
+        widgets: directives,
         token: $cookies.Token
       };
       $http({
@@ -27,6 +30,15 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
       return $http({
         method: 'POST',
         url: '/user/dashboardLoad',
+        data: { token: $cookies.Token }
+      }).then(function(resp){
+        return resp;
+      })
+    },
+    loadOneDash: function(id){
+      return $http({
+        method: 'POST',
+        url: '/user/dashboardLoad/' + id,
         data: { token: $cookies.Token }
       }).then(function(resp){
         return resp;

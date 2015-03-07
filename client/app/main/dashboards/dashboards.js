@@ -1,4 +1,5 @@
 angular.module('Daas.main.dashboards', [
+  'Daas.main.dashboards.list',
   'Daas.main.dashboards.mydashboard',
   'Daas.main.dashboards.apiService',
   'Daas.main.dashboards.dashboardCreator'
@@ -14,7 +15,7 @@ angular.module('Daas.main.dashboards', [
     .state('app.main.dashboards.list', {
       url: '',
       templateUrl: 'main/dashboards/dashboardList/list.html',
-      controller: 'DashboardsController'
+      controller: 'ListController'
     })
     $urlRouterProvider.otherwise('/dashboards');
 })
@@ -27,7 +28,6 @@ angular.module('Daas.main.dashboards', [
   }
 
   $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
-  DashboardLoad.loadDash()
   DashboardLoad.loadDash().then(function(resp){
     console.log('here', resp.data);
     $scope.name = resp.data.displayName || resp.data.username.charAt(0).toUpperCase() + resp.data.username.slice(1);
