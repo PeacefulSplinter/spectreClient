@@ -62,20 +62,7 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     $mdDialog.hide();
     var name = $scope.dashboardName;
     var comments = $scope.dashboardComment;
-    $timeout(function(){
-      html2canvas([document.body], {
-      height: 500,
-      width: 1500,
-      logging: true,
-      onrendered: function(canvas){
-        var canvasImg = canvas.toDataURL("image/jpg");
-        $rootScope.screenshot = canvasImg;
-        DashboardLoad.saveDash(name, comments, $rootScope.screenshot);
-        // var el = $compile(canvas)($scope);
-        // toAppendTo.append(el);
-      }
-    })
-  }, 1500)
+    DashboardLoad.saveDash(name, comments);
   };
 
 });

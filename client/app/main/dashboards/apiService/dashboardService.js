@@ -4,11 +4,10 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
   return {
     data: [],
     loc: [],
-    saveDash: function(name, comments, picture){
+    saveDash: function(name, comments){
       var savedDate = JSON.stringify(new Date()).slice(1, 11)
       var obj = {
         title: name,
-        pic: picture,
         comment: comments || 'none',
         lastSaved: savedDate,
         location: this.loc,
