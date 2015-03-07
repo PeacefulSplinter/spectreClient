@@ -4,9 +4,9 @@ var User = require('../../user/userModel.js');
 
 exports.setup = function (User){
   passport.use(new TwitterStrategy({
-      consumerKey: '9DeclDeLrJfyLLKOx4ZABdio7',
-      consumerSecret: 'To0KrrwMy06meHYYIm0O1Md5fF2N0qpPPJt1zUOvGdrtO46q9U',
-      callbackURL: 'http://127.0.0.1:3000/auth/tw/twitter/callback'
+      consumerKey: 'yjDlGZfoJ0AvpAyjpK7xTx7Ad',
+      consumerSecret: '9PrdTleH7ns9yw3KQwJzgxLzr2weoNCCiE2Ja94niTYpJqlqHo',
+      callbackURL: 'http://localhost:3000/auth/tw/twitter/callback'
 
       // consumerKey: $config.twitter.clientID,
       // consumerSecret: $config.twitter.clientSecret,
@@ -15,7 +15,6 @@ exports.setup = function (User){
     
     function(token, tokenSecret, profile, done) {
       var twitterTokens = {token: token, tokenSecret: tokenSecret};
-      console.log(token, tokenSecret, twitterTokens);
       done(null, twitterTokens);
 
 
