@@ -1,10 +1,6 @@
 var User = require('./userModel.js');
 
 exports.save = function(req, res){
-	console.log(req.body);
-
-
-
 	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user) { return err; }
 		req.body.token = null;
@@ -26,11 +22,10 @@ exports.loadOne = function(req, res) {
 	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
 		for (var i = 0; i < user.savedDashboards.length; i++) {
-			if(user.savedDashboards[i].id === req.param(':id')){
+			if(user.savedDashboards[i]['$$hashKey'] === req.param(':id')){
 				res.status(200).json(user);
 			}
 		};
-		console.log('dashboard not found!');
 		res.status(200).send('Dashboard not found!');
 	});
 }
