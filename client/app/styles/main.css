@@ -4,9 +4,6 @@
   width: 50vw;
   padding: 0px;
 }
-#login-view {
-  background-image: url("../assets/spectreBackground.png");
-}
 .buttondemoBasicUsage section {
   background: #f7f7f7;
   border-radius: 3px;
@@ -87,9 +84,6 @@
   width: 40px;
   height: 40px;
 }
-.authHeader {
-  background-color: #83239d !important;
-}
 .checkboxAuth {
   margin: 0px;
 }
@@ -139,9 +133,6 @@
 }
 .title-header {
   color: #fff;
-}
-#description {
-  color: #f7ca18 !important;
 }
 .navbar-button {
   width: 12vw;

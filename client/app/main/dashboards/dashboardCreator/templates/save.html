@@ -1,0 +1,14 @@
+<md-dialog>
+  <md-content>
+    <h3>Please Confirm<h3>
+  </md-content>
+  <md-input-container class="md-accent">
+    <label>Dashboard Name</label>
+    <input ng-model="dashboardName">
+  </md-input-container>
+  <md-input-container flex class="md-accent">
+    <label>Comments</label>
+    <textarea ng-model="dashboardComment" columns="1" md-maxlength="150"></textarea>
+  </md-input-container>
+  <md-button class="accent" ng-click="save()">Save</md-button>
+</md-dialog>

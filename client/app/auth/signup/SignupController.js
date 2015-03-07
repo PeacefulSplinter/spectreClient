@@ -16,8 +16,6 @@ angular.module('Daas.auth.signup', [])
      obj.username = $scope.username.toLowerCase();
      obj.password = $scope.password;
      Auth.register(obj);
-    }else{
-     console.log('fucked');
     }
   };
 

@@ -12,7 +12,7 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
 .controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad, $timeout){
   // $scope.data = GetData.twitterapi();
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
-
+  console.log('element', toAppendTo)
 
   $scope.addWidget = function(){
     var parentEl = document.getElementById('chartsdisplay');
@@ -51,8 +51,31 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     toAppendTo.append(el);
   };
 
+  $scope.preSave = function(){
+    $mdDialog.show({
+      controller: 'CreatorController',
+      templateUrl: 'main/dashboards/dashboardcreator/templates/save.html'
+    });
+  }
+
   $scope.save = function(){
-    DashboardLoad.saveDash();
+    $mdDialog.hide();
+    var name = $scope.dashboardName;
+    var comments = $scope.dashboardComment;
+    $timeout(function(){
+      html2canvas([document.body], {
+      height: 500,
+      width: 1500,
+      logging: true,
+      onrendered: function(canvas){
+        var canvasImg = canvas.toDataURL("image/jpg");
+        $rootScope.screenshot = canvasImg;
+        DashboardLoad.saveDash(name, comments, $rootScope.screenshot);
+        // var el = $compile(canvas)($scope);
+        // toAppendTo.append(el);
+      }
+    })
+  }, 1500)
   };
 
 });

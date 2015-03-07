@@ -3,7 +3,7 @@
     <div class="md-toolbar-tools">
       <div class="md-toolbar-item">
         <h4>
-          <md-button aria-label="Sidenav" ng-click="toggleLeft()" class="md-primary">
+          <md-button aria-label="Sidenav" ng-click="toggleLeft()">
             <ng-md-icon icon="dehaze"></ng-md-icon>
           </md-button>
           Spectre Widgets
@@ -11,7 +11,7 @@
       </div>
       <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
         <div>
-          <md-button ng-click="logout()">logout</md-button>
+          <md-button ng-click="logout()"><h4>logout</h4></md-button>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
  <section layout="row" flex>
     <md-sidenav class="md-sidenav-left" md-component-id="left" style="height: 100vh">
       <md-toolbar class="md-theme-light">
-        <h1 class="md-toolbar-tools">Profile</h1>
+        <h1 class="md-toolbar-tools">Profile: {{name}}</h1>
       </md-toolbar>
       <md-content class="md-padding">
         <div class="md-tile" class="md-tile-content" layout="row" layout-align="center">

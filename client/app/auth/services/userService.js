@@ -1,6 +1,6 @@
 angular.module('Daas.auth.service', ['ngCookies'])
 
-.factory('Auth', function($http, $window, $interval, $cookies, $rootScope, $state){
+.factory('Auth', function($timeout, $http, $window, $interval, $cookies, $rootScope, $state){
   var checkCookie = function(){
     if($cookies.Token){
       return true
@@ -33,7 +33,6 @@ angular.module('Daas.auth.service', ['ngCookies'])
 
           if(windowObjectReference.closed){
             if (checkCookie()){
-              console.log('All good');
               $state.go('app.main.dashboards');
             } else {
               $rootScope.cookieStatus = true;
@@ -43,9 +42,9 @@ angular.module('Daas.auth.service', ['ngCookies'])
 
         }, 500);
       };
-      
+
       closed();
-      
+
     },
     login: function(obj){
       $http({
@@ -53,7 +52,13 @@ angular.module('Daas.auth.service', ['ngCookies'])
         url: '/auth/local/login',
         data: obj
       }).then(function(resp){
-        console.log(resp.data.token);
+       $timeout(function(){
+          if ($cookies.Token){
+            $state.go('app.main.dashboards');
+          }else{
+            console.log('yup');
+          }
+        }, 500);
       })
     },
     register: function(obj){
@@ -62,16 +67,14 @@ angular.module('Daas.auth.service', ['ngCookies'])
         url: '/auth/local/register',
         data: obj
       }).then(function(resp){
-        console.log(resp.data.token);
-      })
-    },
-    logout: function(obj, cb){
-      $http({
-        method: 'POST',
-        url: '',
-        data: obj
-      }).then(function(resp){
-        cb();
+        $timeout(function(){
+          if ($cookies.Token){
+            console.log('All good');
+            $state.go('app.main.dashboards');
+          }else{
+            console.log('yup');
+          }
+        }, 500);
       })
     }
   }

@@ -2,7 +2,7 @@
   <div flex="25"></div>
   <div flex="50" class="signupBox md-whiteframe-z2">
     <div layout="column">
-      <md-content style="opacity: 0.8">
+      <md-content>
         <md-toolbar>
         <div layout="row" class="authHeader">
           <div flex="30"></div>
@@ -20,11 +20,11 @@
           <div layout layout-sm="column">
           <md-input-container style="width:50%" class="md-accent">
             <label>Username</label>
-            <input ng-model="user.username">
+            <input ng-model="username">
           </md-input-container>
           <md-input-container style="width:50%" class="md-accent">
             <label>Password</label>
-            <input ng-model="user.password" type="password">
+            <input ng-model="password" type="password">
           </md-input-container>
           </div>
           <div layout layout-sm="column">
@@ -44,7 +44,7 @@
             </div>
             <div flex="15">
               <div layout="row" layout-align="end center">
-                <md-button class="md-raised" ng-click="register()" type="submit">Submit</md-button>
+                <md-button class="md-raised" ng-click="login()" type="submit">Submit</md-button>
               </div>
             </div>
           </div>
