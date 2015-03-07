@@ -26,7 +26,7 @@ exports.loadOne = function(req, res) {
 				res.status(200).json(user);
 			}
 		};
-		res.status(200).send('Dashboard not found!');
+		res.status(200).send('Dashboard not found!'); 
 	});
 }
 
