@@ -20,6 +20,7 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
         data: obj
       }).then(function(resp){
         console.log(resp);
+        swal("Dashboard Saved", "Don't stop now, keep on building!", "success");
       });
     },
     loadDash: function(){
