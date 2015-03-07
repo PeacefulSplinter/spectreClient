@@ -16,7 +16,7 @@ angular.module('Daas.auth.login', [])
       var obj = {};
       obj.username = $scope.username.toLowerCase();
       obj.password = $scope.password;
-      var yeah = Auth.login(obj);
+      Auth.login(obj);
     }
   };
 

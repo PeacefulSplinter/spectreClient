@@ -9,11 +9,10 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad){
-  $scope.data = GetData.twitterapi();
-  var widgets = [];
+.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad, $timeout){
+  // $scope.data = GetData.twitterapi();
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
-
+  console.log('element', toAppendTo)
 
   $scope.addWidget = function(){
     var parentEl = document.getElementById('chartsdisplay');
@@ -22,6 +21,10 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
       controller: 'CreatorController',
       templateUrl: 'main/dashboards/dashboardcreator/templates/widgets.html'
     });
+  };
+
+  $scope.done = function(){
+    $mdDialog.hide();
   };
 
   $scope.appendWidget = function(event, type){
@@ -46,11 +49,20 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     DashboardLoad.data.push(el);
     el = $compile(el)($scope);
     toAppendTo.append(el);
-    console.log('widgets', widgets);
   };
 
+  $scope.preSave = function(){
+    $mdDialog.show({
+      controller: 'CreatorController',
+      templateUrl: 'main/dashboards/dashboardcreator/templates/save.html'
+    });
+  }
+
   $scope.save = function(){
-    DashboardLoad.saveDash();
+    $mdDialog.hide();
+    var name = $scope.dashboardName;
+    var comments = $scope.dashboardComment;
+    DashboardLoad.saveDash(name, comments);
   };
 
 });
