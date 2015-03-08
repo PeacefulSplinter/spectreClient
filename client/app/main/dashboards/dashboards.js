@@ -28,14 +28,6 @@ angular.module('Daas.main.dashboards', [
   }
 
   $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
-  DashboardLoad.loadDash().then(function(resp){
-    console.log('here', resp.data);
-    $scope.name = resp.data.displayName || resp.data.username.charAt(0).toUpperCase() + resp.data.username.slice(1);
-    $scope.dashboards = resp.data.savedDashboards;
-    $scope.lastSaved = resp.data.lastSaved;
-    $scope.comment = resp.data.comments;
-  });
-
 
   $scope.onChange = function(val){
     if(val === 'twitAuth'){
@@ -54,6 +46,7 @@ angular.module('Daas.main.dashboards', [
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
   };
+
   $scope.logout = function(){
     $cookieStore.remove('Token');
     $state.go('app.login');

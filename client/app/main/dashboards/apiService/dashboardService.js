@@ -1,6 +1,6 @@
 angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
 
-.factory('DashboardLoad', function($http, $cookies){
+.factory('DashboardLoad', function($http, $cookies, rfc4122){
   return {
     saveDash: function(name, comments){
       var directives = [].map.call(document.querySelectorAll('.uchart'), function(el){
@@ -11,6 +11,7 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
       })
       var savedDate = JSON.stringify(new Date()).slice(1, 11);
       var obj = {
+        id: rfc4122.v4(),
         title: name,
         comment: comments || 'none',
         lastSaved: savedDate,
@@ -23,7 +24,7 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
         data: obj
       }).then(function(resp){
         console.log(resp);
-        swal("Dashboard Saved", "Don't stop now, keep on building!", "success");
+        // swal("Dashboard Saved", "Don't stop now, keep on building!", "success");
       });
     },
     loadDash: function(){

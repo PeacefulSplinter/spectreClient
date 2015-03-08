@@ -4,6 +4,7 @@ angular.module('Daas', [
   'ngMdIcons',
   'Daas.auth',
   'Daas.main',
+  'uuid',
   'Daas.auth.service',
   'Daas.main.dashboards',
   'Daas.main.dashboards.apiService',

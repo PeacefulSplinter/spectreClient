@@ -16,7 +16,24 @@
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerBarChart.html',
-        controller: function(){
+        replace: true,
+        scope: {
+          draggable: '@'
+        },
+        link: function(scope, element, attr){
+          var draggables = Draggable.create(element[0], {
+            type: 'x,y',
+            edgeResistance: .78,
+            bounds: '#chartsdisplay'
+          });
+          console.log('draggable', draggables);
+          console.log('element', element);
+          console.log('scope draggable', scope.draggable);
+          if(scope.draggable === "true"){
+            draggables[0].enable();
+          }else{
+            draggables[0].disable();
+          }
           c3.generate({
             bindto: '#tbar',
             size: {
@@ -36,7 +53,7 @@
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerPieChart.html',
-        controller: function(){
+        link: function(){
           c3.generate({
             bindto: '#tpie',
             size: {
@@ -57,7 +74,7 @@
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerDonutChart.html',
-        controller: function(){
+        link: function(){
           c3.generate({
             bindto: '#tdonut',
             size: {
@@ -77,7 +94,20 @@
       return{
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerLineChart.html',
-        controller: function(){
+        scope: {
+          draggable: "@"
+        },
+        link: function(scope, element, attr){
+          var draggables = Draggable.create(element[0], {
+            type: 'x,y',
+            edgeResistance: .78,
+            bounds: '#chartsdisplay'
+          });
+          if(scope.draggable){
+            draggables.enable();
+          }else{
+            draggables.disable();
+          }
           c3.generate({
             bindto: '#tline',
             size: {
@@ -99,15 +129,10 @@
         }
       };
     })
-    .directive('draggable', function(){
-      return function(scope, element){
-        // var tag = element[0].id;
-        var draggables = Draggable.create('.uchart', {
-          type: 'x,y',
-          edgeResistance: .78,
-          bounds: '#chartsdisplay'
-        });
-      }
-    })
+    // .directive('draggable', function(){
+    //   return function(scope, element){
+
+    //   }
+    // })
 })()
 

@@ -22,11 +22,12 @@ exports.loadOne = function(req, res) {
 	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
 		for (var i = 0; i < user.savedDashboards.length; i++) {
-			if(user.savedDashboards[i]['$$hashKey'] === req.param(':id')){
-				res.status(200).json(user);
+			console.log("I am the param", req.params.id);
+			if(user.savedDashboards[i].id === req.params.id){
+				return res.status(200).json(user.savedDashboards[i]);
 			}
 		};
-		res.status(200).send('Dashboard not found!'); 
+		res.status(200).send('Dashboard not found!');
 	});
 }
 
