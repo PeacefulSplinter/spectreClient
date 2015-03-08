@@ -1,14 +1,15 @@
 angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
 
-.factory('DashboardLoad', function($http, $cookies, rfc4122){
+.factory('DashboardLoad', function($http, $cookies, $compile, rfc4122){
   return {
     saveDash: function(name, comments){
       var directives = [].map.call(document.querySelectorAll('.uchart'), function(el){
+        console.log('I am the element', el);
         return {
           directive: '<' + el.parentElement.localName + '>' + '</' + el.parentElement.localName + '>',
           location: el.style.cssText
         }
-      })
+      });
       var savedDate = JSON.stringify(new Date()).slice(1, 11);
       var obj = {
         id: rfc4122.v4(),
@@ -44,6 +45,10 @@ angular.module('Daas.main.dashboards.dashboardService', ['ngCookies'])
       }).then(function(resp){
         return resp;
       })
+    },
+    appendWidget: function(apiType, chartType, draggable){
+      var el = '<' + apiType + '-' + chartType + ' draggable="' + draggable + '">' + '</' + apiType + '-' + chartType + '>';
+      return $compile(el);
     }
   }
 });

@@ -26,28 +26,10 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     $mdDialog.hide();
   };
 
-  $scope.appendWidget = function(event, type){
-    if(type === 'pie') {
-      el = '<twitter-follower-piechart draggable="true"></twitter-follower-piechart>'
-    }
-    if(type === 'bar') {
-      el = '<twitter-follower-barchart draggable="true"></twitter-follower-barchart>'
-    }
-    if(type === 'donut') {
-      el = '<twitter-follower-donutchart draggable="true"></twitter-follower-donutchart>';
-    }
-     if(type === 'line') {
-      el = '<twitter-follower-line-chart draggable="true"></twitter-follower-line-chart>';
-    }
-    if(type === 'spline') {
-      el = '<twitter-follower-spline-chart draggable="true"></twitter-follower-spline-chart>';
-    }
-    if(type === 'areaSpline') {
-      el = '<twitter-follower-area-spline-chart draggable="true"></twitter-follower-area-spline-chart>';
-    };
-    el = $compile(el)($scope);
+  $scope.appendWidget = function(apiType, chartType, draggable){
+    var el = DashboardLoad.appendWidget(apiType, chartType, draggable)($scope);
     toAppendTo.append(el);
-  };
+  }
 
   $scope.preSave = function(){
     $mdDialog.show({

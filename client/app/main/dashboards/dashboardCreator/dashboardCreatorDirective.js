@@ -16,12 +16,11 @@
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerBarChart.html',
-        replace: true,
         scope: {
           draggable: '@'
         },
         link: function(scope, element, attr){
-          var draggables = Draggable.create(element[0], {
+          var draggables = Draggable.create(element[0].children[0], {
             type: 'x,y',
             edgeResistance: .78,
             bounds: '#chartsdisplay'
@@ -53,7 +52,20 @@
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerPieChart.html',
-        link: function(){
+         scope: {
+          draggable: '@'
+        },
+        link: function(scope, element, attr){
+          var draggables = Draggable.create(element[0].children[0], {
+            type: 'x,y',
+            edgeResistance: .78,
+            bounds: '#chartsdisplay'
+          });
+          if(scope.draggable === "true"){
+            draggables[0].enable();
+          }else{
+            draggables[0].disable();
+          }
           c3.generate({
             bindto: '#tpie',
             size: {
@@ -70,11 +82,23 @@
     })
 
     .directive('twitterFollowerDonutchart', function(GetData){
-      // var data = GetData.twitterapi();
       return {
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerDonutChart.html',
-        link: function(){
+         scope: {
+          draggable: '@'
+        },
+        link: function(scope, element, attr){
+          var draggables = Draggable.create(element[0].children[0], {
+            type: 'x,y',
+            edgeResistance: .78,
+            bounds: '#chartsdisplay'
+          });
+          if(scope.draggable === "true"){
+            draggables[0].enable();
+          }else{
+            draggables[0].disable();
+          }
           c3.generate({
             bindto: '#tdonut',
             size: {
@@ -95,9 +119,19 @@
         restrict: 'E',
         templateUrl: '/main/dashboards/dashboardCreator/templates/tw/twitterFollowerLineChart.html',
         scope: {
-          draggable: "@"
+          draggable: '@'
         },
         link: function(scope, element, attr){
+          var draggables = Draggable.create(element[0].children[0], {
+            type: 'x,y',
+            edgeResistance: .78,
+            bounds: '#chartsdisplay'
+          });
+          if(scope.draggable === "true"){
+            draggables[0].enable();
+          }else{
+            draggables[0].disable();
+          }
           var draggables = Draggable.create(element[0], {
             type: 'x,y',
             edgeResistance: .78,
