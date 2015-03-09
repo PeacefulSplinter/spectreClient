@@ -7,7 +7,7 @@
     <label>Search</label>
     <input ng-model="item">
   </md-input-container>
-  <md-content class="fx-bounce-normal" ng-repeat="item in dashboards | filter: item">
+  <md-content class="fx-bounce-normal fx-easing-bounce" ng-repeat="item in dashboards | filter: item">
     <md-card id="dashboard-list">
       <md-toolbar class="md-accent">
           <div class="fab parent-button">

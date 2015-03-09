@@ -122,6 +122,8 @@
 }
 #home-container-view {
   background-image: url("../assets/spectreBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .bs-header {
   background-position: center center;
