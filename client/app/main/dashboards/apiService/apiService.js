@@ -32,6 +32,26 @@ angular.module('Daas.main.dashboards.apiService', ['ngCookies'])
       }).then(function(resp){
         console.log(resp);
       })
+    },
+    // Returns Age Range from API server
+    facebookAgeRangeApi: function(){
+      $http({
+        method: 'GET',
+        url: 'http://spectre-api.herokuapp.com/api/v1/api/facebook/facebookAgeRange'
+      }).then(function(resp){
+        console.log('Facebook Age Range Data', resp);
+        return resp;
+      })
+    },
+    // Returns Country data from API server
+    facebookCountryApi: function(){
+      $http({
+        method: 'GET',
+        url: 'http://spectre-api.herokuapp.com/api/v1/api/facebook/facebookCountry'
+      }).then(function(resp){
+        console.log('Facebook Country Data', resp);
+        return resp;
+      })
     }
   }
 });
