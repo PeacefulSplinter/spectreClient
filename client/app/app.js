@@ -2,6 +2,7 @@ angular.module('Daas', [
   'ui.router',
   'ngFx',
   'ngMaterial',
+  'ngMdIcons',
   'Daas.auth',
   'Daas.main',
   'uuid',
