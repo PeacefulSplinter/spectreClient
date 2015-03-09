@@ -3,15 +3,22 @@
     <md-button ui-sref="app.main.dashboards.dashboardCreator">New Dashboard</md-button>
   </div>
 </md-subheader>
-<div id="dashboard-list" ng-repeat="item in dashboards">
-  <md-content>
-    <md-card>
+  <md-input-container flex style="max-width: 30vw; margin-left: 322px;">
+    <label>Search</label>
+    <input ng-model="item">
+  </md-input-container>
+  <md-content ng-repeat="item in dashboards | filter: item">
+    <md-card id="dashboard-list">
       <md-toolbar class="md-accent">
-        <h2 class="md-toolbar-tools">
+          <div class="fab parent-button">
+            <div class="sub-button tl" ng-click="">Edit</div>
+            <div class="sub-button br" ng-click="">Delete</div>
+            <div class="sub-button bl" ng-click="">Color</div>
+            <div class="sub-button tr" ng-click="loadDash(item.id)">View</div>
+          </div>
+        <span class="md-toolbar-tools">
           <span>{{item.title}}</span>
-
-          <md-button class="md-toolbar-tools edit-btn" ng-click="loadDash(item.id)">Load</md-button>
-        </h2>
+        </span>
       </md-toolbar>
       <md-card-content>
         <span><i>{{item.lastSaved}}</i></span>
@@ -20,4 +27,5 @@
         </p>
       </md-card-content>
     </md-card>
-</div>
+  </md-content>
+

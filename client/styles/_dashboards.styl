@@ -1,28 +1,175 @@
 #dashboard-list
-  max-width 80vw
+  max-width 30vw
   max-height 250px
-  margin-bottom  20px
-  margin-left 125px
-.all-dashboards
-  margin-top 10px
-.dash-nav
-  background-color mint
-.newDashboard:hover
-  color violet
-  background-color black
-.dash-list
-  margin-top 10px
-.edit-btn
-  position absolute
-  left 900px
-  max-height 80px
-  max-width 80px
-.all-dashboards
-  margin-top 10px
-.dash-nav
-  background-color mint
-.newDashboard:hover
-  color violet
-  background-color black
-.dash-list
-  margin-top 10px
+  margin-bottom 20px
+  margin-left 325px
+
+.parent-button {
+ position: absolute;
+ cursor: pointer
+ right: -27px;
+ top: 37px;
+ margin: auto;
+ width: 56px;
+ height: 56px;
+ overflow: visible;
+ -webkit-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+   color 0s ease .4s,font-size .2s;
+ -moz-transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+   color 0s ease .4s,font-size .2s;
+ transition: transform .4s cubic-bezier(.58,-0.37,.45,1.46),
+   color 0s ease .4s,font-size .2s;
+ text-align: center;
+ line-height: 56px;
+ font-size: 28px;
+ color: rgba(255,255,255,1);
+}
+
+.parent-button:before {
+ position: absolute;
+ z-index: 100;
+ color: black
+ font-size small
+ content 'Select'
+ left 11px
+}
+
+.parent-button:hover {
+ transform: rotate(45deg);
+}
+
+.sub-button {
+ position: absolute;
+ display: inline-block;
+ background-color:#5C6BC0;
+ color: rgba(255,255,255,0);
+ width: 28px;
+ height: 28px;
+ line-height:48px;
+ font-family: "FontAwesome";
+ font-size: 12px;
+ -webkit-transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   transform .1s ease 0s,
+   border-radius .2s  ease .2s;
+  -moz-transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   transform .1s ease 0s,
+   border-radius .2s  ease .2s;
+  transition: top .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   left .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   bottom .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   right .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   width .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   height .2s cubic-bezier(.58,-0.37,.45,1.46) .2s,
+   transform .1s ease 0s,
+   border-radius .2s  ease .2s;
+}
+
+.tl {
+ top: 0;
+ left: 0;
+ border-radius: 28px 0 0 0;
+}
+
+.tr {
+ top: 0;
+ right: 0;
+ border-radius: 0 28px 0 0;
+}
+
+.bl {
+ bottom: 0;
+ left: 0;
+ border-radius: 0 0 0 28px;
+}
+
+.br
+ bottom: 0;
+ right: 0;
+ border-radius: 0 0 28px 0;
+
+
+.tl:before {
+ content:"";
+}
+
+.tr:before {
+ content:"";
+}
+
+.bl:before {
+ content:"";
+}
+
+.br:before {
+ content:"";
+}
+
+
+.parent-button:hover .sub-button {
+ width: 48px;
+ height: 48px;
+ transform: rotate(-45deg);
+
+ color: rgba(255,255,255,1);
+ -webkit-transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   color .3s ease .8s,
+   transform .3s ease .8s,
+   border-radius .4s  ease .6s;
+  -moz-transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   color .3s ease .8s,
+   transform .3s ease .8s,
+   border-radius .4s  ease .6s;
+  transition: top .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   left .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   bottom .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   right .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   width .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   height .4s cubic-bezier(.58,-0.37,.45,1.46) .4s,
+   color .3s ease .8s,
+   transform .3s ease .8s,
+   border-radius .4s  ease .6s;
+}
+
+.parent-button:hover .tl {
+ top: -25px;
+ left: -25px;
+ border-radius: 28px;
+}
+
+.parent-button:hover .tr {
+ top: -25px;
+ right: -25px;
+ border-radius: 28px;
+}
+
+.parent-button:hover .bl {
+ bottom: -25px;
+ left: -25px;
+ border-radius: 28px;
+}
+
+.parent-button:hover .br {
+ bottom: -25px;
+ right: -25px;
+ border-radius: 28px;
+}

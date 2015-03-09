@@ -25,9 +25,6 @@
             edgeResistance: .78,
             bounds: '#chartsdisplay'
           });
-          console.log('draggable', draggables);
-          console.log('element', element);
-          console.log('scope draggable', scope.draggable);
           if(scope.draggable === "true"){
             draggables[0].enable();
           }else{
@@ -163,10 +160,5 @@
         }
       };
     })
-    // .directive('draggable', function(){
-    //   return function(scope, element){
-
-    //   }
-    // })
 })()
 

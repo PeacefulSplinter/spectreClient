@@ -11,7 +11,7 @@ angular.module('Daas', [
   'Daas.main.dashboards.dashboardService'
 ])
 
-.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider){
+.config(function($stateProvider, $urlRouterProvider, $mdThemingProvider, $locationProvider){
   $mdThemingProvider.theme('default')
     .primaryPalette('purple', {
       'default': '600'

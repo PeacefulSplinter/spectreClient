@@ -7,7 +7,6 @@ angular.module('Daas.main', [
     .state('app.main', {
       url: '',
       template: '<ui-view />',
-      // controller: 'HomeController'
       abstract: true
   });
 
