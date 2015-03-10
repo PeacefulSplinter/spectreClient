@@ -9,6 +9,7 @@ angular.module('Daas.main.home', [])
     });
 })
 .controller('HomeController', function($scope, $state, $interval){
+
   $scope.next = function(){
     $state.go('login');
   };

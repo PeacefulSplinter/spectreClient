@@ -375,3 +375,25 @@
   margin-right: 15px;
   border: 1px dotted #000;
 }
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gears {
+  background-image: url("../assets/gears.jpg");
+  height: 700px;
+  width: 100%;
+}
+
+.coffee {
+  background-image: url("../assets/coffeePic.jpg");
+  height: 400px;
+  width: 100%;
+}
+
+.height {
+  height: 400px;
+  width: 100%;
+}
