@@ -36,7 +36,6 @@ angular.module('Daas.main.dashboards', [
     $state.go('app.login');
   }
 
-<<<<<<< HEAD
   $scope.onChange = function(val){
     if(val === 'twitAuth'){
       Auth.authLogin('tw');
@@ -50,23 +49,6 @@ angular.module('Daas.main.dashboards', [
       console.log('no auth by that name');
     }
   };
-=======
-  $scope.picture = 'http://georgiapoliticalreview.com/wp-content/uploads/2014/04/Finn-The-Human.jpg'
-
-  // $scope.onChange = function(val){
-  //   if(val === 'twitAuth'){
-  //     Auth.authLogin('tw');
-  //   } else if (val === 'fbAuth'){
-  //     Auth.authLogin('fb');
-  //   } else if (val === 'googleAuth'){
-  //     Auth.authLogin('g');
-  //   } else if (val === 'mailchimpAuth'){
-  //     Auth.authLogin('mc');
-  //   } else {
-  //     console.log('no auth by that name');
-  //   }
-  // };
->>>>>>> background pics
 
   $scope.toggleLeft = function() {
     $mdSidenav('left').toggle();
