@@ -9,7 +9,7 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
     });
 })
 
-.controller('CreatorController', function($scope, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad, $timeout){
+.controller('CreatorController', function($scope, $state, $rootScope, $mdDialog, $compile, $document, GetData, DashboardLoad){
   // $scope.data = GetData.twitterapi();
   var toAppendTo = angular.element($document[0].getElementById('chartsdisplay'));
 
@@ -40,9 +40,18 @@ angular.module('Daas.main.dashboards.dashboardCreator', ['Daas.main.dashboards.d
 
   $scope.save = function(){
     $mdDialog.hide();
-    name = $scope.dashboardName;
+    var name = $scope.dashboardName;
     var comments = $scope.dashboardComment;
     DashboardLoad.saveDash(name, comments);
+    swal({
+      title: "Dashboard saved!",
+      text: "click back to view your dashboard",
+      type: "success"
+    },
+      function(){
+        $state.go('app.main.dashboards.list');
+      }
+    );
   };
 
 });

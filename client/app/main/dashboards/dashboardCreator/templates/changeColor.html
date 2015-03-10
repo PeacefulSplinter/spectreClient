@@ -1,0 +1,13 @@
+<md-dialog>
+  <md-content>
+    <h3>Pick Your Color<h3>
+  </md-content>
+  <div>
+    <select ng-options="theme for theme in themes" ng-model="appTheme.active"></select>
+    <h3>{{ appTheme.active }}</h3>
+    <div md-theme="{{ appTheme.active }}">
+      <md-button class="md-primary">I'm dynamic</md-button>
+    </div>
+  </div>
+  <md-button class="accent" ng-click="save()">Save</md-button>
+</md-dialog>

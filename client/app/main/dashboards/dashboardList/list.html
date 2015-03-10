@@ -7,13 +7,13 @@
     <label>Search</label>
     <input ng-model="item">
   </md-input-container>
-  <md-content ng-repeat="item in dashboards | filter: item">
+  <md-content class="fx-bounce-normal" ng-repeat="item in dashboards | filter: item">
     <md-card id="dashboard-list">
       <md-toolbar class="md-accent">
           <div class="fab parent-button">
-            <div class="sub-button tl" ng-click="">Edit</div>
-            <div class="sub-button br" ng-click="">Delete</div>
-            <div class="sub-button bl" ng-click="">Color</div>
+            <div class="sub-button tl" ng-click="edit($event)">Edit</div>
+            <div class="sub-button br" ng-click="delete()">Delete</div>
+            <div class="sub-button bl" ng-click="changeColor($event)">Color</div>
             <div class="sub-button tr" ng-click="loadDash(item.id)">View</div>
           </div>
         <span class="md-toolbar-tools">
