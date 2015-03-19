@@ -7,7 +7,7 @@ angular.module('Daas.main.dashboards.apiService', ['ngCookies'])
       $http({
         method: 'POST',
         url: 'http://spectre-api.herokuapp.com/api/v1/api/twitter/twitterFollowers',
-        data: {token: $cookies.Token}
+        data: {token: $cookies.twitterToken}
       }).then(function(resp){
         console.log('I am the response', resp.data.followDate);
         var tData = resp.data.followDate;
@@ -31,6 +31,26 @@ angular.module('Daas.main.dashboards.apiService', ['ngCookies'])
         data: {ye: 'ye'}
       }).then(function(resp){
         console.log(resp);
+      })
+    },
+    // Returns Age Range from API server
+    facebookAgeRangeApi: function(){
+      $http({
+        method: 'GET',
+        url: 'http://spectre-api.herokuapp.com/api/v1/api/facebook/facebookAgeRange'
+      }).then(function(resp){
+        console.log('Facebook Age Range Data', resp);
+        return resp;
+      })
+    },
+    // Returns Country data from API server
+    facebookCountryApi: function(){
+      $http({
+        method: 'GET',
+        url: 'http://spectre-api.herokuapp.com/api/v1/api/facebook/facebookCountry'
+      }).then(function(resp){
+        console.log('Facebook Country Data', resp);
+        return resp;
       })
     }
   }

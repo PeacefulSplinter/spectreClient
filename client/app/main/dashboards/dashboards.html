@@ -1,27 +1,25 @@
-<md-content>
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      <div class="md-toolbar-item">
-        <h4>
-          <md-button aria-label="Sidenav" ng-click="toggleLeft()">
-            <ng-md-icon icon="dehaze"></ng-md-icon>
-          </md-button>
-          Spectre Widgets
-        </h4>
-      </div>
-      <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
-        <div>
-          <md-button ng-click="logout()"><h4>logout</h4></md-button>
-        </div>
+<md-toolbar md-theme="{{ appTheme.active }}">
+  <div class="md-toolbar-tools">
+    <div class="md-toolbar-item">
+      <h4>
+        <md-button aria-label="Sidenav" ng-click="toggleLeft()">
+          <ng-md-icon icon="dehaze"></ng-md-icon>
+        </md-button>
+        <span style="position:absolute; top:19px; left:70px;">Spectre Widgets</span>
+      </h4>
+    </div>
+    <div class="md-toolbar-item md-tools" layout="column" layout-gt-md="row">
+      <div>
+        <md-button ng-click="logout()"><h4>logout</h4></md-button>
       </div>
     </div>
-  </md-toolbar>
-</md-content>
+  </div>
+</md-toolbar>
 
-  <ui-view></ui-view>
+<ui-view md-theme="{{ appTheme.active }}"></ui-view>
 
- <section layout="row" flex>
-    <md-sidenav class="md-sidenav-left" md-component-id="left" style="height: 100vh">
+ <section layout="row" flex md-theme="{{ appTheme.active }}">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" style="height: 100%; position: fixed">
       <md-toolbar class="md-theme-light">
         <h1 class="md-toolbar-tools">Profile: {{name}}</h1>
       </md-toolbar>
@@ -30,7 +28,7 @@
         <img class="avatar" src={{picture}} alt="hello">
         </div>
         <!-- Tab creation-->
-        <md-tabs style="margin-left: 30px" md-selected="data.selectedIndex">
+        <md-tabs style="margin-left: 15px" md-selected="data.selectedIndex">
           <md-tab id="tab1" aria-controls="tab1-content">
             Data
           </md-tab>

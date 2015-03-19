@@ -5,7 +5,7 @@ var decode = require('../auth/authService.js').decode;
 
 router.post('/dashboardSave', decode(), dashboard.save);
 router.post('/dashboardLoad', decode(), dashboard.load);
-router.get('/dashboardLoad/:id', decode(), dashboard.loadOne);
+router.post('/dashboardLoad/:id', decode(), dashboard.loadOne);
 
 module.exports = router;
 
