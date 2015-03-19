@@ -3,9 +3,9 @@
     <md-button ui-sref="app.main.dashboards.dashboardCreator">New Dashboard</md-button>
   </div>
 </md-subheader>
-  <md-input-container flex style="max-width: 30vw; margin-left: 322px;">
-    <label>Search</label>
-    <input ng-model="item">
+  <md-input-container flex class="md-accent" style="max-width: 30vw; margin-left: 322px;">
+    <label class="md-accent">Search</label>
+    <input class="md-accent" ng-model="item">
   </md-input-container>
   <md-content class="fx-bounce-normal fx-easing-bounce" ng-repeat="item in dashboards | filter: item">
     <md-card id="dashboard-list">
