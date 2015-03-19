@@ -8,7 +8,33 @@ angular.module('Daas.main.home', [])
       controller: 'HomeController'
     });
 })
-.controller('HomeController', function($scope, $state, $interval){
+.controller('HomeController', function($scope, $state, $interval, $location, $anchorScroll){
+  
+  $scope.gotoFeatures = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('features');
+        // call $anchorScroll()
+        $anchorScroll();
+      };
+
+  $scope.gotoTeam = function() {
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+        $location.hash('team');
+
+        // call $anchorScroll()
+        $anchorScroll();
+      };
+
+  $scope.gotoTechStack = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('techStack');
+
+        // call $anchorScroll()
+        $anchorScroll();
+      };
 
   $scope.next = function(){
     $state.go('login');

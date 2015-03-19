@@ -38,7 +38,8 @@ angular.module('Daas.main.dashboards', [
 
   $scope.onChange = function(val){
     if(val === 'twitAuth'){
-      Auth.authLogin('tw');
+      // Auth.authLogin('tw');
+      console.log('twitter!');
     } else if (val === 'fbAuth'){
       Auth.authLogin('fb');
     } else if (val === 'googleAuth'){

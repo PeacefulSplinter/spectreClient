@@ -1,17 +1,148 @@
-<div id="home-container-view">
-  <header class="bs-header text-center" id="overview">
-    <div class="container">
-      <img class="logoSize" src="/../../assets/spectrelogo.png" />
-      <h3 class="title-header titleSize">Spectre Widgets</h3>
-      <h3>Build personalized dashboards using your favorite services like Google, MailChimp & Twitter</h3>
-      <a ui-sref="app.signup"><md-button class="md-raised">Sign Up</md-button></a>
-      <a ui-sref="app.login"><md-button class="md-raised">Login</md-button></a>
+<div class="coffee">
+  <div layout="row">
+    <div flex="30">
+      <div layout="row" layout-align="center center" class="moreHeight">
+        <img class="logoSize" src="/../../assets/spectrelogo.png" />
+        <h2 class="btnParam mainFont titleStyle"><p class="titleStyleLetter">S</p>pectre <p class="titleStyleLetter">W</p>idgets</h2>
+      </div>
     </div>
-  </header>
-
-  <a name="see-examples">
+    <div flex="30"></div>
+    <div flex="40">
+      <div layout="row" layout-align="end center" class="moreHeight">
+        <a flex="20" align="center" class="clickable" ng-click="gotoFeatures()">Features</a>
+        <p flex="20" align="center" class="clickable" ng-click="gotoTeam()">Team</p>
+        <p flex="20" align="center" class="clickable" ng-click="gotoTechStack()">Tech Stack</p>
+        <p flex="20" align="right"><a ui-sref="app.signup"><md-button class="md-raised md-primary">Sign Up</md-button></a></p>
+        <p flex="20" align="left" class="btnParam"><a ui-sref="app.login"><md-button class="md-raised ">Login</md-button></a></p>
+      </div>
+    </div>
+  </div>
+  <div layout="row" layout-align="center center" class="tagline">
+    <div flex="15"></div>
+    <div flex="70" align="center">
+      <h3>Build personalized dashboards using your favorite services like Google, MailChimp & Twitter</h3>
+      <a ui-sref="app.signup"><md-button class="md-raised md-primary">Get Started</md-button></a>
+    </div>
+    <div flex="15"></div>
+  </div>
+</div>
+<div layout="row" id="features" class="height">
+  <div flex>
+    <div class="morePad">
+      <div layout="row" layout-align="center center">
+        <div flex="20"></div>
+        <div flex="15" align="center">
+          <img src="../../assets/icon3.png">
+          <h3 class="featureHeadline">Build</h3>
+          <p>Unique dashboards with our robust widget library</p>
+        </div>
+        <div flex="5"></div>
+        <div flex="15" align="center">
+          <img src="../../assets/icon2.png">
+          <h3 class="featureHeadline">Update</h3>
+          <p>Stay informed with friend data and statistics</p>
+        </div>
+        <div flex="5"></div>
+        <div flex="15" align="center">
+          <img src="../../assets/icon1.png">
+          <h3 class="featureHeadline">Customize</h3>
+          <p>Transform your interface for one-of-a-kind layouts</p>
+        </div>
+        <div flex="5"></div>
+        <div flex="20"></div>
+      </div>
+    </div>
     <div id="dashboard-examples">
       <div id="transition-chart" ng-init="showTransitionChart()"></div>
     </div>
-  </a>
+  </div>
 </div>
+<div id="team" class="gears">
+  <div layout="row" layout-align="center center">
+    <div flex="15"></div>
+    <div flex="70" align="center" class="engTeam">
+      <h1 class="titleStyle">Meet the Engineering Team!</h1>
+    </div>
+    <div flex="15"></div>
+  </div>
+  <div layout="row" layout-align="center center">
+    <div flex="10"></div>
+    <div flex="20" align="center">
+      <img class="photoCircle" src="../../assets/arun.jpg">
+      <h3 class="featureHeadline">Arun Suresh</h3>
+      <a href="https://www.linkedin.com/profile/view?id=98918167&authType=NAME_SEARCH&authToken=YUkX&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A1-1-1%2CtarId%3A1426668915534%2Ctas%3Aarun"><md-button class="md-raised buttonBackLinkedIn" aria-label="google+"></md-button></a>
+      <a href="https://github.com/arunvsuresh"><md-button class="md-raised buttonBackGithub" aria-label="google+"></md-button></a>
+    </div>
+    <div flex="20" align="center">
+      <img class="photoCircle" src="../../assets/benoy.jpg">
+      <h3 class="featureHeadline">Benoy Maniara</h3>
+      <a href="https://www.linkedin.com/profile/view?id=381558565&authType=NAME_SEARCH&authToken=9-Pa&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A1-1-1%2CtarId%3A1426668811273%2Ctas%3Abenoy"><md-button class="md-raised buttonBackLinkedIn" aria-label="google+"></md-button></a>
+      <a href="https://github.com/maniarab"><md-button class="md-raised buttonBackGithub" aria-label="google+"></md-button></a>
+    </div>
+    <div flex="20" align="center">
+      <img class="photoCircle" src="../../assets/mike.jpg">
+      <h3 class="featureHeadline">Mike Moss</h3>
+      <a href="https://www.linkedin.com/profile/view?id=305875503&authType=NAME_SEARCH&authToken=KMml&locale=en_US&trk=tyah&trkInfo=clickedVertical%3Amynetwork%2Cidx%3A2-1-2%2CtarId%3A1426668660553%2Ctas%3Amicha"><md-button class="md-raised buttonBackLinkedIn" aria-label="google+"></md-button></a>
+      <a href="https://github.com/realmike33"><md-button class="md-raised buttonBackGithub" aria-label="google+"></md-button></a>
+    </div>
+    <div flex="20" align="center">
+      <img class="photoCircle" src="../../assets/steven.jpg">
+      <h3 class="featureHeadline">Steven Williams</h3>
+      <a href="https://github.com/Radiobeat33"><md-button class="md-raised buttonBackLinkedIn" aria-label="google+"></md-button></a>
+      <a href="https://www.linkedin.com/in/therealsteven"><md-button class="md-raised buttonBackGithub" aria-label="google+"></md-button></a>
+    </div>
+    <div flex="10"></div>
+  </div>
+</div>
+<div flex="70" align="center" id="techStack">
+  <h1 class="titleStyle purple">Spectre Widgets Tech Stack</h1>
+</div>
+<div layout="row" class="heightStack">
+  <div flex>
+    <md-grid-list
+          md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+          md-row-height-gt-md="1:1" md-row-height="2:2"
+          md-gutter="12x" md-gutter-gt-sm="8px" >
+      
+      <a href="https://angularjs.org/"><md-grid-tile class="angular"
+          md-rowspan="2" md-colspan="2">
+        <md-grid-tile-footer>
+          <h3>Angular</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+      <a href="https://nodejs.org/"><md-grid-tile class="nodejs"
+        md-rowspan="2" md-colspan="2">
+        <md-grid-tile-footer>
+          <h3>Node</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+      <a href="http://expressjs.com/"><md-grid-tile class="express">
+        <md-grid-tile-footer>
+          <h3>Express</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+      <a href="http://www.mongodb.org/"><md-grid-tile class="mongo">
+        <md-grid-tile-footer>
+          <h3>MongoDB</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+      <a href="http://gulpjs.com/"><md-grid-tile class="gulp">
+        <md-grid-tile-footer>
+          <h3>Gulp</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+      <a href="http://d3js.org/"><md-grid-tile class="d3">
+        <md-grid-tile-footer>
+          <h3>D3</h3>
+        </md-grid-tile-footer>
+      </md-grid-tile></a>
+    </md-grid-list>
+  </div>
+</div>
+<footer>
+  <md-toolbar>
+    <h2 class="md-toolbar-tools footer">
+      <div class="footerContent">Spectre Widgets &copy;2015 </div>
+    </h2>
+  </md-toolbar>
+</footer>
