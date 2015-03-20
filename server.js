@@ -19,6 +19,12 @@ app.use(express.static('client/app'))
 mongoose.connect($config.mongo.url);
 require('./api')(app);
 
+app.all('/*', function(req, res, next) {
+  // Just send the index.html for other files to support HTML5Mode
+  res.sendFile('index.html', { root: 'client/app' });
+});
+
+
 app.listen($config.port, function(){
   console.log("Listening on port " + $config.port);
 });
