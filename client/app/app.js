@@ -50,12 +50,14 @@ angular.module('Daas', [
     .accentPalette('grey', {
       'default': '700'
     });
+  $locationProvider.html5Mode(true);
   $stateProvider
     .state('app',{
       url: '',
       abstract: true,
       template: '<ui-view />'
     })
+    $urlRouterProvider.otherwise('/');
 })
 .run(function($rootScope){
   $rootScope.appTheme = {

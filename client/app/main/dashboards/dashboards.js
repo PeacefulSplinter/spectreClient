@@ -17,7 +17,6 @@ angular.module('Daas.main.dashboards', [
       templateUrl: 'main/dashboards/dashboardList/list.html',
       controller: 'ListController'
     })
-    $urlRouterProvider.otherwise('/dashboards');
 })
 
 .controller('DashboardsController', function($timeout, $scope, $rootScope, $mdSidenav, $mdDialog, Auth, $state, GetData, $cookieStore, $cookies, DashboardLoad){
