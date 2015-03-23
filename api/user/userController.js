@@ -10,7 +10,6 @@ exports.save = function(req, res){
 	});
 };
 
-
 exports.load = function(req, res) {
 	User.findOne({'username': req.user.username }, {'password':0, 'grants':0, '__v':0, '_id':0}, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
@@ -22,7 +21,6 @@ exports.loadOne = function(req, res) {
 	User.findOne({'username': req.user.username }, function(err, user){
 		if (err || !user || user.savedDashboards.length === 0) { return err; }
 		for (var i = 0; i < user.savedDashboards.length; i++) {
-			console.log("I am the param", req.params.id);
 			if(user.savedDashboards[i].id === req.params.id){
 				return res.status(200).json(user.savedDashboards[i]);
 			}
